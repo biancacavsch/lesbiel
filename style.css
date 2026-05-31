@@ -240,6 +240,29 @@ body {
 }
 .card-link svg { width: 12px; height: 12px; }
 
+/* IMAGE VARIANT CLASSES */
+.card-img-verde { background: var(--verde); }
+.card-img-bege-dark { background: var(--bege-dark); }
+
+/* INDICA THUMB VARIANTS */
+.indica-thumb-verde { background: var(--verde); }
+.indica-thumb-bege-dark { background: var(--bege-dark); }
+.indica-thumb-bege-mid { background: var(--bege-mid); }
+
+.indica-thumb-text {
+  font-size: 0.65rem;
+  color: var(--bege);
+  opacity: 0.5;
+  text-align: center;
+  padding: 0.5rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.indica-thumb-verde .indica-thumb-text { color: var(--bege); opacity: 0.5; }
+.indica-thumb-bege-dark .indica-thumb-text,
+.indica-thumb-bege-mid .indica-thumb-text { color: var(--verde); opacity: 0.8; }
+
 /* QUOTE SECTION */
 .quote-section {
   background: var(--preto);
@@ -370,6 +393,9 @@ blockquote {
   object-fit: cover;
   background: var(--cinza-azul-dark);
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .indica-card-tag {
@@ -558,6 +584,74 @@ footer {
   color: var(--bege);
   opacity: 0.3;
   letter-spacing: 0.04em;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10,10,10,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: var(--verde);
+  padding: 3rem;
+  border-radius: 4px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--bege);
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.modal-close:hover { opacity: 1; }
+
+.modal-title {
+  font-size: 1.5rem;
+  color: var(--bege);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.modal-desc {
+  color: var(--bege);
+  opacity: 0.7;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.modal-btn {
+  background: var(--bege);
+  color: var(--verde);
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.modal-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 /* ANIMATIONS */

@@ -153,102 +153,45 @@ document.querySelectorAll('.section-label, .indica-header h2').forEach(el => {
 // ============================================
 let audioModal = null;
 
-document.querySelectorAll('.card-link, .audio-pill').forEach(btn => {
+function closeAudioModal() {
+  if (audioModal) {
+    audioModal.remove();
+    audioModal = null;
+  }
+}
+
+document.querySelectorAll('.js-modal-trigger').forEach(btn => {
   btn.addEventListener('click', function(e) {
     e.preventDefault();
     
-    // Remove existing modal
-    if (audioModal) {
-      audioModal.remove();
-    }
+    closeAudioModal();
 
-    // Create modal
     audioModal = document.createElement('div');
-    audioModal.style.cssText = `
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(10,10,10,0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      animation: fadeIn 0.3s ease;
-    `;
+    audioModal.className = 'modal-overlay';
 
     const modalContent = document.createElement('div');
-    modalContent.style.cssText = `
-      background: var(--verde);
-      padding: 3rem;
-      border-radius: 4px;
-      max-width: 400px;
-      width: 90%;
-      text-align: center;
-      position: relative;
-    `;
+    modalContent.className = 'modal-content';
 
     const closeBtn = document.createElement('button');
+    closeBtn.className = 'modal-close';
     closeBtn.textContent = '×';
-    closeBtn.style.cssText = `
-      position: absolute;
-      top: 1rem;
-      right: 1.5rem;
-      background: none;
-      border: none;
-      color: var(--bege);
-      font-size: 2rem;
-      cursor: pointer;
-      opacity: 0.6;
-      transition: opacity 0.2s;
-    `;
-    closeBtn.addEventListener('mouseenter', () => closeBtn.style.opacity = '1');
-    closeBtn.addEventListener('mouseleave', () => closeBtn.style.opacity = '0.6');
-    closeBtn.addEventListener('click', () => audioModal.remove());
+    closeBtn.addEventListener('click', closeAudioModal);
 
     const title = document.createElement('h3');
-    title.style.cssText = `
-      font-size: 1.5rem;
-      color: var(--bege);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.03em;
-    `;
+    title.className = 'modal-title';
     title.textContent = 'Em breve';
 
     const desc = document.createElement('p');
-    desc.style.cssText = `
-      color: var(--bege);
-      opacity: 0.7;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-    `;
+    desc.className = 'modal-desc';
     desc.textContent = 'Os áudios estarão disponíveis no Spotify em breve. Inscreva-se para ser notificado.';
 
     const notifyBtn = document.createElement('button');
+    notifyBtn.className = 'modal-btn';
     notifyBtn.textContent = 'Notificar-me';
-    notifyBtn.style.cssText = `
-      background: var(--bege);
-      color: var(--verde);
-      border: none;
-      padding: 0.8rem 2rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      cursor: pointer;
-      transition: transform 0.2s, opacity 0.2s;
-    `;
-    notifyBtn.addEventListener('mouseenter', () => {
-      notifyBtn.style.transform = 'translateY(-2px)';
-      notifyBtn.style.opacity = '0.9';
-    });
-    notifyBtn.addEventListener('mouseleave', () => {
-      notifyBtn.style.transform = 'translateY(0)';
-      notifyBtn.style.opacity = '1';
-    });
     notifyBtn.addEventListener('click', () => {
       notifyBtn.textContent = 'Inscrito! ✓';
       notifyBtn.style.pointerEvents = 'none';
-      setTimeout(() => audioModal.remove(), 1500);
+      setTimeout(closeAudioModal, 1500);
     });
 
     modalContent.appendChild(closeBtn);
@@ -258,19 +201,17 @@ document.querySelectorAll('.card-link, .audio-pill').forEach(btn => {
     audioModal.appendChild(modalContent);
     document.body.appendChild(audioModal);
 
-    // Close on background click
     audioModal.addEventListener('click', (e) => {
-      if (e.target === audioModal) {
-        audioModal.remove();
-      }
+      if (e.target === audioModal) closeAudioModal();
     });
 
-    // Close on escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && audioModal) {
-        audioModal.remove();
+    const escapeHandler = (e) => {
+      if (e.key === 'Escape') {
+        closeAudioModal();
+        document.removeEventListener('keydown', escapeHandler);
       }
-    });
+    };
+    document.addEventListener('keydown', escapeHandler);
   });
 });
 
