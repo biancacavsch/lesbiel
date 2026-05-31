@@ -122,6 +122,14 @@ document.querySelectorAll('.js-soon').forEach(btn => {
   });
 });
 
+document.querySelectorAll('.arquivo-card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    if (e.target.closest('a')) return;
+    const soonLink = this.querySelector('.js-soon');
+    if (soonLink) soonLink.click();
+  });
+});
+
 document.querySelectorAll('.arquivo-card, .indica-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
