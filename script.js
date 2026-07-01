@@ -38,9 +38,9 @@ function showTexto(id) {
 
 textoTocLinks.forEach(link => {
   link.addEventListener('click', function(e) {
-    e.preventDefault();
     const href = this.getAttribute('href');
     if (href && href.startsWith('#')) {
+      e.preventDefault();
       showTexto(href.substring(1));
       document.querySelector('#texto').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
