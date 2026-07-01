@@ -116,27 +116,28 @@
     display: none;
   }
   .text-page-footer {
-    margin-top: 4rem;
+    background: var(--preto);
+    margin: 4rem -3rem -4rem -5rem;
+    padding: 1.5rem 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .back-link {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--verde);
-    text-decoration: none;
-    opacity: 0.5;
-  }
-  .back-link:hover { opacity: 1; }
   .footer-logo {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--verde);
+    color: var(--bege);
     letter-spacing: -0.04em;
   }
   .footer-logo span { font-weight: 300; font-style: italic; }
+  .footer-desc {
+    font-size: 0.68rem;
+    color: var(--bege);
+    opacity: 0.4;
+    max-width: 400px;
+    text-align: right;
+    line-height: 1.5;
+  }
   @media (max-width: 768px) {
     .text-page { padding: 3rem 1.5rem; }
     .text-page-body p { font-size: 1rem; }
@@ -500,8 +501,8 @@
     </article>
 
   <footer class="text-page-footer">
-    <a href="index.html" class="back-link">← Voltar ao arquivo</a>
     <div class="footer-logo">Lesb<span>iel</span></div>
+    <p class="footer-desc">Arquivo e voz de mulheres lésbicas e bissexuais</p>
   </footer>
 </main>
 
