@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katherine Mansfield — Bliss — Lesbiel</title>
+<meta name="description" content="Bliss, conto de Katherine Mansfield (1920). Arquivo Lesbiel — arquivo e voz de mulheres lésbicas e bissexuais.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=General+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .author-hero {
+    background: var(--verde);
+    padding: 6rem 3rem 4rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .author-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    position: relative;
+  }
+  .author-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.9);
+    mix-blend-mode: multiply;
+  }
+  .author-photo .img-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--verde);
+    mix-blend-mode: screen;
+    opacity: 0.6;
+  }
+  .author-info h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: var(--bege);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .author-info .author-work {
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--bege);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+  }
+  .author-info .author-bio {
+    font-size: 0.9rem;
+    color: var(--bege);
+    opacity: 0.7;
+    line-height: 1.7;
+    max-width: 500px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bege);
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    margin-bottom: 2rem;
+  }
+  .back-link:hover { opacity: 1; }
+  .back-link svg { width: 12px; height: 12px; }
+
+  .text-section {
+    background: var(--bege);
+    padding: 6rem 3rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 6rem;
+  }
+  .text-sidebar {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+  }
+  .text-sidebar .section-label {
+    color: var(--verde);
+    opacity: 0.6;
+    margin-bottom: 2rem;
+  }
+  .text-sidebar .author-nav {
+    font-size: 0.82rem;
+    color: var(--verde);
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .text-sidebar .author-nav:hover { opacity: 1; }
+
+  .text-content {
+    max-width: 600px;
+  }
+  .text-work-title {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: var(--verde);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .text-work-author {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--verde);
+    opacity: 0.5;
+    font-style: italic;
+    margin-bottom: 3rem;
+  }
+  .text-body {
+    font-size: 1.05rem;
+    color: var(--verde);
+    line-height: 1.85;
+    font-weight: 400;
+  }
+  .text-body p { margin-bottom: 1.5rem; }
+  .text-body h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--verde);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .text-epigraph {
+    font-style: italic;
+    opacity: 0.6;
+    margin-bottom: 2rem !important;
+  }
+
+  .audio-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--verde);
+    color: var(--bege);
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    text-decoration: none;
+    margin-top: 2rem;
+  }
+  .audio-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--bege);
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .author-hero, .text-section { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.5rem; }
+    .author-photo { max-width: 200px; }
+    .text-sidebar { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AUTHOR HERO -->
+<section class="author-hero" aria-label="Katherine Mansfield">
+  <div class="author-photo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Katherine_Mansfield_by_Arnold_Genthe.jpg/400px-Katherine_Mansfield_by_Arnold_Genthe.jpg" alt="Retrato de Katherine Mansfield" loading="lazy" onerror="this.style.display='none'">
+    <div class="img-overlay"></div>
+  </div>
+  <div class="author-info">
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2L2 10M2 10H8M2 10V4"/></svg>
+      Voltar ao arquivo
+    </a>
+    <h1>Katherine Mansfield</h1>
+    <p class="author-work">Bliss, 1920</p>
+    <p class="author-bio">Escritora neozelandesa de enorme importância para o modernismo de língua inglesa. Em seus contos, trabalhou com diversas representações de feminilidade e narrou um desejo ambíguo e confuso entre mulheres. publicou três volumes de contos em vida: In a German Pension (1911), Bliss and Other Stories (1920) e The Dove's Nest (1923).</p>
+  </div>
+</section>
+
+<!-- TEXT -->
+<section class="text-section" id="texto" aria-label="Texto completo">
+  <nav class="text-sidebar" aria-label="Navegação">
+    <p class="section-label">↘ Texto</p>
+    <a href="sylvia-molloy.html" class="author-nav">
+      Próxima: Sylvia Molloy
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8"/></svg>
+    </a>
+  </nav>
+
+  <div class="text-content">
+    <p class="text-work-title">Bliss</p>
+    <p class="text-work-author">Katherine Mansfield, 1920</p>
+    <div class="text-body">
+      <p class="text-epigraph">Although Bertha Young was thirty she still had moments like this when she wanted to run instead of walk, to take dancing steps on and off the pavement, to bowl a hoop, to throw something up in the air and catch it again, or to stand still and laugh at — nothing — simply at nothing.</p>
+
+      <p>Although Bertha Young was thirty she still had moments like this when she wanted to run instead of walk, to take dancing steps on and off the pavement, to bowl a hoop, to throw something up in the air and catch it again, or to stand still and laugh at — nothing — simply at nothing.</p>
+
+      <p>It was a beautiful spring day. The sky was blue, the air was warm and soft, the chestnut trees were in blossom. Bertha, standing on her balcony, looking down on the taxis coming and going, felt that spring was in her, that life was in her, that joy was about to break out all around her — like spring.</p>
+
+      <p>She ran downstairs. She wanted to tell someone about it. She wanted to share her happiness. She went into the nursery. The babies were having tea. They sat in their high chairs and banged on the table with their spoons.</p>
+
+      <p>"Oh, what a lovely day!" said Bertha. "Isn't it a lovely day!"</p>
+
+      <p>The nurse didn't look up. She went on feeding the baby.</p>
+
+      <p>"Oh, I feel so happy today," said Bertha, and she sat down and watched them. But the nurse didn't notice. She went on with her work.</p>
+
+      <h3>II</h3>
+
+      <p>It was one of those days when the whole house seems to smile. The sun poured in. Even the kitchen, usually dark and dull, had a patch of sunlight on the floor. Bertha went through the house, opening doors, peeping into rooms. Everything was ready for her party. The table was laid in the drawing-room. The flowers were out — Bertha had picked them herself that morning. Pink tulips, white and purple irises, great bowls of orange-coloured daffodils. The room smelled of them.</p>
+
+      <p>She was going to have a party. A dinner party. She had been planning it for weeks. Harry — her husband — had been away. He was coming back tonight. And she had invited some people to meet him. There was going to be music. Her friend, Miss Fulton, was coming. She was a musician. She was going to play.</p>
+
+      <p>Bertha went to the window and looked out. The sky was still blue. The trees were still in blossom. She felt so happy. She wanted to laugh. She wanted to sing.</p>
+
+      <h3>III</h3>
+
+      <p>The guests began to arrive. They came in their fine clothes. They smiled and shook hands. They said how delightful it was to see Bertha again. How charming the flowers were. What a beautiful evening.</p>
+
+      <p>Harry came. He kissed Bertha. He said she looked lovely. He was pleased to be home. He shook hands with the guests. He smiled. He was charming.</p>
+
+      <p>Dinner was served. They sat around the table. The candles were lit. The flowers glowed in the candlelight. The food was good. The wine was good. Everyone was happy.</p>
+
+      <p>And then Miss Fulton went to the piano. She sat down. She began to play. The music filled the room. It was beautiful. It was sad. It was strange.</p>
+
+      <p>Bertha looked at Miss Fulton. She watched her hands on the keys. She watched her face. And suddenly she felt a strange feeling. A feeling she couldn't explain. A feeling of — what? She didn't know. It was like a wave. It was like a flame. It was like — joy.</p>
+
+      <h3>IV</h3>
+
+      <p>After the music, they went into the drawing-room. They had coffee. They talked. They laughed. Bertha moved among her guests. She was radiant. She was beautiful. She was happy.</p>
+
+      <p>And then she found herself on the balcony. She didn't know how she got there. She was alone. The night was warm. The stars were out. She could hear the music still, faintly, from inside.</p>
+
+      <p>She leaned on the railing. She looked up at the sky. And suddenly she saw it — the moon. A great, round, silver moon. And beside it, a star. A bright, shining star.</p>
+
+      <p>She stared at them. She felt her heart beating. She felt something rising in her — something she couldn't name. It was like a cry. It was like a prayer. It was like — love.</p>
+
+      <h3>V</h3>
+
+      <p>Someone came out on the balcony. Bertha turned. It was Miss Fulton.</p>
+
+      <p>They stood side by side. They didn't speak. They looked at the moon. They looked at the star.</p>
+
+      <p>And then Miss Fulton turned to Bertha. She looked at her. She smiled. It was a strange smile. It was a beautiful smile. Bertha felt her heart stop.</p>
+
+      <p>"Your star," whispered Miss Fulton.</p>
+
+      <p>She moved closer. Her hand touched Bertha's arm. Bertha couldn't move. She couldn't breathe. She felt the warmth of Miss Fulton's hand. She smelled her perfume — something sweet, something strange.</p>
+
+      <p>Miss Fulton leaned closer. Her lips were close to Bertha's ear. Bertha could feel her breath.</p>
+
+      <p>"I'm so glad," whispered Miss Fulton. "I'm so glad."</p>
+
+      <p>And then she was gone. She went back inside. The balcony was empty. Bertha was alone.</p>
+
+      <p>She stood there. She looked at the moon. She looked at the star. She felt something inside her — something that had been sleeping — waking up.</p>
+
+      <h3>VI</h3>
+
+      <p>Bertha went back inside. The party was ending. The guests were saying goodbye. They thanked Bertha. They said they had a wonderful time. They said the music was beautiful. They said the dinner was perfect.</p>
+
+      <p>Harry came to her. He put his arm around her. He said it was a lovely party. He said she was wonderful. He kissed her goodnight.</p>
+
+      <p>Bertha smiled. She said goodnight to everyone. She watched them go. And then she was alone. The house was quiet. The candles were burning low.</p>
+
+      <p>She went to the window. She looked out. The moon was still there. The star was still there. She pressed her hand to her heart. She could feel it beating.</p>
+
+      <p>She didn't know what was happening to her. She didn't understand. She only knew that something had changed. Something had opened. Something was — beginning.</p>
+
+      <p>She looked at the pear tree in the garden. It was in full blossom. The flowers were white. They glowed in the moonlight. They trembled in the night air. They were beautiful. They were alive. They were — like her.</p>
+
+      <p>And she thought: "Oh, how strange. How wonderful. How — happy I am."</p>
+
+      <p>She didn't question it. She didn't analyse it. She simply felt it. It was like a wave. It was like a flame. It was like — love. The love she had been waiting for. The love she had been dreaming of. The love that was finally — here.</p>
+    </div>
+    <a href="#" class="audio-pill js-soon">
+      <span class="audio-dot"></span>
+      Disponível em áudio no Spotify
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Lesb<span>iel</span></div>
+  <p class="footer-note">Arquivo e voz de mulheres lésbicas e bissexuais — 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

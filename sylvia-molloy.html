@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sylvia Molloy — Desarticulações — Lesbiel</title>
+<meta name="description" content="Desarticulações, de Sylvia Molloy (2010). Arquivo Lesbiel — arquivo e voz de mulheres lésbicas e bissexuais.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=General+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .author-hero {
+    background: var(--verde);
+    padding: 6rem 3rem 4rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .author-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    position: relative;
+  }
+  .author-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.9);
+    mix-blend-mode: multiply;
+  }
+  .author-photo .img-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--verde);
+    mix-blend-mode: screen;
+    opacity: 0.6;
+  }
+  .author-info h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: var(--bege);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .author-info .author-work {
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--bege);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+  }
+  .author-info .author-bio {
+    font-size: 0.9rem;
+    color: var(--bege);
+    opacity: 0.7;
+    line-height: 1.7;
+    max-width: 500px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bege);
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    margin-bottom: 2rem;
+  }
+  .back-link:hover { opacity: 1; }
+  .back-link svg { width: 12px; height: 12px; }
+
+  .text-section {
+    background: var(--bege);
+    padding: 6rem 3rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 6rem;
+  }
+  .text-sidebar {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+  }
+  .text-sidebar .section-label {
+    color: var(--verde);
+    opacity: 0.6;
+    margin-bottom: 2rem;
+  }
+  .text-sidebar .author-nav {
+    font-size: 0.82rem;
+    color: var(--verde);
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .text-sidebar .author-nav:hover { opacity: 1; }
+
+  .text-content {
+    max-width: 600px;
+  }
+  .text-work-title {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: var(--verde);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .text-work-author {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--verde);
+    opacity: 0.5;
+    font-style: italic;
+    margin-bottom: 3rem;
+  }
+  .text-body {
+    font-size: 1.05rem;
+    color: var(--verde);
+    line-height: 1.85;
+    font-weight: 400;
+  }
+  .text-body p { margin-bottom: 1.5rem; }
+  .text-body h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--verde);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .text-epigraph {
+    font-style: italic;
+    opacity: 0.6;
+    margin-bottom: 2rem !important;
+  }
+
+  .audio-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--verde);
+    color: var(--bege);
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    text-decoration: none;
+    margin-top: 2rem;
+  }
+  .audio-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--bege);
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .author-hero, .text-section { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.5rem; }
+    .author-photo { max-width: 200px; }
+    .text-sidebar { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AUTHOR HERO -->
+<section class="author-hero" aria-label="Sylvia Molloy">
+  <div class="author-photo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sylvia_Molloy.jpg/400px-Sylvia_Molloy.jpg" alt="Retrato de Sylvia Molloy" loading="lazy" onerror="this.style.display='none'">
+    <div class="img-overlay"></div>
+  </div>
+  <div class="author-info">
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2L2 10M2 10H8M2 10V4"/></svg>
+      Voltar ao arquivo
+    </a>
+    <h1>Sylvia Molloy</h1>
+    <p class="author-work">Desarticulações, 2010</p>
+    <p class="author-bio">Escritora, ensaísta e crítica literária nascida na Argentina. Em Desarticulações, utiliza recortes de memória e fragmentos para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer. Professora emérita de Estudos Latino-Americanos e de Literatura Comparada na Universidade de Nova York.</p>
+  </div>
+</section>
+
+<!-- TEXT -->
+<section class="text-section" id="texto" aria-label="Texto completo">
+  <nav class="text-sidebar" aria-label="Navegação">
+    <p class="section-label">↘ Texto</p>
+    <a href="katherine-mansfield.html" class="author-nav">
+      ← Anterior: Katherine Mansfield
+    </a>
+  </nav>
+
+  <div class="text-content">
+    <p class="text-work-title">Desarticulações</p>
+    <p class="text-work-author">Sylvia Molloy, 2010</p>
+    <div class="text-body">
+      <p class="text-epigraph">Ela é incapaz de assinar o próprio nome, não porque não lembre como se chama (acho eu), mas porque não consegue mais escrever.</p>
+
+      <p>Ela é incapaz de assinar o próprio nome, não porque não lembre como se chama (acho eu), mas porque não consegue mais escrever. Da primeira vez que notei isso, ela começou a assinar e em seguida ficou em suspenso, como quem esquece a continuação de um verso aprendido de cor. Desde então, tentei várias vezes fazê-la assinar, com uma desculpa qualquer, para ver se encontra de novo o impulso para terminar o nome, mas foi em vão. Foi embora a letra, o nome escrito, que é outra forma de estar no mundo.</p>
+
+      <p>Às vezes, arrumando meus papéis, encontro algo escrito por ela, uma ficha com um título, ou uma anotação que pode ter servido para algum artigo que escrevemos juntas. São anotações que sobreviveram à sua utilidade, mas não consigo jogá-las fora. Formam uma pilhazinha em uma gaveta da escrivaninha, pedacinhos de escrita que me dizem que um dia ela esteve.</p>
+
+      <h3>Da Necessidade de uma Testemunha</h3>
+
+      <p>Hoje, durante a hora que passei em sua casa, falei longamente com R., a mulher que se ocupa dela quando L. não está. Pergunto se a capital de seu país é tão perigosa quanto dizem que é, ela me responde que não, não mais do que qualquer cidade latino-americana. ML. assente com um sorriso, como se estivesse acompanhando a conversa, todas as cidades são perigosas, ela diz. Mas a minha era mais, diz R., na época da guerrilha, sei do que estou falando. E em seguida nos conta que foi agente da polícia em seu país antes de vir para os Estados Unidos, agente de investigações, acho que disse, e que fora secretaria de um coronel e também de um general, e que sem dúvida morreram alguns inocentes, mas também morreram muitos guerrilheiros, e fica claro a que regime ela se refere, e ML. sorri como se ouvisse dizer que está calor ou frio ou que está chovendo, e eu penso em como ela teria reagido se realmente entendesse isso que R. dizia com toda tranquilidade, aquilo que me reduzia ao silêncio, aquela coisa surpreendente e terrível que não poderíamos comentar nem compartilhar.</p>
+
+      <p>R. continua. Conta que quando chegou aos Estados Unidos, sofreu muito, que não sabia o idioma, que sentia saudades, mas que se habituou, que agora gosta de dirigir, tem seu carro, sua casa, sua vida. E enquanto R. fala, penso que ML. provavelmente não entende nada do que R. diz, mas que isso não importa, porque o que importa é a voz, o som da voz de R., que é uma voz que ela conhece, que é uma voz que a acompanha, que é uma voz que a faz se sentir menos só.</p>
+
+      <h3>O Silêncio</h3>
+
+      <p>ML. não fala mais. Ou quase não fala. Às vezes solta uma palavra, duas, que não sei se são palavras de verdade ou sons que parecem palavras. Eu falo. Falo para ela, falo sobre o que fiz, sobre o que vi, sobre o que li. Ela ouve. Os olhos dela seguem meu rosto, meus gestos, meus lábios. Às vezes sorri. Às vezes parece não ouvir. Mas eu continuo falando, porque o silêncio me assusta, porque o silêncio é o começo do fim, porque enquanto eu falar há uma conexão, há uma ponte, há um fio que nos liga.</p>
+
+      <p>Mas o silêncio é inevitável. Cada vez mais longo, cada vez mais denso. Um silêncio que não é paz, não é descanso, é ausência. É o silêncio de quem não tem mais o que dizer, de quem não tem mais como dizer, de quem foi roubado da própria voz.</p>
+
+      <h3>Memória</h3>
+
+      <p>Eu trago coisas para ela. Livros que ela gostava, fotos que tiramos juntas, cartas que escrevemos. Ela olha. Às vezes toca. Às vezes segura com cuidado, como se fosse algo frágil, precioso. Mas não reconhece. Não lembra. O passado é um território estrangeiro, um país ao qual ela não tem mais acesso.</p>
+
+      <p>E eu? Eu lembro de tudo. Lembro do primeiro encontro, do primeiro beijo, da primeira noite juntas. Lembro das brigas, das reconciliações, dos anos bons e dos anos ruins. Lembro da casa que compramos, do jardim que plantamos, dos gatos que criamos. Lembro de tudo isso, e é como se eu carregasse o peso de duas vidas — a minha e a dela, a que ela não pode mais carregar.</p>
+
+      <h3>Da Necessidade de uma Testemunha (II)</h3>
+
+      <p>R. me diz que às vezes ML. canta. Que canta baixinho, para si mesma, canções que parecem ser de sua infância, de sua juventude. Que são canções em espanhol, canções que R. não conhece. E eu penso que essas canções são o último refúgio, o último pedaço de identidade que resta, uma memória que não está no cérebro mas sim no corpo, nas cordas vocais, nos músculos que se lembram de como era aquele som, aquela melodia, aquela letra.</p>
+
+      <p>E eu penso que talvez a memória não esteja toda perdida. Talvez esteja espalhada pelo corpo, fragmentada, dispersa, como um quebra-cabeça cujas peças foram jogadas no chão. E que talvez, às vezes, uma peça se encaixe, uma palavra venha, uma canção apareça, e que nesses momentos ML. esteja de volta, inteira, completa, por um instante apenas, antes que tudo se desmanche de novo.</p>
+
+      <h3>O Amor</h3>
+
+      <p>Eu a amo. Ainda a amo. Amo a mulher que ela era, a mulher que é, a mulher que foi sendo devorada pela doença. Amo as mãos dela, os olhos dela, o modo como ela sorria, o modo como ela caminhava, o modo como ela me olhava quando estávamos juntas, quando éramos juntas, quando o mundo era nosso.</p>
+
+      <p>Mas o amor não cura. O amor não restaura. O amor não devolve o que foi tirado. O amor é apenas — amor. É a coisa que fica quando tudo o mais foi embora. É a coisa que me traz de volta, semana após semana, para sentar ao lado dela, para segurar sua mão, para falar para seus ouvidos mesmo quando não há resposta.</p>
+
+      <p>Porque ela esteve. Porque ela esteve comigo. Porque ela me amou. E porque, em algum lugar, em alguma parte de si mesma que eu não consigo alcançar, ela ainda está.</p>
+    </div>
+    <a href="#" class="audio-pill js-soon">
+      <span class="audio-dot"></span>
+      Disponível em áudio no Spotify
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Lesb<span>iel</span></div>
+  <p class="footer-note">Arquivo e voz de mulheres lésbicas e bissexuais — 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
