@@ -24,10 +24,7 @@
     margin-bottom: 1.5rem;
   }
   .text-page-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   .text-page-top h1 {
     font-size: 2.2rem;
@@ -44,45 +41,73 @@
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
   }
+  .text-page-photo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
   .text-page-photo {
-    width: 100px;
-    height: 100px;
+    width: 280px;
+    height: 280px;
     overflow: hidden;
-    transform: rotate(2deg);
+    border-radius: 16px;
     flex-shrink: 0;
+    text-align: center;
   }
   .text-page-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: grayscale(100%) brightness(0.9);
+    mix-blend-mode: multiply;
   }
-  .text-page-grid {
+  .text-page-photo-credit {
+    font-size: 0.6rem;
+    color: var(--verde);
+    opacity: 0.4;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  .text-page-content {
     display: grid;
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: auto 1fr;
     gap: 3rem;
     max-width: 800px;
     margin: 0 auto;
+    align-items: start;
   }
-  .text-page-body p {
-    font-size: 0.95rem;
+  .text-page-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
     color: var(--verde);
-    line-height: 1.8;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+  .text-page-logo span { font-weight: 300; font-style: italic; }
+  .text-page-body p {
+    font-size: 1.05rem;
+    color: var(--verde);
+    line-height: 1.9;
     margin-bottom: 1.2rem;
-    text-align: center;
+    text-align: left;
   }
   .text-page-body h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--verde);
     margin-top: 2rem;
     margin-bottom: 0.8rem;
-    text-align: center;
+    text-align: left;
   }
   .text-page-body .epigraph {
     font-style: italic;
     opacity: 0.6;
     margin-bottom: 1.5rem;
-    text-align: center;
+    text-align: left;
   }
   .text-page-aside {
     font-size: 0.75rem;
@@ -105,13 +130,6 @@
     text-decoration: none;
     opacity: 0.5;
   }
-  .text-page-photo-credit {
-    font-size: 0.6rem;
-    color: var(--verde);
-    opacity: 0.4;
-    text-align: center;
-    margin-top: 0.3rem;
-  }
   .back-link:hover { opacity: 1; }
   .footer-logo {
     font-size: 1.1rem;
@@ -122,7 +140,8 @@
   .footer-logo span { font-weight: 300; font-style: italic; }
   @media (max-width: 768px) {
     .text-page { padding: 3rem 1.5rem; }
-    .text-page-grid { grid-template-columns: 1fr; }
+    .text-page-content { grid-template-columns: 1fr; }
+    .text-page-logo { writing-mode: horizontal-tb; transform: none; margin-bottom: 1.5rem; }
     .text-page-aside { display: none; }
   }
 </style>
@@ -133,17 +152,19 @@
   <p class="text-page-label">↘ Texto</p>
 
   <div class="text-page-top">
-    <div>
-      <h1>Desarticulações</h1>
-      <a href="index.html" class="author-link">Sylvia Molloy</a>
-    </div>
-    <figure class="text-page-photo">
-      <img src="assets/img/sylvia-molloy.jpg" alt="Sylvia Molloy" loading="lazy">
-      <figcaption class="text-page-photo-credit">Foto: HyperDarkLink, CC BY-SA 4.0</figcaption>
-    </figure>
+    <h1>Desarticulações</h1>
+    <a href="index.html" class="author-link">Sylvia Molloy</a>
   </div>
 
-  <div class="text-page-grid">
+  <div class="text-page-photo-wrap">
+    <figure class="text-page-photo">
+      <img src="assets/img/sylvia-molloy.jpg" alt="Sylvia Molloy" loading="lazy">
+    </figure>
+    <figcaption class="text-page-photo-credit">Foto: HyperDarkLink, CC BY-SA 4.0</figcaption>
+  </div>
+
+  <div class="text-page-content">
+    <div class="text-page-logo">Lesb<span>iel</span></div>
     <article class="text-page-body">
       <p class="epigraph">para ML., que ainda está</p>
 
