@@ -22,53 +22,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ── Texto: switching between texts ── */
-
-const textoTocLinks = document.querySelectorAll('.texto-toc a');
-const textoContents = document.querySelectorAll('.texto-content');
-
-function showTexto(id) {
-  textoContents.forEach(el => {
-    el.style.display = el.id === id ? 'block' : 'none';
-  });
-  textoTocLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-  });
-}
-
-textoTocLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const href = this.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      showTexto(href.substring(1));
-      document.querySelector('#texto').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
+const textoSections = document.querySelectorAll('.texto-body p');
+const tocLinks = document.querySelectorAll('.texto-toc a');
+const textIds = ['bliss-intro', 'bliss-feeling', 'bliss-question', 'bliss-key'];
+textoSections.forEach((p, i) => {
+  if (textIds[i]) p.id = textIds[i];
 });
 
-/* ── Archive cards: link to text sections ── */
-
-document.querySelectorAll('.arquivo-card .card-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      e.preventDefault();
-      showTexto(href.substring(1));
-      document.querySelector('#texto').scrollIntoView({ behavior: 'smooth', block: 'start' });
+const textObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + id) {
+          link.classList.add('active');
+        }
+      });
     }
   });
-});
-
-/* ── Scroll animations ── */
+}, { threshold: 0.5 });
+textoSections.forEach(p => textObserver.observe(p));
 
 const animateOnScroll = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
+  entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
       setTimeout(() => {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
-      }, 100);
+      }, index * 100);
     }
   });
 }, { threshold: 0.1 });
@@ -86,8 +68,6 @@ document.querySelectorAll('.section-label, .indica-header h2').forEach(el => {
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   animateOnScroll.observe(el);
 });
-
-/* ── Modal "Em breve" ── */
 
 let modal = null;
 
@@ -142,7 +122,13 @@ document.querySelectorAll('.js-soon').forEach(btn => {
   });
 });
 
-/* ── Card hover effect ── */
+document.querySelectorAll('.arquivo-card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    if (e.target.closest('a')) return;
+    const soonLink = this.querySelector('.js-soon');
+    if (soonLink) soonLink.click();
+  });
+});
 
 document.querySelectorAll('.arquivo-card, .indica-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
@@ -159,8 +145,6 @@ document.querySelectorAll('.arquivo-card, .indica-card').forEach(card => {
     card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
   });
 });
-
-/* ── Keyboard nav ── */
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Tab') {
