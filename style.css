@@ -441,6 +441,7 @@ blockquote {
   color: var(--verde);
   opacity: 0.6;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .texto-list {
@@ -448,6 +449,8 @@ blockquote {
   display: flex;
   flex-direction: column;
   gap: 0;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .texto-list li {
@@ -460,12 +463,13 @@ blockquote {
 
 .texto-list a {
   display: block;
-  font-size: 0.82rem;
+  font-size: 1.1rem;
   color: var(--verde);
   text-decoration: none;
-  opacity: 0.6;
+  opacity: 0.7;
   transition: opacity 0.2s;
-  padding: 0.75rem 0;
+  padding: 0.85rem 0;
+  text-align: center;
 }
 .texto-list a:hover { opacity: 1; }
 
