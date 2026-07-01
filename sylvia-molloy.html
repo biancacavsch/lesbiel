@@ -35,6 +35,8 @@
     opacity: 0.55;
     line-height: 1.6;
     max-width: 220px;
+    text-align: center;
+    align-self: center;
   }
   .text-page-bio p { margin-bottom: 0.6rem; }
   .text-page-label {
@@ -120,10 +122,10 @@
   @media (max-width: 768px) {
     .text-page { padding: 2rem 1.2rem; }
     .text-page-fixed-logo { display: none !important; }
-    .text-page-top { flex-direction: column-reverse; gap: 1rem; }
+    .text-page-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .text-page-top h1 { font-size: 1.6rem; }
     .text-page-photo { width: 80px; height: 80px; }
-    .text-page-bio { max-width: 100%; }
+    .text-page-bio { max-width: 100%; text-align: left; order: 3; }
     .text-page-body { max-width: 100%; }
     .text-page-body p { font-size: 1rem; }
     footer { margin: 3rem -1.2rem -2rem -1.2rem; padding: 2rem 1.2rem; }
@@ -141,10 +143,10 @@
     <div>
       <h1>Desarticulações</h1>
       <a href="index.html" class="author-link">Sylvia Molloy</a>
-      <div class="text-page-bio">
-        <p>Sylvia Molloy (n. 1938) é escritora, ensaísta e crítica literária nascida na Argentina. Professora emérita na Universidade de Nova York.</p>
-        <p>Em Desarticulações, utiliza recortes de memória para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer.</p>
-      </div>
+    </div>
+    <div class="text-page-bio">
+      <p>Sylvia Molloy (n. 1938) é escritora, ensaísta e crítica literária nascida na Argentina. Professora emérita na Universidade de Nova York.</p>
+      <p>Em Desarticulações, utiliza recortes de memória para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer.</p>
     </div>
     <div>
       <figure class="text-page-photo">
