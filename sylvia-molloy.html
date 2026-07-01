@@ -13,7 +13,7 @@
   .text-page {
     background: var(--bege);
     min-height: 100vh;
-    padding: 4rem 3rem 4rem 5rem;
+    padding: 4rem 5rem 4rem 5rem;
   }
   .text-page-fixed-logo {
     position: fixed;
@@ -29,6 +29,21 @@
     white-space: nowrap;
   }
   .text-page-fixed-logo span { font-weight: 300; font-style: italic; }
+  .text-page-fixed-aside {
+    position: fixed;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 160px;
+    font-size: 0.75rem;
+    color: var(--verde);
+    opacity: 0.35;
+    line-height: 1.6;
+    text-align: right;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .text-page-fixed-aside p { margin-bottom: 0.8rem; }
   .text-page-label {
     font-size: 0.72rem;
     text-transform: uppercase;
@@ -105,14 +120,8 @@
     text-align: center;
   }
   .text-page-aside {
-    max-width: 600px;
-    margin: 3rem auto 0;
-    font-size: 0.75rem;
-    color: var(--verde);
-    opacity: 0.35;
-    line-height: 1.6;
+    display: none;
   }
-  .text-page-aside p { margin-bottom: 0.8rem; }
   .text-page-footer {
     margin-top: 4rem;
     display: flex;
@@ -144,6 +153,11 @@
 <body>
 
 <div class="text-page-fixed-logo">Lesb<span>iel</span></div>
+
+<div class="text-page-fixed-aside">
+  <p>Sylvia Molloy (n. 1938) é escritora, ensaísta e crítica literária nascida na Argentina. Professora emérita na Universidade de Nova York.</p>
+  <p>Em Desarticulações, utiliza recortes de memória para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer.</p>
+</div>
 
 <main class="text-page">
   <p class="text-page-label">↘ Texto</p>
@@ -202,11 +216,6 @@
 
       <p>Mais de uma vez eu me pego dizendo a ela "você se lembra de tal ou qual coisa", quando é óbvio que a resposta será negativa, e me impaciento comigo mesma por ter feito a pergunta, não tanto por ela, para quem não lembrar não significa nada, mas por mim, que continuo lançando esses pedidos de confirmação como se jogasse água ao vento. Por que não digo a ela "sabe que uma vez" e conto a lembrança como se fosse um relato novo, como se fosse um relato de outra pessoa que não pede identificação ou reconhecimento?</p>
     </article>
-
-    <aside class="text-page-aside">
-      <p>Sylvia Molloy (n. 1938) é escritora, ensaísta e crítica literária nascida na Argentina. Professora emérita na Universidade de Nova York.</p>
-      <p>Em Desarticulações, utiliza recortes de memória para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer.</p>
-    </aside>
 
   <footer class="text-page-footer">
     <a href="index.html" class="back-link">← Voltar ao arquivo</a>
