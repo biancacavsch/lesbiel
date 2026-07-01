@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sylvia Molloy — Desarticulações — Lesbiel</title>
-<meta name="description" content="Desarticulações, de Sylvia Molloy (2010). Arquivo Lesbiel.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📖%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,121 +13,94 @@
   .text-page {
     background: var(--bege);
     min-height: 100vh;
-    padding: 6rem 3rem;
+    padding: 4rem 3rem;
   }
-  .text-page-header {
-    margin-bottom: 3rem;
-  }
-  .text-page-header .section-label {
+  .text-page-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
     color: var(--verde);
     opacity: 0.6;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
-  .text-page-title-row {
+  .text-page-top {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
+    margin-bottom: 3rem;
   }
-  .text-page-title {
-    flex: 1;
-  }
-  .text-page-title h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
+  .text-page-top h1 {
+    font-size: 2.2rem;
     font-weight: 700;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.04em;
     color: var(--verde);
-    line-height: 1;
-    margin-bottom: 0.25rem;
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
   }
-  .text-page-title .author-name {
-    font-size: 0.9rem;
-    font-weight: 400;
+  .text-page-top .author-link {
+    font-size: 0.85rem;
     color: var(--verde);
-    opacity: 0.6;
     text-decoration: underline;
     text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
   }
   .text-page-photo {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     overflow: hidden;
-    flex-shrink: 0;
     transform: rotate(2deg);
-    border-radius: 4px;
+    flex-shrink: 0;
   }
   .text-page-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) brightness(0.9);
   }
-  .text-page-body {
+  .text-page-grid {
     display: grid;
     grid-template-columns: 1fr 200px;
-    gap: 4rem;
+    gap: 3rem;
   }
-  .text-page-main {
-    max-width: 600px;
-  }
-  .text-page-main p {
-    font-size: 1.05rem;
+  .text-page-body p {
+    font-size: 0.95rem;
     color: var(--verde);
-    line-height: 1.85;
-    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
   }
-  .text-page-main h3 {
-    font-size: 1.1rem;
+  .text-page-body h3 {
+    font-size: 1rem;
     font-weight: 600;
     color: var(--verde);
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
   }
-  .text-page-main .epigraph {
+  .text-page-body .epigraph {
     font-style: italic;
     opacity: 0.6;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
-  .text-page-sidebar {
-    font-size: 0.8rem;
+  .text-page-aside {
+    font-size: 0.75rem;
     color: var(--verde);
-    opacity: 0.4;
+    opacity: 0.35;
     line-height: 1.6;
   }
-  .text-page-sidebar p {
-    margin-bottom: 1rem;
-  }
-  .text-page-audio {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: var(--verde);
-    color: var(--bege);
-    font-size: 0.72rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.5rem 1rem;
-    border-radius: 100px;
-    text-decoration: none;
-    margin-top: 2rem;
-  }
-  .text-page-audio .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--bege);
-    opacity: 0.7;
-  }
+  .text-page-aside p { margin-bottom: 0.8rem; }
   .text-page-footer {
-    margin-top: 6rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(38,68,3,0.1);
+    margin-top: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+  .back-link {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--verde);
+    text-decoration: none;
+    opacity: 0.5;
+  }
+  .back-link:hover { opacity: 1; }
   .footer-logo {
     font-size: 1.1rem;
     font-weight: 700;
@@ -136,44 +108,30 @@
     letter-spacing: -0.04em;
   }
   .footer-logo span { font-weight: 300; font-style: italic; }
-  .back-link {
-    font-size: 0.72rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--verde);
-    text-decoration: none;
-    opacity: 0.5;
-    transition: opacity 0.2s;
-  }
-  .back-link:hover { opacity: 1; }
   @media (max-width: 768px) {
-    .text-page { padding: 4rem 1.5rem; }
-    .text-page-title-row { flex-direction: column-reverse; }
-    .text-page-photo { width: 100px; height: 100px; }
-    .text-page-body { grid-template-columns: 1fr; gap: 2rem; }
-    .text-page-sidebar { display: none; }
+    .text-page { padding: 3rem 1.5rem; }
+    .text-page-grid { grid-template-columns: 1fr; }
+    .text-page-aside { display: none; }
   }
 </style>
 </head>
 <body>
 
 <main class="text-page">
-  <header class="text-page-header">
-    <p class="section-label">↘ Texto</p>
-    <div class="text-page-title-row">
-      <div class="text-page-title">
-        <h1>Desarticulações</h1>
-        <a href="index.html" class="author-name">Sylvia Molloy</a>
-      </div>
-      <figure class="text-page-photo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sylvia_Molloy.jpg/200px-Sylvia_Molloy.jpg" alt="Sylvia Molloy" loading="lazy">
-      </figure>
-    </div>
-  </header>
+  <p class="text-page-label">↘ Texto</p>
 
-  <div class="text-page-body">
-    <article class="text-page-main">
+  <div class="text-page-top">
+    <div>
+      <h1>Desarticulações</h1>
+      <a href="index.html" class="author-link">Sylvia Molloy</a>
+    </div>
+    <figure class="text-page-photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sylvia_Molloy.jpg/200px-Sylvia_Molloy.jpg" alt="Sylvia Molloy" loading="lazy">
+    </figure>
+  </div>
+
+  <div class="text-page-grid">
+    <article class="text-page-body">
       <p class="epigraph">para ML., que ainda está</p>
 
       <p>Tenho que escrever estes textos enquanto ela ainda está viva, enquanto não houver morte ou encerramento, para tentar entender esse estar/não estar de uma pessoa que se desarticula diante dos meus olhos. Tenho que fazer isso para seguir adiante, para fazer durar uma relação que continua apesar da ruína, que subsiste, ainda que mal restem palavras.</p>
@@ -186,15 +144,21 @@
 
       <h3>Da Necessidade de uma Testemunha</h3>
 
-      <p>Hoje, durante a hora que passei em sua casa, falei longamente com R., a mulher que se ocupa dela quando L. não está. Pergunto se a capital de seu país é tão perigosa quanto dizem que é, ela me responde que não, não mais do que qualquer cidade latino-americana. ML. assente com um sorriso, como se estivesse acompanhando a conversa, todas as cidades são perigosas, ela diz. Mas a minha era mais, diz R., na época da guerrilha, sei do que estou falando. E em seguida nos conta que foi agente da polícia em seu país antes de vir para os Estados Unidos, agente de investigações, acho que disse, e que fora secretaria de um coronel e também de um general, e que sem dúvida morreram alguns inocentes, mas também morreram muitos guerrilheiros, e fica claro a que regime ela se refere, e ML. sorri como se ouvisse dizer que está calor ou frio ou que está chovendo, e eu penso em como ela teria reagido se realmente entendesse isso que R. dizia com toda tranquilidade, aquilo que me reduzia ao silêncio, aquela coisa surpreendente e terrível que não poderíamos comentar nem compartilhar.</p>
+      <p>Hoje, durante a hora que passei em sua casa, falei longamente com R., a mulher que se ocupa dela quando L. não está. Pergunto se a capital de seu país é tão perigosa quanto dizem que é, ela me responde que não, não mais do que qualquer cidade latino-americana. ML. assente com um sorriso, como se estivesse acompanhando a conversa, todas as cidades são perigosas, ela diz. Mas a minha era mais, diz R., na época da guerrilha, sei do que estou falando.</p>
+
+      <p>E em seguida nos conta que foi agente da polícia em seu país antes de vir para os Estados Unidos, agente de investigações, acho que disse, e que fora secretaria de um coronel e também de um general, e que sem dúvida morreram alguns inocentes, mas também morreram muitos guerrilheiros, e fica claro a que regime ela se refere, e ML. sorri como se ouvisse dizer que está calor ou frio ou que está chovendo, e eu penso em como ela teria reagido se realmente entendesse isso que R. dizia com toda tranquilidade, aquilo que me reduzia ao silêncio, aquela coisa surpreendente e terrível que não poderíamos comentar nem compartilhar.</p>
 
       <h3>Retórica</h3>
 
-      <p>À medida que a memória se esvai, eu me dou conta de que ela recorre a uma cortesia cada vez mais requintada, como se a delicadeza dos modos suprisse a falta de razão. É curioso pensar que frases tão bem articuladas — porque ela não esqueceu a estrutura da língua: até seria possível dizer que ela está mais presente do que nunca, agora que anoitece em sua mente — não vão perdurar em nenhuma memória. Hoje de manhã, quando cheguei, ela dormia profundamente, depois da frenética alteração de ontem. Abriu os olhos, eu a cumprimentei, e ela disse: "Que sorte acordar e ver rostos amigos". Não acho que nos tenha reconhecido; individualmente, quero dizer.</p>
+      <p>À medida que a memória se esvai, eu me dou conta de que ela recorre a uma cortesia cada vez mais requintada, como se a delicadeza dos modos suprisse a falta de razão. É curioso pensar que frases tão bem articuladas — porque ela não esqueceu a estrutura da língua: até seria possível dizer que ela está mais presente do que nunca, agora que anoitece em sua mente — não vão perdurar em nenhuma memória.</p>
+
+      <p>Hoje de manhã, quando cheguei, ela dormia profundamente, depois da frenética alteração de ontem. Abriu os olhos, eu a cumprimentei, e ela disse: "Que sorte acordar e ver rostos amigos". Não acho que nos tenha reconhecido; individualmente, quero dizer.</p>
 
       <h3>Lógica</h3>
 
-      <p>Ela opera impecavelmente por dedução, de modo que eu comprovo, mais uma vez, que a razão não é necessária para que se pense razoavelmente. Como sempre, ela me pergunta por E., embora a essa altura o nome já tenha se esvaziado para ela; quando a vê, ela me diz, na hora da despedida, beijos para E., como se ela não estivesse ali. Respondo que E. está bastante cansada, hoje teve um dia longo no tribunal. Como não podia deixar de ser, ela me responde, é verdade que vocês andam atrapalhadas com esse processo terrível. Não, me apresso a contradizê-la, não, como se afugentasse a possibilidade de que suas palavras tenham poder convocatório, não, imagine, é só que ela teve um dia longo no tribunal porque trabalha lá, é advogada. Ela parece ficar decepcionada. Acho que gostava mais da própria explicação, em certo sentido perfeitamente lógica (tribunal, portanto, processo.) Com certeza era mais dramática.</p>
+      <p>Ela opera impecavelmente por dedução, de modo que eu comprovo, mais uma vez, que a razão não é necessária para que se pense razoavelmente. Como sempre, ela me pergunta por E., embora a essa altura o nome já tenha se esvaziado para ela; quando a vê, ela me diz, na hora da despedida, beijos para E., como se ela não estivesse ali.</p>
+
+      <p>Respondo que E. está bastante cansada, hoje teve um dia longo no tribunal. Como não podia deixar de ser, ela me responde, é verdade que vocês andam atrapalhadas com esse processo terrível. Não, me apresso a contradizê-la, não, como se afugentasse a possibilidade de que suas palavras tenham poder convocatório, não, imagine, é só que ela teve um dia longo no tribunal porque trabalha lá, é advogada. Ela parece ficar decepcionada. Acho que gostava mais da própria explicação, em certo sentido perfeitamente lógica (tribunal, portanto, processo.) Com certeza era mais dramática.</p>
 
       <h3>Desencanto</h3>
 
@@ -207,14 +171,9 @@
       <h3>Rememoração</h3>
 
       <p>Mais de uma vez eu me pego dizendo a ela "você se lembra de tal ou qual coisa", quando é óbvio que a resposta será negativa, e me impaciento comigo mesma por ter feito a pergunta, não tanto por ela, para quem não lembrar não significa nada, mas por mim, que continuo lançando esses pedidos de confirmação como se jogasse água ao vento. Por que não digo a ela "sabe que uma vez" e conto a lembrança como se fosse um relato novo, como se fosse um relato de outra pessoa que não pede identificação ou reconhecimento?</p>
-
-      <a href="#" class="text-page-audio js-soon">
-        <span class="dot"></span>
-        Disponível em áudio no Spotify
-      </a>
     </article>
 
-    <aside class="text-page-sidebar">
+    <aside class="text-page-aside">
       <p>Sylvia Molloy (n. 1938) é escritora, ensaísta e crítica literária nascida na Argentina. Professora emérita na Universidade de Nova York.</p>
       <p>Em Desarticulações, utiliza recortes de memória para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer.</p>
     </aside>
