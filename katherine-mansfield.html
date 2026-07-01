@@ -24,7 +24,10 @@
     margin-bottom: 1.5rem;
   }
   .text-page-top {
-    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
   }
   .text-page-top h1 {
     font-size: 2.2rem;
@@ -41,17 +44,11 @@
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
   }
-  .text-page-photo-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
-  }
   .text-page-photo {
-    width: 280px;
-    height: 280px;
+    width: 100px;
+    height: 100px;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 12px;
     flex-shrink: 0;
   }
   .text-page-photo img {
@@ -61,38 +58,16 @@
     filter: grayscale(100%) brightness(0.9);
     mix-blend-mode: multiply;
   }
-  .text-page-photo-overlay {
-    position: absolute;
-    inset: 0;
-    background: var(--verde);
-    mix-blend-mode: screen;
-    opacity: 0.6;
-  }
-  .text-page-content {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 3rem;
-    max-width: 800px;
+  .text-page-body {
+    max-width: 600px;
     margin: 0 auto;
-    align-items: start;
   }
-  .text-page-logo {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--verde);
-    letter-spacing: -0.04em;
-    line-height: 1;
-    writing-mode: vertical-lr;
-    transform: rotate(180deg);
-    white-space: nowrap;
-  }
-  .text-page-logo span { font-weight: 300; font-style: italic; }
   .text-page-body p {
     font-size: 1.05rem;
     color: var(--verde);
     line-height: 1.9;
     margin-bottom: 1.2rem;
-    text-align: left;
+    text-align: center;
   }
   .text-page-body h3 {
     font-size: 1.1rem;
@@ -100,15 +75,17 @@
     color: var(--verde);
     margin-top: 2rem;
     margin-bottom: 0.8rem;
-    text-align: left;
+    text-align: center;
   }
   .text-page-body .epigraph {
     font-style: italic;
     opacity: 0.6;
     margin-bottom: 1.5rem;
-    text-align: left;
+    text-align: center;
   }
   .text-page-aside {
+    max-width: 600px;
+    margin: 3rem auto 0;
     font-size: 0.75rem;
     color: var(--verde);
     opacity: 0.35;
@@ -139,9 +116,7 @@
   .footer-logo span { font-weight: 300; font-style: italic; }
   @media (max-width: 768px) {
     .text-page { padding: 3rem 1.5rem; }
-    .text-page-content { grid-template-columns: 1fr; }
-    .text-page-logo { writing-mode: horizontal-tb; transform: none; margin-bottom: 1.5rem; }
-    .text-page-aside { display: none; }
+    .text-page-body p { font-size: 1rem; }
   }
 </style>
 </head>
@@ -151,19 +126,16 @@
   <p class="text-page-label">↘ Texto</p>
 
   <div class="text-page-top">
-    <h1>Bliss</h1>
-    <a href="index.html" class="author-link">Katherine Mansfield</a>
-  </div>
-
-  <div class="text-page-photo-wrap">
+    <div>
+      <h1>Bliss</h1>
+      <a href="index.html" class="author-link">Katherine Mansfield</a>
+    </div>
     <figure class="text-page-photo">
       <img src="assets/img/katherine-mansfield.jpg" alt="Katherine Mansfield" loading="lazy">
     </figure>
   </div>
 
-  <div class="text-page-content">
-    <div class="text-page-logo">Lesb<span>iel</span></div>
-    <article class="text-page-body">
+  <article class="text-page-body">
       <p class="epigraph">Although Bertha Young was thirty she still had moments like this when she wanted to run instead of walk, to take dancing steps on and off the pavement, to bowl a hoop, to throw something up in the air and catch it again, or to stand still and laugh at — nothing — simply at nothing.</p>
 
       <p>Although Bertha Young was thirty she still had moments like this when she wanted to run instead of walk, to take dancing steps on and off the pavement, to bowl a hoop, to throw something up in the air and catch it again, or to stand still and laugh at — nothing — simply at nothing.</p>
@@ -251,7 +223,6 @@
       <p>Katherine Mansfield (1888–1923) foi uma escritora neozelandesa considerada uma das maiores mestras do conto moderno em língua inglesa.</p>
       <p>Seu trabalho explora relações femininas, desejo e a complexidade da vida interior das mulheres.</p>
     </aside>
-  </div>
 
   <footer class="text-page-footer">
     <a href="index.html" class="back-link">← Voltar ao arquivo</a>
