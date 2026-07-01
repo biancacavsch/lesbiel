@@ -29,21 +29,14 @@
     white-space: nowrap;
   }
   .text-page-fixed-logo span { font-weight: 300; font-style: italic; }
-  .text-page-fixed-aside {
-    position: fixed;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 180px;
+  .text-page-bio {
     font-size: 0.82rem;
     color: var(--verde);
     opacity: 0.55;
     line-height: 1.6;
-    text-align: right;
-    z-index: 10;
-    pointer-events: none;
+    max-width: 220px;
   }
-  .text-page-fixed-aside p { margin-bottom: 0.8rem; }
+  .text-page-bio p { margin-bottom: 0.6rem; }
   .text-page-label {
     font-size: 0.72rem;
     text-transform: uppercase;
@@ -127,10 +120,10 @@
   @media (max-width: 768px) {
     .text-page { padding: 2rem 1.2rem; }
     .text-page-fixed-logo { display: none !important; }
-    .text-page-fixed-aside { display: none !important; }
     .text-page-top { flex-direction: column-reverse; gap: 1rem; }
     .text-page-top h1 { font-size: 1.6rem; }
     .text-page-photo { width: 80px; height: 80px; }
+    .text-page-bio { max-width: 100%; }
     .text-page-body { max-width: 100%; }
     .text-page-body p { font-size: 1rem; }
     footer { margin: 3rem -1.2rem -2rem -1.2rem; padding: 2rem 1.2rem; }
@@ -141,11 +134,6 @@
 
 <div class="text-page-fixed-logo">Lesb<span>iel</span></div>
 
-<div class="text-page-fixed-aside">
-  <p>Sylvia Molloy (n. 1938) é escritora, ensaísta e crítica literária nascida na Argentina. Professora emérita na Universidade de Nova York.</p>
-  <p>Em Desarticulações, utiliza recortes de memória para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer.</p>
-</div>
-
 <main class="text-page">
   <p class="text-page-label">↘ Texto</p>
 
@@ -153,6 +141,10 @@
     <div>
       <h1>Desarticulações</h1>
       <a href="index.html" class="author-link">Sylvia Molloy</a>
+      <div class="text-page-bio">
+        <p>Sylvia Molloy (n. 1938) é escritora, ensaísta e crítica literária nascida na Argentina. Professora emérita na Universidade de Nova York.</p>
+        <p>Em Desarticulações, utiliza recortes de memória para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer.</p>
+      </div>
     </div>
     <div>
       <figure class="text-page-photo">
