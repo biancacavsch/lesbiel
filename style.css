@@ -435,113 +435,39 @@ blockquote {
 .texto-section {
   background: var(--bege);
   padding: 6rem 3rem;
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 6rem;
 }
 
-.texto-sidebar {
-  position: sticky;
-  top: 6rem;
-  align-self: start;
-}
-
-.texto-sidebar .section-label {
+.texto-section .section-label {
   color: var(--verde);
   opacity: 0.6;
   margin-bottom: 2rem;
 }
 
-.texto-toc {
+.texto-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0;
 }
 
-.texto-toc a {
+.texto-list li {
+  border-bottom: 0.5px solid rgba(38,68,3,0.12);
+}
+
+.texto-list li:last-child {
+  border-bottom: none;
+}
+
+.texto-list a {
+  display: block;
   font-size: 0.82rem;
   color: var(--verde);
   text-decoration: none;
-  opacity: 0.5;
-  transition: opacity 0.2s;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-  border-bottom: 0.5px solid rgba(38,68,3,0.12);
-}
-.texto-toc a:hover { opacity: 1; }
-.texto-toc a.active { opacity: 1; font-weight: 500; }
-
-.texto-content {
-  max-width: 600px;
-}
-
-.texto-work-title {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  color: var(--verde);
-  line-height: 1;
-  margin-bottom: 0.25rem;
-}
-.texto-work-author {
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: var(--verde);
-  opacity: 0.5;
-  font-style: italic;
-  margin-bottom: 3rem;
-}
-
-.texto-body {
-  font-size: 1.05rem;
-  color: var(--verde);
-  line-height: 1.85;
-  font-weight: 400;
-}
-
-.texto-body p { margin-bottom: 1.5rem; }
-
-.texto-body h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--verde);
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-}
-
-.texto-epigraph {
-  font-style: italic;
   opacity: 0.6;
-  margin-bottom: 2rem !important;
+  transition: opacity 0.2s;
+  padding: 0.75rem 0;
 }
-
-.audio-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: var(--verde);
-  color: var(--bege);
-  font-size: 0.72rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.5rem 1rem;
-  border-radius: 100px;
-  text-decoration: none;
-  margin-top: 2rem;
-}
-
-.audio-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--bege);
-  opacity: 0.7;
-}
+.texto-list a:hover { opacity: 1; }
 
 /* SOBRE */
 .sobre-section {
@@ -728,7 +654,6 @@ footer {
   .hero-link:last-child { border-bottom: none; }
   .arquivo, .indica-section, .texto-section, .sobre-section { padding: 4rem 1.5rem; }
   .quote-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
-  .texto-section { grid-template-columns: 1fr; gap: 3rem; }
   .sobre-section { grid-template-columns: 1fr; gap: 3rem; }
   .arquivo-grid { grid-template-columns: 1fr; }
   .indica-grid { grid-template-columns: 1fr; }
