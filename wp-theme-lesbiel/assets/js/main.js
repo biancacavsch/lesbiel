@@ -161,3 +161,34 @@ document.addEventListener('DOMContentLoaded', () => {
     el.style.transform = 'translateY(0)';
   });
 });
+
+/* ── Quote carousel ── */
+
+const quoteSlides = document.querySelectorAll('.quote-slide');
+const quoteDots = document.querySelectorAll('.quote-dot');
+let quoteCurrent = 0;
+let quoteTimer = null;
+
+function showQuote(index) {
+  quoteSlides.forEach(s => s.classList.remove('active'));
+  quoteDots.forEach(d => d.classList.remove('active'));
+  quoteSlides[index].classList.add('active');
+  quoteDots[index].classList.add('active');
+  quoteCurrent = index;
+}
+
+function nextQuote() {
+  showQuote((quoteCurrent + 1) % quoteSlides.length);
+}
+
+quoteDots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    clearInterval(quoteTimer);
+    showQuote(parseInt(dot.dataset.index));
+    quoteTimer = setInterval(nextQuote, 10000);
+  });
+});
+
+if (quoteSlides.length > 1) {
+  quoteTimer = setInterval(nextQuote, 10000);
+}

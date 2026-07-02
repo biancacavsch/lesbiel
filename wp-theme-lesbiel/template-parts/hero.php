@@ -20,6 +20,7 @@ $subtitulo = get_theme_mod('lesbiel_hero_subtitulo', 'Arquivo e voz de mulheres 
           'items_wrap' => '%3$s',
           'link_before' => '',
           'link_after' => '',
+          'walker' => new Lesbiel_Hero_Walker(),
         ));
       } else {
         ?>

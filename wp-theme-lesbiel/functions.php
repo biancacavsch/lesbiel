@@ -72,6 +72,27 @@ function lesbiel_customize_register($wp_customize) {
     $wp_customize->add_control('lesbiel_quote_autor', array('label' => 'Assinatura', 'section' => 'lesbiel_quote_sec', 'type' => 'text'));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'lesbiel_quote_img', array('label' => 'Foto da autora', 'section' => 'lesbiel_quote_sec')));
     $wp_customize->add_control('lesbiel_quote_legenda', array('label' => 'Legenda da foto', 'section' => 'lesbiel_quote_sec', 'type' => 'text'));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'lesbiel_quote_img', array('label' => 'Foto da autora', 'section' => 'lesbiel_quote_sec')));
+    $wp_customize->add_setting('lesbiel_quote_zoom', array('default' => '', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('lesbiel_quote_zoom', array('label' => 'Zoom na foto (1 = sim)', 'section' => 'lesbiel_quote_sec', 'type' => 'checkbox'));
+
+    /* ── Seção: Quote 2 ── */
+    $wp_customize->add_setting('lesbiel_quote2_meta', array('default' => 'Desarticulações', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('lesbiel_quote2_obra', array('default' => 'Sylvia Molloy', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('lesbiel_quote2_texto', array('default' => '"Tenho que escrever estes textos enquanto ela ainda está viva, enquanto não houver morte ou encerramento, para tentar entender esse estar/não estar de uma pessoa que se desarticula diante dos meus olhos."', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_setting('lesbiel_quote2_autor', array('default' => '— Sylvia Molloy, Desarticulações', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('lesbiel_quote2_img', array('default' => '', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_setting('lesbiel_quote2_legenda', array('default' => 'Sylvia Molloy', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('lesbiel_quote2_zoom', array('default' => '1', 'sanitize_callback' => 'sanitize_text_field'));
+
+    $wp_customize->add_section('lesbiel_quote2_sec', array('title' => 'Destaque 2 (Quote 2)', 'panel' => 'lesbiel_hero_panel'));
+    $wp_customize->add_control('lesbiel_quote2_meta', array('label' => 'Label (ex: Desarticulações)', 'section' => 'lesbiel_quote2_sec', 'type' => 'text'));
+    $wp_customize->add_control('lesbiel_quote2_obra', array('label' => 'Obra / Autora', 'section' => 'lesbiel_quote2_sec', 'type' => 'text'));
+    $wp_customize->add_control('lesbiel_quote2_texto', array('label' => 'Texto da citação', 'section' => 'lesbiel_quote2_sec', 'type' => 'textarea'));
+    $wp_customize->add_control('lesbiel_quote2_autor', array('label' => 'Assinatura', 'section' => 'lesbiel_quote2_sec', 'type' => 'text'));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'lesbiel_quote2_img', array('label' => 'Foto da autora', 'section' => 'lesbiel_quote2_sec')));
+    $wp_customize->add_control('lesbiel_quote2_legenda', array('label' => 'Legenda da foto', 'section' => 'lesbiel_quote2_sec', 'type' => 'text'));
+    $wp_customize->add_control('lesbiel_quote2_zoom', array('label' => 'Zoom na foto (1 = sim)', 'section' => 'lesbiel_quote2_sec', 'type' => 'checkbox'));
 
     /* ── Seção: Indica Título ── */
     $wp_customize->add_setting('lesbiel_indica_titulo', array('default' => 'indica', 'sanitize_callback' => 'sanitize_text_field'));
@@ -122,6 +143,14 @@ function lesbiel_customizer_css() {
 }
 add_action('wp_head', 'lesbiel_customizer_css');
 
+/* ── Custom Walker for Hero Nav ── */
+
+class Lesbiel_Hero_Walker extends Walker_Nav_Menu {
+    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+        $output .= '<a href="' . esc_url($item->url) . '" class="hero-link">' . esc_html($item->title) . '</a>';
+    }
+}
+
 /* ── Custom Post Type: Autoras (arquivo) ── */
 
 function lesbiel_register_cpts() {
@@ -154,6 +183,21 @@ function lesbiel_register_cpts() {
         'rewrite'      => array('slug' => 'indica'),
         'show_in_rest' => true,
     ));
+
+    register_post_type('texto', array(
+        'labels' => array(
+            'name'          => 'Textos',
+            'singular_name' => 'Texto',
+            'add_new_item'  => 'Adicionar novo texto',
+            'edit_item'     => 'Editar texto',
+        ),
+        'public'       => true,
+        'has_archive'  => true,
+        'menu_icon'    => 'dashicons-book-alt',
+        'supports'     => array('title', 'editor', 'thumbnail'),
+        'rewrite'      => array('slug' => 'texto'),
+        'show_in_rest' => true,
+    ));
 }
 add_action('init', 'lesbiel_register_cpts');
 
@@ -169,9 +213,17 @@ function autora_dados_cb($post) {
     $subtitulo = get_post_meta($post->ID, '_autora_subtitulo', true);
     $link_spotify = get_post_meta($post->ID, '_autora_link_spotify', true);
     $cor = get_post_meta($post->ID, '_autora_cor', true);
+    $bio = get_post_meta($post->ID, '_autora_bio', true);
+    $foto_credito = get_post_meta($post->ID, '_autora_foto_credito', true);
     ?>
     <p><label>Subtítulo (ex: Bliss, 1920)</label><br>
     <input type="text" name="autora_subtitulo" value="<?php echo esc_attr($subtitulo); ?>" style="width:100%"></p>
+
+    <p><label>Biografia (para página do texto)</label><br>
+    <textarea name="autora_bio" style="width:100%;min-height:100px" placeholder="Katherine Mansfield (1888–1923) foi uma escritora..."><?php echo esc_textarea($bio); ?></textarea></p>
+
+    <p><label>Crédito da foto (opcional, ex: HyperDarkLink, CC BY-SA 4.0)</label><br>
+    <input type="text" name="autora_foto_credito" value="<?php echo esc_attr($foto_credito); ?>" style="width:100%"></p>
 
     <p><label>Link do Spotify</label><br>
     <input type="url" name="autora_link_spotify" value="<?php echo esc_url($link_spotify); ?>" style="width:100%"></p>
@@ -191,6 +243,8 @@ function lesbiel_save_autora_meta($post_id) {
     if (!current_user_can('edit_post', $post_id)) return;
 
     if (isset($_POST['autora_subtitulo'])) update_post_meta($post_id, '_autora_subtitulo', sanitize_text_field($_POST['autora_subtitulo']));
+    if (isset($_POST['autora_bio'])) update_post_meta($post_id, '_autora_bio', sanitize_textarea_field($_POST['autora_bio']));
+    if (isset($_POST['autora_foto_credito'])) update_post_meta($post_id, '_autora_foto_credito', sanitize_text_field($_POST['autora_foto_credito']));
     if (isset($_POST['autora_link_spotify'])) update_post_meta($post_id, '_autora_link_spotify', esc_url_raw($_POST['autora_link_spotify']));
     if (isset($_POST['autora_cor'])) update_post_meta($post_id, '_autora_cor', sanitize_text_field($_POST['autora_cor']));
 }
@@ -240,6 +294,82 @@ function lesbiel_save_indica_meta($post_id) {
 }
 add_action('save_post_indica_item', 'lesbiel_save_indica_meta');
 
+/* ── Meta Boxes para Textos ── */
+
+function lesbiel_texto_meta_boxes() {
+    add_meta_box('texto_dados', 'Dados do Texto', 'texto_dados_cb', 'texto', 'normal', 'high');
+}
+add_action('add_meta_boxes', 'lesbiel_texto_meta_boxes');
+
+function texto_dados_cb($post) {
+    wp_nonce_field('texto_meta', 'texto_nonce');
+    $titulo_original = get_post_meta($post->ID, '_texto_titulo_original', true);
+    $ano = get_post_meta($post->ID, '_texto_ano', true);
+    $publicacao = get_post_meta($post->ID, '_texto_publicacao', true);
+    $edicao_pt = get_post_meta($post->ID, '_texto_edicao_pt', true);
+    $tradutor = get_post_meta($post->ID, '_texto_tradutor', true);
+    $fonte_url = get_post_meta($post->ID, '_texto_fonte_url', true);
+    $fonte_label = get_post_meta($post->ID, '_texto_fonte_label', true);
+    $epigrafe = get_post_meta($post->ID, '_texto_epigrafe', true);
+    $autora_id = get_post_meta($post->ID, '_texto_autora_id', true);
+    ?>
+    <p><label>Título original (quando diferente do português)</label><br>
+    <input type="text" name="texto_titulo_original" value="<?php echo esc_attr($titulo_original); ?>" style="width:100%" placeholder="ex: Bliss"></p>
+
+    <p><label>Ano de escrita</label><br>
+    <input type="text" name="texto_ano" value="<?php echo esc_attr($ano); ?>" style="width:100%" placeholder="ex: 1918"></p>
+
+    <p><label>Publicação original</label><br>
+    <input type="text" name="texto_publicacao" value="<?php echo esc_attr($publicacao); ?>" style="width:100%" placeholder="ex: English Review, 1918"></p>
+
+    <p><label>Edição em português (opcional)</label><br>
+    <input type="text" name="texto_edicao_pt" value="<?php echo esc_attr($edicao_pt); ?>" style="width:100%" placeholder="ex: Editora 34, 2015"></p>
+
+    <p><label>Tradutor(a) (opcional)</label><br>
+    <input type="text" name="texto_tradutor" value="<?php echo esc_attr($tradutor); ?>" style="width:100%" placeholder="ex: Paloma Vidal"></p>
+
+    <p><label>URL da fonte</label><br>
+    <input type="url" name="texto_fonte_url" value="<?php echo esc_url($fonte_url); ?>" style="width:100%" placeholder="https://..."></p>
+
+    <p><label>Label da fonte</label><br>
+    <input type="text" name="texto_fonte_label" value="<?php echo esc_attr($fonte_label); ?>" style="width:100%" placeholder="ex: Project Gutenberg"></p>
+
+    <p><label>Epígrafe (opcional)</label><br>
+    <textarea name="texto_epigrafe" style="width:100%" rows="2" placeholder="ex: para ML., que ainda está"><?php echo esc_textarea($epigrafe); ?></textarea></p>
+
+    <p><label>Link da autora</label><br>
+    <?php
+    $q = new WP_Query(array('post_type' => 'autora', 'posts_per_page' => 50, 'orderby' => 'title', 'order' => 'ASC'));
+    if ($q->have_posts()) :
+    ?>
+    <select name="texto_autora_id" style="width:100%">
+      <option value="">— Selecionar autora —</option>
+      <?php while ($q->have_posts()) : $q->the_post(); ?>
+        <option value="<?php the_ID(); ?>" <?php selected($autora_id, get_the_ID()); ?>><?php the_title(); ?></option>
+      <?php endwhile; wp_reset_postdata(); ?>
+    </select>
+    <?php endif; ?>
+    </p>
+    <?php
+}
+
+function lesbiel_save_texto_meta($post_id) {
+    if (!isset($_POST['texto_nonce']) || !wp_verify_nonce($_POST['texto_nonce'], 'texto_meta')) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (!current_user_can('edit_post', $post_id)) return;
+
+    if (isset($_POST['texto_titulo_original'])) update_post_meta($post_id, '_texto_titulo_original', sanitize_text_field($_POST['texto_titulo_original']));
+    if (isset($_POST['texto_ano'])) update_post_meta($post_id, '_texto_ano', sanitize_text_field($_POST['texto_ano']));
+    if (isset($_POST['texto_publicacao'])) update_post_meta($post_id, '_texto_publicacao', sanitize_text_field($_POST['texto_publicacao']));
+    if (isset($_POST['texto_edicao_pt'])) update_post_meta($post_id, '_texto_edicao_pt', sanitize_text_field($_POST['texto_edicao_pt']));
+    if (isset($_POST['texto_tradutor'])) update_post_meta($post_id, '_texto_tradutor', sanitize_text_field($_POST['texto_tradutor']));
+    if (isset($_POST['texto_fonte_url'])) update_post_meta($post_id, '_texto_fonte_url', esc_url_raw($_POST['texto_fonte_url']));
+    if (isset($_POST['texto_fonte_label'])) update_post_meta($post_id, '_texto_fonte_label', sanitize_text_field($_POST['texto_fonte_label']));
+    if (isset($_POST['texto_epigrafe'])) update_post_meta($post_id, '_texto_epigrafe', sanitize_textarea_field($_POST['texto_epigrafe']));
+    if (isset($_POST['texto_autora_id'])) update_post_meta($post_id, '_texto_autora_id', intval($_POST['texto_autora_id']));
+}
+add_action('save_post_texto', 'lesbiel_save_texto_meta');
+
 /* ── Helper: get autora card data ── */
 
 function lesbiel_get_autoras() {
@@ -256,6 +386,16 @@ function lesbiel_get_indica_items() {
     $q = new WP_Query(array(
         'post_type'      => 'indica_item',
         'posts_per_page' => 10,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+    ));
+    return $q->posts;
+}
+
+function lesbiel_get_textos() {
+    $q = new WP_Query(array(
+        'post_type'      => 'texto',
+        'posts_per_page' => 50,
         'orderby'        => 'menu_order',
         'order'          => 'ASC',
     ));
