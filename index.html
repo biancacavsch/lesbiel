@@ -74,20 +74,47 @@
 
 <!-- QUOTE -->
 <section class="quote-section" id="destaque" aria-label="Destaque literário">
-  <div>
-    <p class="quote-meta">↘ Êxtase</p>
-    <p class="quote-work">Katherine Mansfield</p>
-    <blockquote>
-      "E as duas mulheres se deixaram ficar ali, lado a lado, olhando para a esguia árvore em flor. Embora imóvel, a árvore parecia estender-se para cima, subir, tremer no ar brilhante como a chama de uma vela, e crescer, crescer mais alto diante delas — quase tocar a borda da lua cheia prateada."
-    </blockquote>
-    <p class="quote-author">— Katherine Mansfield, Êxtase</p>
+  <div class="quote-carousel">
+    <div class="quote-slide active">
+      <div>
+        <p class="quote-meta">↘ Êxtase</p>
+        <p class="quote-work">Katherine Mansfield</p>
+        <blockquote>
+          "E as duas mulheres se deixaram ficar ali, lado a lado, olhando para a esguia árvore em flor. Embora imóvel, a árvore parecia estender-se para cima, subir, tremer no ar brilhante como a chama de uma vela, e crescer, crescer mais alto diante delas — quase tocar a borda da lua cheia prateada."
+        </blockquote>
+        <p class="quote-author">— Katherine Mansfield, Êxtase</p>
+      </div>
+      <div class="quote-img-side">
+        <figure class="quote-photo">
+          <img src="assets/img/katherine-mansfield.jpg" alt="Katherine Mansfield" loading="lazy" onerror="this.style.display='none'">
+          <div class="photo-overlay"></div>
+          <figcaption class="quote-photo-label">Katherine Mansfield, c. 1917</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="quote-slide">
+      <div>
+        <p class="quote-meta">↘ Desarticulações</p>
+        <p class="quote-work">Sylvia Molloy</p>
+        <blockquote>
+          "Tenho que escrever estes textos enquanto ela ainda está viva, enquanto não houver morte ou encerramento, para tentar entender esse estar/não estar de uma pessoa que se desarticula diante dos meus olhos."
+        </blockquote>
+        <p class="quote-author">— Sylvia Molloy, Desarticulações</p>
+      </div>
+      <div class="quote-img-side">
+        <figure class="quote-photo">
+          <img src="assets/img/sylvia-molloy-text.jpg" alt="Sylvia Molloy" loading="lazy" onerror="this.style.display='none'">
+          <div class="photo-overlay"></div>
+          <figcaption class="quote-photo-label">Sylvia Molloy</figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
-  <div class="quote-img-side">
-    <figure class="quote-photo">
-      <img src="assets/img/katherine-mansfield.jpg" alt="Katherine Mansfield em retrato de Arnold Genthe" loading="lazy" onerror="this.style.display='none'">
-      <div class="photo-overlay"></div>
-      <figcaption class="quote-photo-label">Katherine Mansfield, c. 1917</figcaption>
-    </figure>
+
+  <div class="quote-dots">
+    <button class="quote-dot active" data-index="0" aria-label="Citação 1"></button>
+    <button class="quote-dot" data-index="1" aria-label="Citação 2"></button>
   </div>
 </section>
 
