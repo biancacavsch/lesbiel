@@ -201,7 +201,7 @@ quoteDots.forEach(dot => {
   dot.addEventListener('click', () => {
     clearInterval(quoteTimer);
     showQuote(parseInt(dot.dataset.index));
-    quoteTimer = setInterval(nextQuote, 6000);
+    quoteTimer = setInterval(nextQuote, 10000);
   });
 });
 
