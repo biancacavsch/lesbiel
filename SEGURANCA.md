@@ -1,90 +1,88 @@
 # Guia de Segurança — Projeto Lesbiel
 
-## 1. Proteger conta GitHub (FAZER AGORA)
+Este guia descreve as medidas de segurança aplicadas ao site do projeto de extensão
+"Lesbiel" (Universidade Estadual de Campinas), publicado em `lesbiel.com.br`.
 
-### Ativar autenticação de dois fatores (2FA)
-1. Acesse https://github.com/settings/security
-2. Clique em "Enable two-factor authentication"
-3. Use um app autenticador (Google Authenticator, Authy, ou 1Password)
-4. Salve os códigos de recuperação em local seguro
-
-### Proteger a branch main
-1. Acesse https://github.com/biancacavsch/lesbiel/settings/branches
-2. Clique em "Add rule"
-3. Em "Branch name pattern" digite: `main`
-4. Marque: "Require pull request reviews before merging"
-5. Salve
-
-### Revisar chaves de acesso
-1. Acesse https://github.com/settings/keys
-2. Remova chaves SSH que não são mais usadas
-3. Acesse https://github.com/settings/tokens
-4. Revogue tokens que não são mais necessários
+O site é **estático** (HTML/CSS/JS), versionado no GitHub e publicado no **Cloudflare Pages**.
+Em tempo de execução ele não depende do GitHub: após o deploy, é servido pela CDN global
+da Cloudflare, o que já confere redundância e disponibilidade.
 
 ---
 
-## 2. Cloudflare (PRÓXIMO PASSO)
+## 1. Conta GitHub (repositório do código)
 
-### Criar conta
-1. Acesse https://dash.cloudflare.com/sign-up
-2. Crie uma conta gratuita
+O código-fonte está em https://github.com/biancacavsch/lesbiel. O GitHub é usado apenas
+para versionamento e para disparar o deploy; a queda eventual do GitHub não derruba o site.
 
-### Adicionar domínio
-1. Clique em "Add a site"
-2. Digite: lesbiel.com.br
-3. Selecione o plano gratuito
-4. O Cloudflare vai mostrar nameservers
-5. Acesse o Registro.br e troque os nameservers pelos do Cloudflare
-
-### Ativar proxy (laranja)
-1. No painel do Cloudflare, vá para DNS > Records
-2. Para o registro CNAME de lesbiel:
-   - Name: @ (ou lesbiel)
-   - Target: biancacavsch.github.io
-   - Proxy status: Proxied (botão laranja ativado)
-3. Para o registro CNAME de www:
-   - Name: www
-   - Target: biancacavsch.github.io
-   - Proxy status: Proxied
-
-### Configurar SSL
-1. Vá para SSL/TLS > Overview
-2. Selecione "Full (strict)"
-
-### Configurar headers de segurança
-1. Vá para Rules > Transform Rules > Modify Response Header
-2. Crie uma regra com os seguintes headers:
-
-| Header | Value |
-|--------|-------|
-| X-Frame-Options | DENY |
-| X-Content-Type-Options | nosniff |
-| Referrer-Policy | strict-origin-when-cross-origin |
-| Permissions-Policy | camera=(), microphone=(), geolocation=() |
+- Ativar 2FA em https://github.com/settings/security
+- Proteger a branch `main` (exigir revisão de PR antes de merge)
+- Revisar chaves SSH e tokens em https://github.com/settings/keys e /tokens
 
 ---
 
-## 3. Web3Forms (FORMULÁRIO)
+## 2. Cloudflare (DNS, CDN, SSL e hospedagem)
 
-### Criar conta
-1. Acesse https://web3forms.com
-2. Digite seu email e clique em "Create Free Access Key"
-3. Verifique o email e copie a access key
+### Registro do domínio
+- Domínio registrado no Registro.br: `lesbiel.com.br`
+- Nameservers delegados para a Cloudflare (primeira delegação leva até ~2h na Registro.br)
 
-### Usar no formulário
-A access key será colocada no HTML do formulário de sugestões.
-O Web3Forms envia as submissões por email e armazena no painel.
+### Cloudflare Pages (hospedagem)
+O site estático é publicado no Cloudflare Pages. Arquivos de configuração na raiz:
+- `wrangler.toml` — define o projeto (`name = "lesbiel"`) e o diretório de saída (`pages_build_output_dir = "."`, pois os arquivos ficam na raiz).
+- Deploy via Git (conectar o repositório) ou via CLI: `npx wrangler pages deploy .`
+- Custom domains: `lesbiel.com.br` e `www.lesbiel.com.br` → CNAME para `lesbiel.pages.dev`, com **proxy laranja** ativado.
+
+### Cabeçalhos de segurança (`_headers`)
+Aplicados na borda (edge) da Cloudflare para todas as páginas (`/*`):
+- `X-Frame-Options: DENY` — impede que o site seja exibido em iframes (clickjacking)
+- `X-Content-Type-Options: nosniff` — evita que o navegador "adivinhe" o tipo de arquivo
+- `Referrer-Policy: strict-origin-when-cross-origin` — limita o vazamento de URL em referrers
+- `Permissions-Policy: camera=(), microphone=(), geolocation=()` — desliga APIs sensíveis
+- `Strict-Transport-Security` — força HTTPS (HSTS)
+
+### Redirecionamentos (`_redirects`)
+- `www.lesbiel.com.br → lesbiel.com.br` (301) — canonização do domínio.
+
+### SSL/TLS
+- Modo: **Full (strict)**.
+
+### Políticas de bots (IA)
+Configuradas no onboarding do domínio na Cloudflare:
+- **Search:** permitido (indexação em buscadores)
+- **Agent:** permitido
+- **Training:** bloqueado (ver `robots.txt` abaixo e o toggle do próprio Cloudflare)
 
 ---
 
-## 4. Checklist de Segurança
+## 3. robots.txt (bloqueio de treino de IA)
+
+Arquivo na raiz, servido em `/robots.txt`. Permite buscadores (Google, Bing) e bloqueia
+crawlers conhecidos de treinamento de modelos de IA: `GPTBot`, `Google-Extended`, `CCBot`,
+`anthropic-ai`, `ClaudeBot`, `omgilibot`, `omgili`.
+
+Observação: `robots.txt` é um sinal **voluntário** — bots mal-intencionados podem ignorá-lo.
+O toggle "Block training" do Cloudflare reforça isso na borda, mas também não é garantido.
+É a postura padrão de proteção de conteúdo autoral.
+
+---
+
+## 4. Web3Forms (formulário de indicação)
+
+O formulário (`indicar.html`) envia pelo Web3Forms:
+- `access_key` em `indicar.html` (chave **pública** por design — não é vazamento)
+- Honeypot implementado (campo oculto para bots)
+- Verificação de tempo anti-bot e consentimento (LGPD) antes do envio
+
+---
+
+## 5. Checklist de Segurança
 
 - [ ] 2FA ativado no GitHub
 - [ ] Branch protection configurada
-- [ ] Cloudflare configurado com proxy
+- [ ] Domínio no Registro.br com nameservers da Cloudflare
+- [ ] Cloudflare Pages com custom domains ativos
 - [ ] SSL ativo (Full strict)
-- [ ] Headers de segurança configurados
-- [ ] Web3Forms criado
-- [ ] Formulário com honeypot implementado
-- [ ] LGPD: política de privacidade no formulário
-- [ ] Política de privacidade no site
+- [ ] `_headers` aplicados (cabeçalhos de segurança)
+- [ ] `_redirects` (www → apex)
+- [ ] `robots.txt` com bloqueio de treino de IA
+- [ ] Política de privacidade no site (`privacidade.html`)

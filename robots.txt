@@ -1,0 +1,29 @@
+# robots.txt — Lesbiel
+# Permite a indexação por buscadores (Search). Bloqueia crawlers de treinamento de IA (Training).
+
+User-agent: *
+Allow: /
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Disallow: /
+
+# Google — treinamento de modelos (não afeta a busca orgânica)
+User-agent: Google-Extended
+Disallow: /
+
+# Common Crawl
+User-agent: CCBot
+Disallow: /
+
+# Anthropic (Claude)
+User-agent: anthropic-ai
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+
+# Omgili (datasets de IA)
+User-agent: omgilibot
+Disallow: /
+User-agent: omgili
+Disallow: /
