@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<!--
+  ============================================================================
+  TEMPLATE da home (não é servido diretamente).
+  O build.js lê este arquivo, substitui os marcadores internos pelo conteúdo
+  de content.js e gera o index.html final (estático, para SEO).
+  Para editar o conteúdo, mexa em content.js — não neste template.
+  ============================================================================
+-->
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -39,81 +47,14 @@
 <section class="arquivo" id="voz" aria-label="Episódios em áudio">
   <p class="section-label">↘ Voz — episódios em áudio</p>
 
-  <div class="arquivo-grid">
-    <article class="arquivo-card">
-      <div class="card-number">01</div>
-      <figure class="card-img card-img-verde">
-        <img src="assets/img/katherine-mansfield.jpg" alt="Retrato de Katherine Mansfield" loading="lazy" onerror="this.style.display='none'">
-        <div class="img-overlay"></div>
-      </figure>
-      <p class="card-title">Katherine Mansfield</p>
-      <p class="card-subtitle">Episódio no Spotify</p>
-      <p class="card-text">Escritora neozelandesa de enorme importância para o modernismo de língua inglesa. Em seus contos, trabalhou com diversas representações de feminilidade e narrou um desejo ambíguo e confuso entre mulheres.</p>
-      <a href="#" class="card-link js-soon">
-        Escute o episódio completo
-        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8"/></svg>
-      </a>
-    </article>
-
-    <article class="arquivo-card">
-      <div class="card-number">02</div>
-      <figure class="card-img card-img-bege-dark">
-        <img src="assets/img/sylvia-molloy.jpg" alt="Retrato de Sylvia Molloy" loading="lazy" onerror="this.style.display='none'">
-        <div class="img-overlay"></div>
-      </figure>
-      <p class="card-title">Sylvia Molloy</p>
-      <p class="card-subtitle">Episódio no Spotify</p>
-      <p class="card-text">Escritora, ensaísta e crítica literária nascida na Argentina. Em Desarticulações, utiliza recortes de memória e fragmentos para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer.</p>
-      <a href="#" class="card-link js-soon">
-        Escute o episódio completo
-        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8"/></svg>
-      </a>
-    </article>
-  </div>
+  <div class="arquivo-grid"><article class="arquivo-card"><div class="card-number">01</div><figure class="card-img card-img-verde"><img src="assets/img/katherine-mansfield.jpg" alt="Retrato de Katherine Mansfield" loading="lazy" onerror="this.style.display='none'"><div class="img-overlay"></div></figure><p class="card-title">Katherine Mansfield</p><p class="card-subtitle">Episódio no Spotify</p><p class="card-text">Escritora neozelandesa de enorme importância para o modernismo de língua inglesa. Em seus contos, trabalhou com diversas representações de feminilidade e narrou um desejo ambíguo e confuso entre mulheres.</p><a href="#" class="card-link js-soon">Escute o episódio completo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8"/></svg></a></article><article class="arquivo-card"><div class="card-number">02</div><figure class="card-img card-img-bege-dark"><img src="assets/img/sylvia-molloy.jpg" alt="Retrato de Sylvia Molloy" loading="lazy" onerror="this.style.display='none'"><div class="img-overlay"></div></figure><p class="card-title">Sylvia Molloy</p><p class="card-subtitle">Episódio no Spotify</p><p class="card-text">Escritora, ensaísta e crítica literária nascida na Argentina. Em Desarticulações, utiliza recortes de memória e fragmentos para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer.</p><a href="#" class="card-link js-soon">Escute o episódio completo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8"/></svg></a></article></div>
 </section>
 
 <!-- QUOTE -->
 <section class="quote-section" id="destaque" aria-label="Destaque literário">
-  <div class="quote-carousel">
-    <div class="quote-slide active">
-      <div>
-        <p class="quote-work">Katherine Mansfield</p>
-        <blockquote>
-          "E as duas mulheres se deixaram ficar ali, lado a lado, olhando para a esguia árvore em flor. Embora imóvel, a árvore parecia estender-se para cima, subir, tremer no ar brilhante como a chama de uma vela, e crescer, crescer mais alto diante delas — quase tocar a borda da lua cheia prateada."
-        </blockquote>
-        <p class="quote-author">— Katherine Mansfield, Êxtase</p>
-      </div>
-      <div class="quote-img-side">
-        <figure class="quote-photo">
-          <img src="assets/img/katherine-mansfield.jpg" alt="Katherine Mansfield" loading="lazy" onerror="this.style.display='none'">
-          <div class="photo-overlay"></div>
-          <figcaption class="quote-photo-label">Katherine Mansfield, c. 1917</figcaption>
-        </figure>
-      </div>
-    </div>
+  <div class="quote-carousel"><div class="quote-slide active"><div><p class="quote-work">Katherine Mansfield</p><blockquote>“E as duas mulheres se deixaram ficar ali, lado a lado, olhando para a esguia árvore em flor. Embora imóvel, a árvore parecia estender-se para cima, subir, tremer no ar brilhante como a chama de uma vela, e crescer, crescer mais alto diante delas — quase tocar a borda da lua cheia prateada.”</blockquote><p class="quote-author">— Katherine Mansfield, Êxtase</p></div><div class="quote-img-side"><figure class="quote-photo"><img src="assets/img/katherine-mansfield.jpg" alt="Katherine Mansfield" loading="lazy" onerror="this.style.display='none'"><div class="photo-overlay"></div><figcaption class="quote-photo-label">Katherine Mansfield, c. 1917</figcaption></figure></div></div><div class="quote-slide"><div><p class="quote-work">Sylvia Molloy</p><blockquote>“Tenho que escrever estes textos enquanto ela ainda está viva, enquanto não houver morte ou encerramento, para tentar entender esse estar/não estar de uma pessoa que se desarticula diante dos meus olhos.”</blockquote><p class="quote-author">— Sylvia Molloy, Desarticulações</p></div><div class="quote-img-side"><figure class="quote-photo quote-photo-zoom"><img src="assets/img/sylvia-molloy-text.jpg" alt="Sylvia Molloy" loading="lazy" onerror="this.style.display='none'"><div class="photo-overlay"></div><figcaption class="quote-photo-label">Sylvia Molloy</figcaption></figure></div></div></div>
 
-    <div class="quote-slide">
-      <div>
-        <p class="quote-work">Sylvia Molloy</p>
-        <blockquote>
-          "Tenho que escrever estes textos enquanto ela ainda está viva, enquanto não houver morte ou encerramento, para tentar entender esse estar/não estar de uma pessoa que se desarticula diante dos meus olhos."
-        </blockquote>
-        <p class="quote-author">— Sylvia Molloy, Desarticulações</p>
-      </div>
-      <div class="quote-img-side">
-        <figure class="quote-photo quote-photo-zoom">
-          <img src="assets/img/sylvia-molloy-text.jpg" alt="Sylvia Molloy" loading="lazy" onerror="this.style.display='none'">
-          <div class="photo-overlay"></div>
-          <figcaption class="quote-photo-label">Sylvia Molloy</figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-
-  <div class="quote-dots">
-    <button class="quote-dot active" data-index="0" aria-label="Citação 1"></button>
-    <button class="quote-dot" data-index="1" aria-label="Citação 2"></button>
-  </div>
+  <div class="quote-dots"><button class="quote-dot active" data-index="0" aria-label="Citação 1"></button><button class="quote-dot" data-index="1" aria-label="Citação 2"></button></div>
 </section>
 
 <!-- INDICA -->
@@ -125,64 +66,13 @@
     </div>
   </div>
 
-  <div class="indica-grid">
-    <article class="indica-card">
-      <figure class="indica-thumb indica-thumb-verde">
-        <span class="indica-thumb-text">WATERMELON<br>WOMAN</span>
-      </figure>
-      <div>
-        <p class="indica-card-tag">↘ Cinema</p>
-        <p class="indica-card-title">Watermelon Woman</p>
-        <p class="indica-card-author">Cheryl Dunye, 1996</p>
-        <p class="indica-card-text">Primeiro filme americano dirigido por uma mulher negra lésbica. Uma cineasta amadora investiga a vida de uma atriz esquecida dos anos 30, inventando um passado que poderia ter existido.</p>
-      </div>
-    </article>
-
-    <article class="indica-card">
-      <figure class="indica-thumb indica-thumb-bege-dark">
-        <span class="indica-thumb-text">GERTRUDE<br>STEIN</span>
-      </figure>
-      <div>
-        <p class="indica-card-tag">↘ Literatura</p>
-        <p class="indica-card-title">A autobiografia de Alice B. Toklas</p>
-        <p class="indica-card-author">Gertrude Stein, 1933</p>
-        <p class="indica-card-text">Escrita na voz de sua companheira, Stein narra sua própria vida com ironia e elegância, evocando o coração do modernismo em Paris e o círculo de Picasso, Matisse e Hemingway.</p>
-      </div>
-    </article>
-
-    <article class="indica-card">
-      <figure class="indica-thumb indica-thumb-bege-mid">
-        <span class="indica-thumb-text">RADCLYFFE<br>HALL</span>
-      </figure>
-      <div>
-        <p class="indica-card-tag">↘ Literatura</p>
-        <p class="indica-card-title">O poço da solidão</p>
-        <p class="indica-card-author">Radclyffe Hall, 1928</p>
-        <p class="indica-card-text">Marco da literatura lésbica, o romance narra a história de Stephen Gordon, uma mulher que desde cedo reconhece sua diferença e busca um lugar em um mundo hostil.</p>
-      </div>
-    </article>
-
-    <article class="indica-card">
-      <figure class="indica-thumb indica-thumb-verde">
-        <span class="indica-thumb-text">DESERT<br>HEARTS</span>
-      </figure>
-      <div>
-        <p class="indica-card-tag">↘ Cinema</p>
-        <p class="indica-card-title">Desert Hearts</p>
-        <p class="indica-card-author">Donna Deitch, 1985</p>
-        <p class="indica-card-text">Um dos primeiros filmes com representação lésbica que não termina em tragédia — uma professora universitária e uma mulher livre se encontram no Nevada dos anos 50.</p>
-      </div>
-    </article>
-  </div>
+  <div class="indica-grid"><article class="indica-card"><figure class="indica-thumb indica-thumb-verde"><span class="indica-thumb-text">WATERMELON<br>WOMAN</span></figure><div><p class="indica-card-tag">↘ Cinema</p><p class="indica-card-title">Watermelon Woman</p><p class="indica-card-author">Cheryl Dunye, 1996</p><p class="indica-card-text">Primeiro filme americano dirigido por uma mulher negra lésbica. Uma cineasta amadora investiga a vida de uma atriz esquecida dos anos 30, inventando um passado que poderia ter existido.</p></div></article><article class="indica-card"><figure class="indica-thumb indica-thumb-bege-dark"><span class="indica-thumb-text">GERTRUDE<br>STEIN</span></figure><div><p class="indica-card-tag">↘ Literatura</p><p class="indica-card-title">A autobiografia de Alice B. Toklas</p><p class="indica-card-author">Gertrude Stein, 1933</p><p class="indica-card-text">Escrita na voz de sua companheira, Stein narra sua própria vida com ironia e elegância, evocando o coração do modernismo em Paris e o círculo de Picasso, Matisse e Hemingway.</p></div></article><article class="indica-card"><figure class="indica-thumb indica-thumb-bege-mid"><span class="indica-thumb-text">RADCLYFFE<br>HALL</span></figure><div><p class="indica-card-tag">↘ Literatura</p><p class="indica-card-title">O poço da solidão</p><p class="indica-card-author">Radclyffe Hall, 1928</p><p class="indica-card-text">Marco da literatura lésbica, o romance narra a história de Stephen Gordon, uma mulher que desde cedo reconhece sua diferença e busca um lugar em um mundo hostil.</p></div></article><article class="indica-card"><figure class="indica-thumb indica-thumb-verde"><span class="indica-thumb-text">DESERT<br>HEARTS</span></figure><div><p class="indica-card-tag">↘ Cinema</p><p class="indica-card-title">Desert Hearts</p><p class="indica-card-author">Donna Deitch, 1985</p><p class="indica-card-text">Um dos primeiros filmes com representação lésbica que não termina em tragédia — uma professora universitária e uma mulher livre se encontram no Nevada dos anos 50.</p></div></article></div>
 </section>
 
 <!-- TEXTO -->
 <section class="texto-section" id="texto" aria-label="Textos completos">
   <p class="section-label">↘ Texto</p>
-  <ul class="texto-list">
-    <li><a href="katherine-mansfield.html">Êxtase, Katherine Mansfield →</a></li>
-    <li><a href="sylvia-molloy.html">Desarticulações, Sylvia Molloy →</a></li>
-  </ul>
+  <ul class="texto-list"><li><a href="katherine-mansfield.html">Êxtase, Katherine Mansfield →</a></li><li><a href="sylvia-molloy.html">Desarticulações, Sylvia Molloy →</a></li></ul>
 </section>
 
 <!-- SOBRE -->
@@ -205,6 +95,8 @@
   <p class="footer-note">Arquivo e voz de mulheres lésbicas e bissexuais — 2026</p>
 </footer>
 
+<script src="content.js"></script>
 <script src="script.js"></script>
+<script src="render.js"></script>
 </body>
 </html>
