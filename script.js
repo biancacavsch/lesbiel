@@ -22,44 +22,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ── Texto: switching between texts ── */
-
-const textoTocLinks = document.querySelectorAll('.texto-toc a');
-const textoContents = document.querySelectorAll('.texto-content');
-
-function showTexto(id) {
-  textoContents.forEach(el => {
-    el.style.display = el.id === id ? 'block' : 'none';
-  });
-  textoTocLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-  });
-}
-
-textoTocLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      e.preventDefault();
-      showTexto(href.substring(1));
-      document.querySelector('#texto').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
-/* ── Archive cards: link to text sections ── */
-
-document.querySelectorAll('.arquivo-card .card-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      e.preventDefault();
-      showTexto(href.substring(1));
-      document.querySelector('#texto').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
 /* ── Scroll animations ── */
 
 const animateOnScroll = new IntersectionObserver((entries) => {

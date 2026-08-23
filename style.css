@@ -312,15 +312,6 @@ body {
   background: var(--verde-light);
 }
 
-.quote-meta {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--bege);
-  opacity: 0.4;
-  margin-bottom: 0.5rem;
-}
-
 .quote-work {
   font-size: 1.8rem;
   font-weight: 700;
@@ -622,23 +613,6 @@ footer {
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-}
-
-.modal-btn {
-  background: var(--bege);
-  color: var(--verde);
-  border: none;
-  padding: 0.8rem 2rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
-}
-.modal-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
 }
 
 /* SCROLLBAR */
