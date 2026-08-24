@@ -23,24 +23,24 @@
     const grid = document.getElementById('voz-grid');
     if (!grid || !DATA.voz) return;
     if (grid.children.length) return; /* já está no HTML estático (build) */
-    grid.innerHTML = DATA.voz.map(function (c) {
+    function vozCard(c) {
       const isSoon = c.soon || !c.link || c.link === '#';
-      const href = isSoon ? '#' : c.link;
-      const cls = isSoon ? 'card-link js-soon' : 'card-link';
-      const ext = isSoon ? '' : ' target="_blank" rel="noopener"';
-      return '' +
-        '<article class="arquivo-card">' +
-          '<div class="card-number">' + esc(c.number) + '</div>' +
-          '<figure class="card-img ' + esc(c.imgClass || 'card-img-verde') + '">' +
-            '<img src="' + esc(c.img) + '" alt="' + esc(c.alt) + '" loading="lazy" onerror="this.style.display=\'none\'">' +
-            '<div class="img-overlay"></div>' +
-          '</figure>' +
-          '<p class="card-title">' + esc(c.title) + '</p>' +
-          '<p class="card-subtitle">' + esc(c.subtitle) + '</p>' +
-          '<p class="card-text">' + esc(c.text) + '</p>' +
-          '<a href="' + href + '" class="' + cls + '"' + ext + '>Escute o episódio completo ' + ARROW + '</a>' +
-        '</article>';
-    }).join('');
+      const inner =
+        '<div class="card-number">' + esc(c.number) + '</div>' +
+        '<figure class="card-img ' + esc(c.imgClass || 'card-img-verde') + '">' +
+          '<img src="' + esc(c.img) + '" alt="' + esc(c.alt) + '" loading="lazy" onerror="this.style.display=\'none\'">' +
+          '<div class="img-overlay"></div>' +
+        '</figure>' +
+        '<p class="card-title">' + esc(c.title) + '</p>' +
+        '<p class="card-subtitle">' + esc(c.subtitle) + '</p>' +
+        '<p class="card-text">' + esc(c.text) + '</p>' +
+        '<span class="card-link">Escute o episódio completo ' + ARROW + '</span>';
+      if (isSoon) {
+        return '<article class="arquivo-card js-soon" role="button" tabindex="0" aria-label="Em breve: ' + esc(c.title) + '">' + inner + '</article>';
+      }
+      return '<a class="arquivo-card card-link-real" href="' + esc(c.link) + '" target="_blank" rel="noopener">' + inner + '</a>';
+    }
+    grid.innerHTML = DATA.voz.map(vozCard).join('');
   }
 
   /* ---------- CARROSSEL DE CITAÇÕES ---------- */
@@ -198,24 +198,33 @@
   function initModal() {
     let modal = null;
     function close() { if (modal) { modal.remove(); modal = null; } }
-    document.addEventListener('click', function (e) {
-      const btn = e.target.closest('.js-soon');
-      if (!btn) return;
-      e.preventDefault();
-      close();
+    function open() {
+      if (modal) return;
       modal = document.createElement('div');
       modal.className = 'modal-overlay';
       const content = document.createElement('div');
       content.className = 'modal-content';
-      content.innerHTML = '<button class="modal-close">&times;</button><h3 class="modal-title">Em breve</h3><p class="modal-desc">Este conteúdo estará disponível em breve.</p>';
+      content.innerHTML = '<button class="modal-close" aria-label="Fechar">&times;</button><h3 class="modal-title">Em breve</h3><p class="modal-desc">Este conteúdo estará disponível em breve.</p>';
       modal.appendChild(content);
       document.body.appendChild(modal);
       content.querySelector('.modal-close').addEventListener('click', close);
       modal.addEventListener('click', function (ev) { if (ev.target === modal) close(); });
-      const escHandler = function (ev) {
-        if (ev.key === 'Escape') { close(); document.removeEventListener('keydown', escHandler); }
-      };
-      document.addEventListener('keydown', escHandler);
+    }
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest('.js-soon');
+      if (!btn) return;
+      e.preventDefault();
+      open();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal) { close(); return; }
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        const el = document.activeElement;
+        if (el && el.classList && el.classList.contains('js-soon')) {
+          e.preventDefault();
+          open();
+        }
+      }
     });
   }
 

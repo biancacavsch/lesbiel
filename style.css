@@ -168,6 +168,9 @@ body {
 }
 .arquivo-card:last-child { border-right: none; }
 .arquivo-card:hover { background: var(--bege-mid); }
+.arquivo-card.js-soon { cursor: pointer; }
+a.arquivo-card { display: block; color: inherit; text-decoration: none; }
+.arquivo-card.js-soon:focus-visible { outline: 2px solid var(--verde); outline-offset: 3px; }
 
 .arquivo-card .card-number {
   font-size: 0.72rem;

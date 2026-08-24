@@ -24,25 +24,26 @@ const ARROW = '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke
 
 function esc(s) { return String(s == null ? '' : s); }
 
+function vozCard(c) {
+  const isSoon = c.soon || !c.link || c.link === '#';
+  const inner =
+    '<div class="card-number">' + esc(c.number) + '</div>' +
+    '<figure class="card-img ' + esc(c.imgClass || 'card-img-verde') + '">' +
+      '<img src="' + esc(c.img) + '" alt="' + esc(c.alt) + '" loading="lazy" onerror="this.style.display=\'none\'">' +
+      '<div class="img-overlay"></div>' +
+    '</figure>' +
+    '<p class="card-title">' + esc(c.title) + '</p>' +
+    '<p class="card-subtitle">' + esc(c.subtitle) + '</p>' +
+    '<p class="card-text">' + esc(c.text) + '</p>' +
+    '<span class="card-link">Escute o episódio completo ' + ARROW + '</span>';
+  if (isSoon) {
+    return '<article class="arquivo-card js-soon" role="button" tabindex="0" aria-label="Em breve: ' + esc(c.title) + '">' + inner + '</article>';
+  }
+  return '<a class="arquivo-card card-link-real" href="' + esc(c.link) + '" target="_blank" rel="noopener">' + inner + '</a>';
+}
+
 function buildVoz() {
-  return (DATA.voz || []).map(function (c) {
-    const isSoon = c.soon || !c.link || c.link === '#';
-    const href = isSoon ? '#' : c.link;
-    const cls = isSoon ? 'card-link js-soon' : 'card-link';
-    const ext = isSoon ? '' : ' target="_blank" rel="noopener"';
-    return '' +
-      '<article class="arquivo-card">' +
-        '<div class="card-number">' + esc(c.number) + '</div>' +
-        '<figure class="card-img ' + esc(c.imgClass || 'card-img-verde') + '">' +
-          '<img src="' + esc(c.img) + '" alt="' + esc(c.alt) + '" loading="lazy" onerror="this.style.display=\'none\'">' +
-          '<div class="img-overlay"></div>' +
-        '</figure>' +
-        '<p class="card-title">' + esc(c.title) + '</p>' +
-        '<p class="card-subtitle">' + esc(c.subtitle) + '</p>' +
-        '<p class="card-text">' + esc(c.text) + '</p>' +
-        '<a href="' + href + '" class="' + cls + '"' + ext + '>Escute o episódio completo ' + ARROW + '</a>' +
-      '</article>';
-  }).join('');
+  return (DATA.voz || []).map(vozCard).join('');
 }
 
 function buildQuotes() {
