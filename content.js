@@ -212,12 +212,6 @@ window.LESBIEL = {
     { label: "Site Lesbiel",                 icon: "site",     href: "https://lesbiel.com.br" },
     { label: "Spotify — Episódios em áudio", icon: "spotify",  href: "#",      soon: true },
     { label: "Instagram",                    icon: "instagram", href: "https://www.instagram.com/lesb.iel" },
-    { label: "Indicar uma autora",           icon: "form",     href: "indicar.html" },
-    { label: "Adrienne Rich",                icon: "site",     href: "https://www.poetryfoundation.org/poets/adrienne-rich" },
-    { label: "Cristina Peri Rossi",          icon: "site",     href: "https://www.cristinaperirossi.es/web/" },
-    { label: "Maria Firmina dos Reis",       icon: "site",     href: "https://pt.wikipedia.org/wiki/Maria_Firmina_dos_Reis" },
-    { label: "Monique Wittig",               icon: "site",     href: "https://en.wikipedia.org/wiki/Monique_Wittig" },
-    { label: "Natália Borges Polesso",       icon: "site",     href: "https://www.companhiadasletras.com.br/livros/a-extincao-das-abelhas/" },
-    { label: "Val Flores",                   icon: "site",     href: "https://valflores.com.ar/" }
+    { label: "Indicar uma autora",           icon: "form",     href: "indicar.html" }
   ]
 };
