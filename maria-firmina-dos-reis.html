@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria Firmina dos Reis — Cantos à beira-mar — Lesbiel</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📖%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=General+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .text-page {
+    background: var(--bege);
+    min-height: 100vh;
+    padding: 4rem 5rem 4rem 5rem;
+  }
+  .text-page-fixed-logo {
+    position: fixed;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--verde);
+    letter-spacing: -0.04em;
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .text-page-fixed-logo span { font-weight: 300; font-style: italic; }
+  .text-page-bio {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--verde);
+    line-height: 1.9;
+    max-width: 280px;
+    text-align: left;
+    align-self: center;
+    border-left: 2px solid var(--verde);
+    padding-left: 1rem;
+  }
+  .text-page-bio-label {
+    font-size: 0.72rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .text-page-bio p { margin-bottom: 0.6rem; }
+  .text-page-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--verde);
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+  }
+  .text-page-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+  .text-page-top h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--verde);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .text-page-top .author-link {
+    font-size: 0.85rem;
+    color: var(--verde);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .text-page-photo {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .text-page-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .text-page-meta {
+    max-width: 600px;
+    margin: 2rem auto 2.5rem;
+    font-size: 0.85rem;
+    color: var(--verde);
+    line-height: 1.7;
+  }
+  .text-page-meta-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .text-page-meta p { margin-bottom: 0.3rem; opacity: 0.7; }
+  .text-page-meta a {
+    color: var(--verde);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .text-page-body {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .text-page-body p {
+    font-size: 1.05rem;
+    color: var(--verde);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+    text-align: left;
+  }
+  .text-page-body h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--verde);
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+  }
+  .text-page-body .epigraph {
+    font-style: italic;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  footer {
+    margin: 4rem -5rem -4rem -5rem;
+  }
+
+  @media (max-width: 768px) {
+    .text-page { padding: 2rem 1.2rem; }
+    .text-page-fixed-logo { display: none !important; }
+    .text-page-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .text-page-top h1 { font-size: 1.6rem; }
+    .text-page-photo { width: 80px; height: 80px; }
+    .text-page-bio { max-width: 100%; text-align: left; order: 3; }
+    .text-page-meta { margin: 1.5rem 0 2rem; }
+    .text-page-body { max-width: 100%; }
+    .text-page-body p { font-size: 1rem; }
+    footer { margin: 3rem -1.2rem -2rem -1.2rem; padding: 2rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="text-page-fixed-logo">Lesb<span>iel</span></div>
+
+<main class="text-page">
+  <p class="text-page-label">↘ Texto</p>
+
+  <div class="text-page-top">
+    <div>
+      <h1>Cantos à beira-mar (1875) — Poemas</h1>
+      <p class="author-link">Maria Firmina dos Reis</p>
+    </div>
+    <div class="text-page-bio">
+      <p class="text-page-bio-label">↘ Biografia</p>
+      <p>Maria Firmina dos Reis (1820s–1917) foi uma romancista, poeta, compositora e professora maranhense. De sua biografia, sabemos que atuou ativamente pelo direito à educação universal e gratuita, pela abolição da escravidão e pela igualdade racial. Filha de uma ex-escravizada, Leonor Felipa dos Reis, a quem dedicou "Cantos à beira-mar" (1871). Não temos registro da vida erótica da autora, mas poemas e seu álbum privado (1975) permitem leitura de textos homoeróticos.</p>
+    </div>
+    <figure class="text-page-photo">
+      <img src="assets/img/maria-firmina-dos-reis.jpg" alt="Maria Firmina dos Reis">
+    </figure>
+  </div>
+
+  <div class="text-page-meta">
+    <p class="text-page-meta-label">↘ Ficha técnica</p>
+    <p><strong>Título original:</strong> Cantos à beira-mar</p>
+    <p><strong>Escrita em:</strong> 1875</p>
+    <p><strong>Publicação original:</strong> São Luís, MA, 1875</p>
+    <p><strong>Tradução:</strong> Diversas edições (Imprensa Nacional, 2019)</p>
+    <p><strong>Fonte:</strong> <a href="https://pt.wikipedia.org/wiki/Maria_Firmina_dos_Reis" target="_blank" rel="noopener">Wikipédia</a></p>
+  </div>
+
+  <article class="text-page-body">
+    <h3>Ah! Não posso!</h3>
+    <p>Ah! Não posso! Se uma frase se pudesse Do meu peito destacar; Uma frase misteriosa Como o gemido do mar, Em noite erma, e saudosa, Do meigo, e doce luar; Ah! Se pudesse!... mas muda Sou, por lei, que me impõe Deus! Essa frase maga encerra, Resume os afetos meus; Exprime o gozo dos anjos, Extremos puros dos céus. Entretanto, ela é meu sonho, Meu ideal inda é ela: Menos a vida eu amara Embora fosse ela bela, Como rubro diamante, Sob finíssima tela. Se dizê-la é meu empenho, Reprimi-la é meu dever: Se se escapar dos meus lábios, Oh! Deus, – fazei-me morrer! Que eu pronunciando-a não posso Mais – sobre a terra viver.</p>
+
+    <h3>A uma amiga</h3>
+    <p>Eu a vi – gentil mimosa, Os lábios da cor da rosa, A voz um hino de amor! Eu a vi, lânguida, e bela; E ele a rever-se nela: Ele colibri – ela flor. Tinha a face reclinada Sobre a débil mão nevada; Era a flor à beira-rio. A voz meiga, a voz fluente, Era um arrulo cadente, Era um vago murmúrio. No langor dos olhos dela Há expressão tão bela, Tanta maga, tão sedutora, Que eu mesmo julguei-a anjo, Eloá, fada, arcanjo, Ou nuvem núncia d'aurora. Eu vi – o seio lhe arfava: E ela... ela cismava, Cismava no que lhe ouvia; Não sei que frase era aquela: Só ele falava a ela, Só ela a frase entendia. Eu tive tantos ciúmes!... Teria dos próprios numes, Se lhe falassem de amor. Porque, querê-la – só eu. Mas ela! – A outra ela deu Meigo riso encantador... Ela esqueceu-se de mim Por ele... por ele enfim.</p>
+
+    <h3>Trecho de Úrsula (1859/1860)</h3>
+    <p>IX A preta Susana Estavam já feitos os aprestos da viagem, e Túlio, cependant no meio da sua felicidade, parecia às vezes tocado por viva melancolia, que se lhe debuxava no rosto, onde uma lágrima recente havia deixado profundo sulco. Era por sem dúvida a saudade da separação, essa dor, que aflige a todo o coração sensível, que assim o consumia. Ia deixar a casa de sua senhora, onde senão ledos, pelo menos não muito amargos tinha ele passado seus primeiros anos. O negro sentia saudades. E aí havia uma mulher escrava, e negra como ele; mas boa, e compassiva, que lhe serviu de mãe enquanto lhe sorriu essa idade lisonjeira e feliz, única na vida do homem que se grava no coração com caracteres de amor – única, cuja recordação nos apraz, e em que...</p>
+    <p>Susana, chama-se ela, trajava uma saia de grosseiro tecido de algodão preto, cuja orla chegava-lhe ao meio das pernas magras, e descarnadas como todo o seu corpo: na cabeça tinha cingido um lenço encarnado e amarelo, que mal lhe ocultava as alvíssimas cãs. Túlio estava ante ela com os braços cruzados sobre o peito. Em seu semblante transparecia um quê de dor mal reprimida, que denunciava o seu profundo pesar. A velha deixou o fuso em que fiava, ergueu-se sem olhá-lo, tomou o cachimbo, encheu-o de tabaco, acendeu-o, tirou-lhe algumas baforadas de fumo, e de novo sentou-se: mas dessa vez não pegou no fuso. Fitou então os olhos em Túlio, e disse-lhe: — Onde vais, Túlio? — Acompanhar o senhor Tancredo de *** – respondeu o interpelado. — Acompanhar o senhor Tancredo! – continuou a velha com acento repreensivo – Sabes tu o que fazes? Túlio, Túlio!.. Depois de pausa, ajuntou: — Não sentes saudades desta casa, ingrato?! — Não, mãe Susana, não me alcunheis de ingrato. Quantas saudades levo eu de vós! Oh só Deus sabe quanto me pesam elas! — Tu!? – exclamou ela procurando ler-lhe no fundo do coração os sentimentos, que o animavam. – Tu não levas saudades algumas. Túlio, se as levasses, quem te obrigaria a deixar-nos? — A gratidão – respondeu ele com presteza. — A gratidão!? E não a deves à senhora, que para ti tem sido quase que uma mãe? Não a deves à menina? E porque as deixas? É que não sentes saudades delas. — Oh! Sinto-as, sinto-as, e muitas, mãe Susana! — Então não procures ir com esse homem, que apenas conheces! Olha, ainda há pouco vi uma lágrima pender dos olhos dessa boa menina, essa lágrima, creio que lhe arrancou do coração a notícia da sua partida... e tu vais-te! Quando voltarás aqui? — A nossa separação, disse-me o senhor Tancredo, será por pouco tempo. Volto para junto de vós, mãe Susana, e a senhora não reclamará em vão os meus serviços. — A senhora! – replicou a velha com mágoa – Essa, meu filho, jamais reclamará os teus serviços; ou eu me engano, ou tu vais dizer-lhe o último adeus! — Túlio, – continuou – não sabes quanto sofro quando recordo-me de que a nossa querida menina vai tão breve ficar só no mundo! Só, Túlio! Quem a acompanhará? Quem poderá consolá-la! Eu? Não. Pouco poderei demorar-me neste mundo. Meu filho, acho bom que não te vás. Que te adianta trocar um cativeiro por outro! E sabes tu se aí o encontrarás melhor? Olha, chamar-te-ão, talvez, ingrato, e eu não terei uma palavra para defender-te. — Oh! Quanto a isso não, mãe Susana – tornou Túlio. – A senhora Luísa B. foi para mim boa e carinhosa, o céu lhe pague o bem que me fez, que eu nunca me esquecerei de que poupou-me os mais acerbos desgostos da escravidão, mas quanto ao jovem cavaleiro, é bem diverso o meu sentir; sim, bem diverso. Não troco cativeiro por cativeiro, oh não! Troco escravidão por liberdade, por ampla liberdade! Veja, mãe Susana, se deve ter limites a minha gratidão: veja se devo, ou não, acompanhá-lo, se devo, ou não provar-lhe até a morte o meu reconhecimento!...</p>
+  </article>
+
+  <footer>
+    <div class="footer-logo">Lesb<span>iel</span></div>
+    <p class="footer-note">Arquivo e voz de autoras lésbicas e bissexuais — 2026</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

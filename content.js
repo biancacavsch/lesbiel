@@ -20,7 +20,7 @@
 
 window.LESBIEL = {
 
-  /* ---- Seção VOZ: cards de episódios do Spotify ------------------------- */
+/* ---- Seção VOZ: cards de episódios do Spotify ------------------------- */
   voz: [
     {
       number: "01",
@@ -29,7 +29,7 @@ window.LESBIEL = {
       imgClass: "card-img-verde",
       title: "Katherine Mansfield",
       subtitle: "Episódio no Spotify",
-      text: "Escritora neozelandesa de enorme importância para o modernismo de língua inglesa. Em seus contos, trabalhou com diversas representações de feminilidade e narrou um desejo ambíguo e confuso entre mulheres.",
+      text: "Escritora neozelandesa de enorme importância para o modernismo de língua inglesa. Em seus contos, trabalhado com diversas representações de feminilidade e narrou um desejo ambíguo e confuso entre mulheres.",
       link: "#",
       soon: true
     },
@@ -41,6 +41,72 @@ window.LESBIEL = {
       title: "Sylvia Molloy",
       subtitle: "Episódio no Spotify",
       text: "Escritora, ensaísta e crítica literária nascida na Argentina. Em Desarticulações, utiliza recortes de memória e fragmentos para narrar as visitas à sua ex-companheira que perde a memória devido ao Alzheimer.",
+      link: "#",
+      soon: true
+    },
+    {
+      number: "03",
+      img: "assets/img/adrienne-rich.jpg",
+      alt: "Retrato de Adrienne Rich",
+      imgClass: "card-img-verde",
+      title: "Adrienne Rich",
+      subtitle: "Episódio no Spotify",
+      text: "Poetisa e ensaísta americana (1929–2012), referência no feminismo e no lesbianismo. Autora de mais de vinte volumes de poesia e prosa.",
+      link: "#",
+      soon: true
+    },
+    {
+      number: "04",
+      img: "assets/img/cristina-peri-rossi.jpg",
+      alt: "Retrato de Cristina Peri Rossi",
+      imgClass: "card-img-bege-dark",
+      title: "Cristina Peri Rossi",
+      subtitle: "Episódio no Spotify",
+      text: " Escritora uruguaia (1941), poetisa e narradora. Desde sua primeira publicação em 1971, traz erotismo lésbico à literatura, causando escândalo e censura. Exilada na Espanha e Paris.",
+      link: "#",
+      soon: true
+    },
+    {
+      number: "05",
+      img: "assets/img/maria-firmina-dos-reis.jpg",
+      alt: "Retrato de Maria Firmina dos Reis",
+      imgClass: "card-img-verde",
+      title: "Maria Firmina dos Reis",
+      subtitle: "Episódio no Spotify",
+      text: "Romancista e poetisa maranhense (1820s–1917). Atuou pela educação universal, abolição da escravidão e igualdade racial. Sua obra inclui poemas homoeróticos e trechos do romance Úrsula.",
+      link: "#",
+      soon: true
+    },
+    {
+      number: "06",
+      img: "assets/img/monique-wittig.jpg",
+      alt: "Retrato de Monique Wittig",
+      imgClass: "card-img-bege-dark",
+      title: "Monique Wittig",
+      subtitle: "Episódio no Spotify",
+      text: "Teórica feminista e ativista lésbica francesa (1935–2003). Em 1969 publicou As guerrilheiras, fundamental para o feminismo lésbico e investigação de linguagem, sexo e poder.",
+      link: "#",
+      soon: true
+    },
+    {
+      number: "07",
+      img: "assets/img/natalia-borges-polesso.jpg",
+      alt: "Retrato de Natália Borges Polesso",
+      imgClass: "card-img-verde",
+      title: "Natália Borges Polesso",
+      subtitle: "Episódio no Spotify",
+      text: " Escritora brasileira, autora de A extinção das abelhas (2021). Explora memória, luto e cotidiano em condomínios com prosa que mistura real e onírico.",
+      link: "#",
+      soon: true
+    },
+    {
+      number: "08",
+      img: "assets/img/val-flores.jpg",
+      alt: "Retrato de Val Flores",
+      imgClass: "card-img-bege-dark",
+      title: "Val Flores",
+      subtitle: "Episódio no Spotify",
+      text: " Escritora, feminista e performer lésbica queer argentina (1973). Autora de Interruqciones (2013) e Deslenguada (2010), entre outros ensaios sobre poética ativista.",
       link: "#",
       soon: true
     }
@@ -64,6 +130,24 @@ window.LESBIEL = {
       img: "assets/img/sylvia-molloy-text.jpg",
       alt: "Sylvia Molloy",
       caption: "Sylvia Molloy",
+      zoom: true
+    },
+    {
+      work: "Adrienne Rich",
+      quote: "“Não podemos nos permitir acreditar que o silêncio seja ouro. O silêncio é a condição de possibilidade da opressão. Falar é resistir.”",
+      author: "— Adrienne Rich, Of Woman and Sword",
+      img: "assets/img/adrienne-rich.jpg",
+      alt: "Adrienne Rich",
+      caption: "Adrienne Rich, 1979",
+      zoom: false
+    },
+    {
+      work: "Cristina Peri Rossi",
+      quote: "“Uma mulher me dança nos ouvidos palavras da infância eu a escuto mansamente a observo a observo cerimoniosamente e se ela diz fumaça se diz peixe que pegamos com a mão se ela diz meu pai minha mãe meus irmãos sinto deslizar desde a antiguidade uma coisa indefinível melaço de palavras uma vez que ela falando me conquistou e assim me tem presa em minhas letras em suas sílabas e consoantes como se a tivesse penetrada.”",
+      author: "— Cristina Peri Rossi, Evoé (1971)",
+      img: "assets/img/cristina-peri-rossi.jpg",
+      alt: "Cristina Peri Rossi",
+      caption: "Cristina Peri Rossi, c. 1970",
       zoom: true
     }
   ],
@@ -113,15 +197,27 @@ window.LESBIEL = {
   /*  copiado de text-template.html (ex.: novatexto.html) e linke aqui.        */
   textos: [
     { title: "Êxtase, Katherine Mansfield →", href: "katherine-mansfield.html" },
-    { title: "Desarticulações, Sylvia Molloy →", href: "sylvia-molloy.html" }
+    { title: "Desarticulações, Sylvia Molloy →", href: "sylvia-molloy.html" },
+    { title: "Adrienne Rich →", href: "adrienne-rich.html" },
+    { title: "Cristina Peri Rossi →", href: "cristina-peri-rossi.html" },
+    { title: "Maria Firmina dos Reis →", href: "maria-firmina-dos-reis.html" },
+    { title: "Monique Wittig →", href: "monique-wittig.html" },
+    { title: "Natália Borges Polesso →", href: "natalia-borges-polesso.html" },
+    { title: "Val Flores →", href: "val-flores.html" }
   ],
 
-  /* ---- Links (linktree próprio) ---------------------------------------- */
+/* ---- Links (linktree próprio) ---------------------------------------- */
   /*  icon: "site" | "spotify" | "instagram" | "form"                        */
   links: [
     { label: "Site Lesbiel",                 icon: "site",     href: "https://lesbiel.com.br" },
-    { label: "Spotify — Episódios em áudio", icon: "spotify",  href: "#", soon: true },
+    { label: "Spotify — Episódios em áudio", icon: "spotify",  href: "#",      soon: true },
     { label: "Instagram",                    icon: "instagram", href: "https://www.instagram.com/lesb.iel" },
-    { label: "Indicar uma autora",           icon: "form",     href: "indicar.html" }
+    { label: "Indicar uma autora",           icon: "form",     href: "indicar.html" },
+    { label: "Adrienne Rich",                icon: "site",     href: "https://www.poetryfoundation.org/poets/adrienne-rich" },
+    { label: "Cristina Peri Rossi",          icon: "site",     href: "https://www.cristinaperirossi.es/web/" },
+    { label: "Maria Firmina dos Reis",       icon: "site",     href: "https://pt.wikipedia.org/wiki/Maria_Firmina_dos_Reis" },
+    { label: "Monique Wittig",               icon: "site",     href: "https://en.wikipedia.org/wiki/Monique_Wittig" },
+    { label: "Natália Borges Polesso",       icon: "site",     href: "https://www.companhiadasletras.com.br/livros/a-extincao-das-abelhas/" },
+    { label: "Val Flores",                   icon: "site",     href: "https://valflores.com.ar/" }
   ]
 };

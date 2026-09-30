@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adrienne Rich — Poemas Selecionados — Lesbiel</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📖%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=General+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .text-page {
+    background: var(--bege);
+    min-height: 100vh;
+    padding: 4rem 5rem 4rem 5rem;
+  }
+  .text-page-fixed-logo {
+    position: fixed;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--verde);
+    letter-spacing: -0.04em;
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .text-page-fixed-logo span { font-weight: 300; font-style: italic; }
+  .text-page-bio {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--verde);
+    line-height: 1.9;
+    max-width: 280px;
+    text-align: left;
+    align-self: center;
+    border-left: 2px solid var(--verde);
+    padding-left: 1rem;
+  }
+  .text-page-bio-label {
+    font-size: 0.72rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .text-page-bio p { margin-bottom: 0.6rem; }
+  .text-page-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--verde);
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+  }
+  .text-page-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+  .text-page-top h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--verde);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .text-page-top .author-link {
+    font-size: 0.85rem;
+    color: var(--verde);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .text-page-photo {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .text-page-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .text-page-meta {
+    max-width: 600px;
+    margin: 2rem auto 2.5rem;
+    font-size: 0.85rem;
+    color: var(--verde);
+    line-height: 1.7;
+  }
+  .text-page-meta-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .text-page-meta p { margin-bottom: 0.3rem; opacity: 0.7; }
+  .text-page-meta a {
+    color: var(--verde);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .text-page-body {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .text-page-body p {
+    font-size: 1.05rem;
+    color: var(--verde);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+    text-align: left;
+  }
+  .text-page-body h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--verde);
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+  }
+  .text-page-body .epigraph {
+    font-style: italic;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  footer {
+    margin: 4rem -5rem -4rem -5rem;
+  }
+
+  @media (max-width: 768px) {
+    .text-page { padding: 2rem 1.2rem; }
+    .text-page-fixed-logo { display: none !important; }
+    .text-page-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .text-page-top h1 { font-size: 1.6rem; }
+    .text-page-photo { width: 80px; height: 80px; }
+    .text-page-bio { max-width: 100%; text-align: left; order: 3; }
+    .text-page-meta { margin: 1.5rem 0 2rem; }
+    .text-page-body { max-width: 100%; }
+    .text-page-body p { font-size: 1rem; }
+    footer { margin: 3rem -1.2rem -2rem -1.2rem; padding: 2rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="text-page-fixed-logo">Lesb<span>iel</span></div>
+
+<main class="text-page">
+  <p class="text-page-label">↘ Texto</p>
+
+  <div class="text-page-top">
+    <div>
+      <h1>Poemas Selecionados</h1>
+      <p class="author-link">Adrienne Rich</p>
+    </div>
+    <div class="text-page-bio">
+      <p class="text-page-bio-label">↘ Biografia</p>
+      <p>Adrienne Rich (1929–2012) foi uma das poetas e ensaístas mais influentes dos EUA no século XX. Autora de mais de vinte volumes de poesia e prosa, seu trabalho explora identidade lésbica, feminismo, justiça social e o poder da linguagem.</p>
+      <p>Recusou a Medalha Nacional de Artes em 1997 em protesto contra políticas culturais do governo. Recebeu o Prêmio Bollingen, o Prêmio Lannan e o National Book Award.</p>
+    </div>
+    <figure class="text-page-photo">
+      <img src="assets/img/adrienne-rich.jpg" alt="Adrienne Rich">
+    </figure>
+  </div>
+
+  <div class="text-page-meta">
+    <p class="text-page-meta-label">↘ Ficha técnica</p>
+    <p><strong>Título original:</strong> Selected Poems</p>
+    <p><strong>Escrita em:</strong> 1950–2000</p>
+    <p><strong>Publicação original:</strong> Diversas coletâneas (W. W. Norton)</p>
+    <p><strong>Tradução:</strong> André Caramuru Aubert</p>
+    <p><strong>Fonte:</strong> <a href="https://www.poetryfoundation.org/poets/adrienne-rich" target="_blank" rel="noopener">Poetry Foundation</a></p>
+  </div>
+
+  <article class="text-page-body">
+    <h3>As letras do meu nome</h3>
+    <p>As letras do meu nome estão escritas sob as pálpebras da criança recém-nascida.</p>
+
+    <h3>Esta noite nenhuma poesia servirá</h3>
+    <p>Te vi andando descalça dando uma longa olhada para as pálpebras da lua nova depois esparramada dormindo pesado, nua em seus cabelos negros dormindo mas não ignorante dos que não dormiram não dormem por aí</p>
+    <p>Hoje eu penso nenhuma poesia servirá</p>
+    <p>Sintaxe da rendição: verbo pilota o avião advérbio modifica a ação verbo alimenta o substantivo à força submerge o sujeito substantivo sufocando verbo desgraçado segue fazendo agora diagrame a frase</p>
+    <p>Atrás do motel Um homem está debaixo de um carro seminu uma criança brinca de tourada com um pano rasgado pinheiros enlutados envoltos na névoa uma mulher fala ao telefone, olha no espelho brincando com o puxador metálico da gaveta</p>
+    <p>Ela viu o seu mundo esfregado e limpo, o pano que o limpou desintegrado na névoa ou dando o último suspiro na crosta de um espelho Ela viu sua vida se fechar como uma gaveta acordou em algum outro lugar, nua</p>
+    <p>Ele sente sua pele como se ela estivesse na névoa como se seu rosto se mostrasse em espelho algum Ele precisa dos parafusos que largou numa gaveta perdida rasteja para dentro do mundo dos pinheiros com suas mãos apenas, esfrega sua chave-inglesa com um pano encharcado de óleo encara a mulher falando no espelho a qual trancou o telefone na gaveta enquanto de novo e de novo, com um pano rasgado na beira do pinheiral atrás do motel depauperado uma criança provoca a besta chifruda feita de névoa</p>
+
+    <h3>Paisagem perfeita</h3>
+    <p>Nós precisávamos aceitar o mundo como ele era: A babá sentada passiva no parque Era raramente abordada por algum príncipe de mentira. As manhãs pareciam iguais e imutáveis Nas salas da individualidade nas quais acordávamos e ficávamos Observando hoje se desdobrar como ontem.</p>
+    <p>Nossos amigos não eram beldades do outro mundo, Nem sabiam seduzir com palavras; nossos amantes falharam Agora e sempre quando o que mais buscamos é a perfeição, Ou nos esconder no armário, quando os céus trovejavam.</p>
+    <p>A humanidade surgia para nos assombrar em todos os lugares, Crua, defeituosa e exigindo mais do que podíamos dar. E o tempo estava sempre em disparada como um bonde Pelas ruas de uma cidade estrangeira, cidades que vimos Se abrindo em grandes e ensolaradas praças Nós não encontraríamos novamente, nenhum mapa poderia mostrar — Jamais aquelas fontes jorraram sob aquela mesma luz, Aquelas árvores douradas, aquelas estátuas verdes e brancas.</p>
+
+    <h3>Vigilância noturna</h3>
+    <p>E agora, do lado de fora os muros de rocha negra, sem ver. Com que palidez, dormindo, você jaz. Amor: meu amor é só um suspiro soprado na vidraça e dissolvido. Tudo, até mesmo você clama silenciosamente por socorro, a teia da aranha é rasgada pela chuva, os gansos voam para dentro da nuvem negra.</p>
+    <p>O que eu posso fazer por você? o que eu posso fazer por você? Pode o toque de um dedo remendar Aquilo que o toque de um dedo quebrou? Olhos azuis agora, de cabelos amarelos, eu permaneço em meu antigo pesadelo ao lado dos trilhos, enquanto você, e de novo e de novo e sempre você se arrasta para os vagões da morte.</p>
+    <p>Algumas vezes você sorri para mim e eu — eu sorrio de volta. Quão doce o aroma das rosas do chefe da estação! Quão puros, quão de pôsteres as cores deste sonho.</p>
+
+    <h3>Delta</h3>
+    <p>Se você pegou este entulho para o meu passado revolvendo-o em busca de fragmentos para vender saiba que eu há muito segui em frente para dentro, para o coração da matéria Se você pensa que pode me agarrar, pense melhor: minha história flui em mais de uma direção um delta do leito do rio se abrindo com seus cinco dedos abertos</p>
+
+    <h3>Para um aniversário</h3>
+    <p>A asa da águia-pescadora erguida sobre o ninho na baía Tomales sob a neblina e a dura ventania remexendo os topos das árvores da serra de Inverness em cima A asa esquerda fazendo-se ombro num gesto protetor a asa esquerda que julgávamos quebrada e os jovens abaixo do ventoso ninho lá chiando em sua fome e as marés suplicando, importunando a baía em sua arruinada languidez</p>
+
+    <h3>1999</h3>
+    <p>Antes do agudo ponto do rompimento eu quis ver no espelho chanfrado e dependurado de meu século limpo da fumaça olhos de carvão e rubi pasmado pescoço carregador de tijolos e diamantes fronte de ostras iluminadas de luar renda traçada de arame farpado, desgraçando o famoso monumento Atrás disso se esparrama o velho mapa indígena paisagem antes dos conquistadores horizonte sem dono</p>
+
+    <h3>Aquela boca</h3>
+    <p>Esta é a boca da garota, o sabor que filhas, e não filhos, obtêm: Aqueles são os lábios, lemes poderosos empurrando através de bosques de algas, o da garota terrível, não adocicado sabor do oceano inteiro, suas profundezas: este é aquele sabor.</p>
+    <p>Este não é o beijo do pai, mas da mãe: um pai pode tentar sufocar você, uma mãe afoga você para salvá-lo: todas as transações foram há tempos decretadas. Este não é o conto de uma irmã e nem de um irmão: estranhos acordos foram fechados há tempos.</p>
+    <p>Este é o engolir, o esparramar de krill e de plâncton, aquela boca descrita como a de uma garota — suficiente para dar a você um sabor: Você é uma filha? Você é um filho? Estranhos acordos foram fechados há tempos.</p>
+
+    <h3>Para registro</h3>
+    <p>As nuvens e as estrelas não promoveram esta guerra os córregos não informaram nada se a montanha vomitou pedras de fogo no rio ela não estava escolhendo um lado a chuva que fracamente balançava sob as folhas não tinha opinião política e se aqui ou ali uma casa repleta de esgoto não tratado ou que envenenou quem lá vivia com lentas exalações, ao longo dos anos as casas não estavam em guerra nem estavam os prédios lacrados com estanho buscando recusar abrigo para velhas sem-teto e crianças de rua eles não tinham qualquer política para mantê-las na rua ou morrendo, não, as cidades não eram o problema as pontes não eram guerrilheiras as autoestradas queimaram, mas não com ódio Até mesmo as milhas de arame farpado esticadas em volta de humilhantes abrigos temporários projetados para manter os indesejáveis a uma distância segura, longe da vista mesmo as tábuas que precisavam absorver</p>
+  </article>
+
+  <footer>
+    <div class="footer-logo">Lesb<span>iel</span></div>
+    <p class="footer-note">Arquivo e voz de autoras lésbicas e bissexuais — 2026</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

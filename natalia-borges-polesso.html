@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natália Borges Polessa — A extinção das abelhas — Lesbiel</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📖%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=General+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .text-page {
+    background: var(--bege);
+    min-height: 100vh;
+    padding: 4rem 5rem 4rem 5rem;
+  }
+  .text-page-fixed-logo {
+    position: fixed;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--verde);
+    letter-spacing: -0.04em;
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .text-page-fixed-logo span { font-weight: 300; font-style: italic; }
+  .text-page-bio {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--verde);
+    line-height: 1.9;
+    max-width: 280px;
+    text-align: left;
+    align-self: center;
+    border-left: 2px solid var(--verde);
+    padding-left: 1rem;
+  }
+  .text-page-bio-label {
+    font-size: 0.72rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .text-page-bio p { margin-bottom: 0.6rem; }
+  .text-page-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--verde);
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+  }
+  .text-page-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+  .text-page-top h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--verde);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .text-page-top .author-link {
+    font-size: 0.85rem;
+    color: var(--verde);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .text-page-photo {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .text-page-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .text-page-meta {
+    max-width: 600px;
+    margin: 2rem auto 2.5rem;
+    font-size: 0.85rem;
+    color: var(--verde);
+    line-height: 1.7;
+  }
+  .text-page-meta-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .text-page-meta p { margin-bottom: 0.3rem; opacity: 0.7; }
+  .text-page-meta a {
+    color: var(--verde);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .text-page-body {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .text-page-body p {
+    font-size: 1.05rem;
+    color: var(--verde);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+    text-align: left;
+  }
+  .text-page-body h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--verde);
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+  }
+  .text-page-body .epigraph {
+    font-style: italic;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  footer {
+    margin: 4rem -5rem -4rem -5rem;
+  }
+
+  @media (max-width: 768px) {
+    .text-page { padding: 2rem 1.2rem; }
+    .text-page-fixed-logo { display: none !important; }
+    .text-page-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .text-page-top h1 { font-size: 1.6rem; }
+    .text-page-photo { width: 80px; height: 80px; }
+    .text-page-bio { max-width: 100%; text-align: left; order: 3; }
+    .text-page-meta { margin: 1.5rem 0 2rem; }
+    .text-page-body { max-width: 100%; }
+    .text-page-body p { font-size: 1rem; }
+    footer { margin: 3rem -1.2rem -2rem -1.2rem; padding: 2rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="text-page-fixed-logo">Lesb<span>iel</span></div>
+
+<main class="text-page">
+  <p class="text-page-label">↘ Texto</p>
+
+  <div class="text-page-top">
+    <div>
+      <h1>A extinção das abelhas</h1>
+      <p class="author-link">Natália Borges Polesso</p>
+    </div>
+    <div class="text-page-bio">
+      <p class="text-page-bio-label">↘ Biografia</p>
+      <p>Natália Borges Polesso é escritora brasileira, autora do romance A extinção das abelhas (Companhia das Letras, 2021). Seu trabalho explora temas como memória, luto, violência política e cotidiano em condomínios, com uma prosa que mistura o real e o onírico. A obra tem sido cada vez mais estudada por sua representação de subjetividades feministas e dissidentes.</p>
+    </div>
+    <figure class="text-page-photo">
+      <img src="assets/img/natalia-borges-polesso.jpg" alt="Natália Borges Polesso">
+    </figure>
+  </div>
+
+  <div class="text-page-meta">
+    <p class="text-page-meta-label">↘ Ficha técnica</p>
+    <p><strong>Título original:</strong> A extinção das abelhas</p>
+    <p><strong>Escrita em:</strong> 2021</p>
+    <p><strong>Publicação original:</strong> São Paulo: Companhia das Letras, 2021</p>
+    <p><strong>Tradução:</strong> Ana Luiza Braga</p>
+    <p><strong>Fonte:</strong> <a href="https://www.companhiadasletras.com.br/livros/a-extincao-das-abelhas/" target="_blank" rel="noopener">Companhia das Letras</a></p>
+  </div>
+
+  <article class="text-page-body">
+    <h3>Excerto — Vida nova</h3>
+    <p>Vida nova. Era por isso que eu tinha sido chamada. Com certeza a Aline não tinha contado como era meu trabalho. Posso tentar. Não sei muita coisa. Mas é fácil achar quem sabe. Um curso, uma aula. E a gente não precisa de tanto pessoal na empresa mesmo, podemos assumir nossa eupresa, ao menos não no escritório. Podemos pensar em reestruturar, dar uma segurada e depois, quando as coisas melhorarem, bum! Expandimos. O que me diz? Preciso avisar ele até amanhã. Tá bem. Acho que pode ser. Eu já sinto a gente entrar nessa vida nova.</p>
+
+    <h3>Excerto — Assombro</h3>
+    <p>Assombro. Eu não sei, nem pensei direito. Todo mundo fora ou longe, eu sem fazer shows no site, a Tânia sem clientes no bar, dona Norma lá em casa, o dinheiro sumiu. A comida que eu comprava eu dava pra velha, não tinha coragem de comer. Saí pra procurar emprego, levei um CV mentiroso, vazio das coisas que eu realmente sabia e cheio das que eu achava que eram necessárias. Levei na porta de alguns condomínios. Deixei no RH de algumas empresas, mas não muitas, eram longe demais. Eu não tinha nem pro ônibus direito, e andar tanto estava fora de cogitação. Sentei para descansar sobre uma pedra, num canteiro entre uma BR e uma caçamba de lixo, e vi uma sacolinha plástica pendurada do lado de fora. Tava separada. Pendurada do lado de fora. Cheguei perto. Olhei. Parecia estar quente. Não era do sol. O dia estava frio, deviam ter recém-posto ali. Peguei e voltei à pedra. Abri. Era arroz com carne. O cheiro estava maravilhoso. Quem põe comida boa no lixo? Olhei ao redor. Portões altos e prédios ainda mais altos ou portões altos que escondiam, atrás de árvores mais altas, casas brancas com escadarias, piscinas e carrões. Peguei uns grãos. O gosto era compatível com o cheiro. Fiz da mão uma concha e enfiei uma, duas, três vezes na boca, e aquilo era o paraíso. Fazia dias que eu não comia uma boa refeição, estava passando a bolachinha e pão. Não cagava há dias. A mulher na parada de ônibus me olhava aterrorizada. Larguei a sacola plástica no chão e saí. Como cheguei aqui? Como cheguei neste ponto.</p>
+
+    <h3>Excerto — Imóveis</h3>
+    <p>Imóveis. Lupe é a Monga. Está pulando na grade, contra a grade. Balançando para a frente e para trás, de um lado para o outro. Brincando com o equilíbrio da perna. Uurrando para a gente que começa a correr para fora do recinto. Batendo na própria cabeça. Batendo forte na própria cabeça, urrando. Autoflagelação. Atitude motivada pelo sentimento de culpa ou insatisfação. Punição ou forma de aliviar a dor. Purificação dos pecados. Catarse. Todos fugiram. Lupe ri dentro da fantasia. Os sons do mundo todos abafados. As luzes amenas. Sempre tem a sensação de que o mundo fica menos áspero dentro da fantasia. Vestindo aquela brutalidade reativa. Lupe é a Monga, a mulher selvagem. Na plateia há uma criança. Despercebida. Bem no canto da grade, olhando. Fascinada. Lupe a encara através da cabeçona. A criança a encara também. Fascinadas. Lupe vai se agachando perto da grade. A criança chegando mais perto. Lupe estende a mão peluda, a mão dita errada, imprópria. A mão dita não civilizada, dentro da qual sua mão real se sente tão mais à vontade. A criança vai estendendo a sua mão pequenina. Se tocam. Lupe resfolegando. A criança treme. Não recuam. Nunca se afastam. É uma silenciosa investigação. Lupe bufa. A criança treme. Não recuam. Nunca se afastam. É uma silenciosa investigação. (Natália Borges Polesso. A extinção das abelhas. São Paulo: Companhia das Letras, 2021. p. 124-125)</p>
+  </article>
+
+  <footer>
+    <div class="footer-logo">Lesb<span>iel</span></div>
+    <p class="footer-note">Arquivo e voz de autoras lésbicas e bissexuais — 2026</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

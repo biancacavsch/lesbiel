@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Val Flores — Escrever contra si mesma — Lesbiel</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📖%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=General+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .text-page {
+    background: var(--bege);
+    min-height: 100vh;
+    padding: 4rem 5rem 4rem 5rem;
+  }
+  .text-page-fixed-logo {
+    position: fixed;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--verde);
+    letter-spacing: -0.04em;
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .text-page-fixed-logo span { font-weight: 300; font-style: italic; }
+  .text-page-bio {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--verde);
+    line-height: 1.9;
+    max-width: 280px;
+    text-align: left;
+    align-self: center;
+    border-left: 2px solid var(--verde);
+    padding-left: 1rem;
+  }
+  .text-page-bio-label {
+    font-size: 0.72rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .text-page-bio p { margin-bottom: 0.6rem; }
+  .text-page-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--verde);
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+  }
+  .text-page-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+  .text-page-top h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--verde);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .text-page-top .author-link {
+    font-size: 0.85rem;
+    color: var(--verde);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .text-page-photo {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .text-page-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .text-page-meta {
+    max-width: 600px;
+    margin: 2rem auto 2.5rem;
+    font-size: 0.85rem;
+    color: var(--verde);
+    line-height: 1.7;
+  }
+  .text-page-meta-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .text-page-meta p { margin-bottom: 0.3rem; opacity: 0.7; }
+  .text-page-meta a {
+    color: var(--verde);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .text-page-body {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .text-page-body p {
+    font-size: 1.05rem;
+    color: var(--verde);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+    text-align: left;
+  }
+  .text-page-body h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--verde);
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+  }
+  .text-page-body .epigraph {
+    font-style: italic;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  footer {
+    margin: 4rem -5rem -4rem -5rem;
+  }
+
+  @media (max-width: 768px) {
+    .text-page { padding: 2rem 1.2rem; }
+    .text-page-fixed-logo { display: none !important; }
+    .text-page-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .text-page-top h1 { font-size: 1.6rem; }
+    .text-page-photo { width: 80px; height: 80px; }
+    .text-page-bio { max-width: 100%; text-align: left; order: 3; }
+    .text-page-meta { margin: 1.5rem 0 2rem; }
+    .text-page-body { max-width: 100%; }
+    .text-page-body p { font-size: 1rem; }
+    footer { margin: 3rem -1.2rem -2rem -1.2rem; padding: 2rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="text-page-fixed-logo">Lesb<span>iel</span></div>
+
+<main class="text-page">
+  <p class="text-page-label">↘ Texto</p>
+
+  <div class="text-page-top">
+    <div>
+      <h1>Escrever contra si mesma</h1>
+      <p class="author-link">Val Flores</p>
+    </div>
+    <div class="text-page-bio">
+      <p class="text-page-bio-label">↘ Biografia</p>
+      <p>Val Flores (Buenos Aires, 1973) é escritora, feminista, professora, performer lésbica queer, ativista da dissidência sexual. Ela/dela. Entre seus livros publicados estão Interruqciones. Ensayos de poética ativista (2013); Deslenguada: desbordes de una proletaria del lenguaje (2010) e El sótano de San Telmo - Una barricada proletaria para el deseo lésbico en los 70 (2015). Também realiza performances e oficinas como formas de intervenção política, estética e pedagógica.</p>
+    </div>
+    <figure class="text-page-photo">
+      <img src="assets/img/val-flores.jpg" alt="Val Flores">
+    </figure>
+  </div>
+
+  <div class="text-page-meta">
+    <p class="text-page-meta-label">↘ Ficha técnica</p>
+    <p><strong>Título original:</strong> Escribir contra sí misma</p>
+    <p><strong>Escrita em:</strong> 2023 (ensaio)</p>
+    <p><strong>Publicação original:</strong> Publicado em variados fóruns feministas e queer</p>
+    <p><strong>Tradução:</strong> Ana Luiza Braga</p>
+    <p><strong>Fonte:</strong> <a href="https://valflores.com.ar/" target="_blank" rel="noopener">Site da autora</a></p>
+  </div>
+
+  <article class="text-page-body">
+    <h3>Escrever contra si mesma: uma microtecnologia de subjetivação política</h3>
+    <p>Poderia alguém escrever contra si mesma? Que processos de desidentificação sobre o eu se ativam? Que empreendimento político poderia ser deduzido de uma escrita que litigue contra si, contra a Una, contra a sedimentação de um eu que tende a estabilizar-se? Que potência assume uma política de escrita que se constrói como um contramapa da identidade? Ou como os mapas ocluídos pela identidade?</p>
+    <p>Poderia tal política articular-se como uma modalidade para traçar linhas de deslocamento e de fuga do já constituído? Por que esta emergência de uma fluidez que se volta contra o eu estabelecido, contra uma ordem da subjetividade modulada pelas disciplinas do corpo e pelos discursos normativos?</p>
+    <p>O que significa escrever contra si mesma para uma escritora feminista, dissidente sexual, branca, tortillera, trabalhadora precarizada, não mãe, habitante de uma urbanidade periférica? Como afetaria a geopolítica cultural da escrita dos corpos, essa disposição de lugares alocados que limita as práticas e as formas de saber e de prazer?</p>
+    <p>Não se converteria num despropósito negar/deslocar/fissurar os sentidos uma vez afirmados? Ou poderia isso se constituir no impulso vital de um pensamento capaz de não se submeter mais que provisoriamente aos postulados do inteligível?</p>
+    <p>Não se converteria numa prática de inversão ou negatividade cuja finalidade se fecha sobre si mesma, antes, ela toma impulso numa demanda de invenção de novas possibilidades de vida, que estão em jogo nas disputas do eu-ellxs-nós. A ativação de uma produtividade de contra-identidades para habitar-se de outros modos, como retalhos disponíveis daquilo que é jogado fora, descartado pelas instâncias que regulam a normatividade dos corpos. A outra ou o outro (travesti, trans, marimacha, pobre, femme, sadomasoquista, promíscua, que vive com HIV, boliviana, peruana, mapuche, puta, intersexo, atriz pornô, gorda, com deficiência etc.) já não está fora, mas nos constitui.</p>
+    <p>Essa prática constitui um experimento performativo, um exercitar-se ao capturar os "destroços" da subjetividade, estimulado por uma política do titubeio, da gagueira, da ressonância e por uma estética insaciavelmente curiosa e de ambição erótica, assim como de responsabilidade com a(s) memória(s).</p>
+    <p>A escrita quebra o presente vivo mediante um modo excursivo, porque parte do curso e do sulco da normalidade, remetendo à oscilação que mareia e desloca, rumo ao questionamento da ideia de propriedade, explorando um âmbito oscilante de impropriedade e des-apropriação, abrindo um porvir monstruoso: a monstruosidade do não-predizível, do não-dominável por uma subjetividade segura de si.</p>
+  </article>
+
+  <footer>
+    <div class="footer-logo">Lesb<span>iel</span></div>
+    <p class="footer-note">Arquivo e voz de autoras lésbicas e bissexuais — 2026</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
