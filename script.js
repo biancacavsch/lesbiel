@@ -40,12 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* Toggle da biografia colapsável */
-document.querySelectorAll('.bio-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const content = btn.previousElementSibling;
-    if (!content || !content.classList.contains('bio-content')) return;
-    const isExpanded = content.classList.toggle('expanded');
-    btn.textContent = isExpanded ? 'Mostrar menos' : 'Mostrar mais';
-  });
+/* Toggle da biografia colapsável — o rótulo é o controle (delegação) */
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.bio-label-toggle');
+  if (!btn) return;
+  const bio = btn.closest('.text-page-bio');
+  const content = bio && bio.querySelector('.bio-content');
+  if (!bio || !content) return;
+  const isOpen = bio.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0px';
 });
