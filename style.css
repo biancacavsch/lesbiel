@@ -685,3 +685,32 @@ footer {
   .arquivo-grid { grid-template-columns: 1fr; }
   .indica-grid { grid-template-columns: 1fr; }
 }
+/* BIOGRAFIA COLAPSÁVEL */
+.bio-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.bio-content.expanded {
+  max-height: 600px;
+}
+
+.bio-toggle {
+  background: none;
+  border: none;
+  color: var(--verde);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.bio-toggle:hover {
+  opacity: 1;
+}

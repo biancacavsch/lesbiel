@@ -39,3 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
     el.style.transform = 'translateY(0)';
   });
 });
+
+/* Toggle da biografia colapsável */
+document.querySelectorAll('.bio-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.previousElementSibling;
+    if (!content || !content.classList.contains('bio-content')) return;
+    const isExpanded = content.classList.toggle('expanded');
+    btn.textContent = isExpanded ? 'Mostrar menos' : 'Mostrar mais';
+  });
+});
