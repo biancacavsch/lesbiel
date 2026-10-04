@@ -30,8 +30,7 @@ window.LESBIEL = {
       title: "Katherine Mansfield",
       subtitle: "Episódio no Spotify",
       text: "Escritora neozelandesa de enorme importância para o modernismo de língua inglesa. Em seus contos, trabalhado com diversas representações de feminilidade e narrou um desejo ambíguo e confuso entre mulheres.",
-      link: "#",
-      soon: true
+      link: "https://open.spotify.com/episode/6DZ06yDV5CeFYI8AKCNhV1?si=03ab9b8154ee410e"
     },
     {
       number: "02",
