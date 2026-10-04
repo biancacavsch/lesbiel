@@ -45,9 +45,11 @@
 
 <!-- ARQUIVO / VOZ -->
 <section class="arquivo" id="voz" aria-label="Episódios em áudio">
-  <p class="section-label">↘ Voz — episódios em áudio</p>
+  <button class="section-label voz-toggle" aria-expanded="false" aria-controls="voz-grid-wrap">↘ Voz — episódios em áudio <span class="voz-plus" aria-hidden="true">+</span></button>
 
-  <div class="arquivo-grid">@@VOZ@@</div>
+  <div class="voz-collapsible" id="voz-grid-wrap">
+    <div class="arquivo-grid">@@VOZ@@</div>
+  </div>
 </section>
 
 <!-- QUOTE -->

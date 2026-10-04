@@ -51,3 +51,15 @@ document.addEventListener('click', (e) => {
   btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0px';
 });
+
+/* Toggle da seção VOZ expansível — o rótulo é o controle (delegação) */
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.voz-toggle');
+  if (!btn) return;
+  const section = btn.closest('#voz');
+  const content = section && section.querySelector('.voz-collapsible');
+  if (!section || !content) return;
+  const isOpen = section.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0px';
+});

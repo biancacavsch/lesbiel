@@ -716,3 +716,39 @@ footer {
 .text-page-bio.open .bio-label-toggle {
   opacity: 1;
 }
+
+/* SEÇÃO VOZ EXPANSÍVEL — o próprio rótulo é o controle */
+.voz-collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+.voz-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-align: left;
+  transition: opacity 0.2s;
+}
+.voz-toggle:hover {
+  opacity: 1 !important;
+}
+.voz-toggle .voz-plus {
+  display: inline-block;
+  font-size: 0.85rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.arquivo.open .voz-plus {
+  transform: rotate(45deg);
+}
+.arquivo.open .voz-toggle {
+  opacity: 1;
+}
