@@ -196,8 +196,8 @@ window.LESBIEL = {
   /*  href aponta para a página do texto. Para novos textos, use um arquivo   */
   /*  copiado de text-template.html (ex.: novatexto.html) e linke aqui.        */
   textos: [
-    { title: "Êxtase, Katherine Mansfield →", href: "katherine-mansfield.html" },
-    { title: "Desarticulações, Sylvia Molloy →", href: "sylvia-molloy.html" },
+    { title: "Katherine Mansfield →", href: "katherine-mansfield.html" },
+    { title: "Sylvia Molloy →", href: "sylvia-molloy.html" },
     { title: "Adrienne Rich →", href: "adrienne-rich.html" },
     { title: "Cristina Peri Rossi →", href: "cristina-peri-rossi.html" },
     { title: "Maria Firmina dos Reis →", href: "maria-firmina-dos-reis.html" },
