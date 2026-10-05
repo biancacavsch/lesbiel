@@ -45,10 +45,9 @@
 
 <!-- ARQUIVO / VOZ -->
 <section class="arquivo" id="voz" aria-label="Episódios em áudio">
-  <button class="section-label voz-toggle" aria-expanded="false" aria-controls="voz-grid-wrap">↘ Voz — episódios em áudio <span class="voz-plus" aria-hidden="true">+</span></button>
+  <p class="section-label">↘ Voz — episódios em áudio</p>
 
-  <div class="voz-collapsible" id="voz-grid-wrap">
-    <div class="arquivo-grid"><a class="arquivo-card card-link-real" href="https://open.spotify.com/episode/6DZ06yDV5CeFYI8AKCNhV1?si=03ab9b8154ee410e" target="_blank" rel="noopener"><div class="card-number">01</div><figure class="card-img card-img-verde"><img src="assets/img/katherine-mansfield.jpg" alt="Retrato de Katherine Mansfield" loading="lazy" onerror="this.style.display='none'"><div class="img-overlay"></div></figure><p class="card-title">Katherine Mansfield</p><p class="card-subtitle">Episódio no Spotify</p><p class="card-text">Escritora neozelandesa de enorme importância para o modernismo de língua inglesa. Em seus contos, trabalhado com diversas representações de feminilidade e narrou um desejo ambíguo e confuso entre mulheres.</p><span class="card-link">Escute o episódio completo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8"/></svg></span></a>
+  <div class="arquivo-grid"><a class="arquivo-card card-link-real" href="https://open.spotify.com/episode/6DZ06yDV5CeFYI8AKCNhV1?si=03ab9b8154ee410e" target="_blank" rel="noopener"><div class="card-number">01</div><figure class="card-img card-img-verde"><img src="assets/img/katherine-mansfield.jpg" alt="Retrato de Katherine Mansfield" loading="lazy" onerror="this.style.display='none'"><div class="img-overlay"></div></figure><p class="card-title">Katherine Mansfield</p><p class="card-subtitle">Episódio no Spotify</p><p class="card-text">Escritora neozelandesa de enorme importância para o modernismo de língua inglesa. Em seus contos, trabalhado com diversas representações de feminilidade e narrou um desejo ambíguo e confuso entre mulheres.</p><span class="card-link">Escute o episódio completo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8"/></svg></span></a>
     <!--
       AVISO "EM BREVE" — temporário enquanto houver menos de 3 episódios
       lançados (a grade tem 3 colunas). Remova este <aside> quando adicionar
@@ -59,7 +58,20 @@
       <p class="voz-soon-text">Novos episódios com outras autoras do arquivo estão a caminho.</p>
     </aside>
   </div>
-  </div>
+  <!--
+    ==========================================================================
+    MENU EXPANSÍVEL DA VOZ — guardado para o futuro (quando houver vários
+    episódios e a seção voltar a ocupar muito espaço). Para reativar:
+    1. Troque o <p class="section-label"> acima pelo botão abaixo;
+    2. Envolva a div.arquivo-grid com a div.voz-collapsible abaixo.
+    O CSS (.voz-collapsible, .voz-toggle, .voz-plus, .arquivo.open) e o JS
+    do toggle (em script.js) continuam ativos — nada mais a fazer.
+    ==========================================================================
+    <button class="section-label voz-toggle" aria-expanded="false" aria-controls="voz-grid-wrap">Rótulo Voz + indicador</button>
+    <div class="voz-collapsible" id="voz-grid-wrap">
+      <div class="arquivo-grid">[grade aqui]</div>
+    </div>
+  -->
 </section>
 
 <!-- QUOTE -->
