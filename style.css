@@ -680,6 +680,7 @@ footer {
   .quote-slide.active { grid-template-columns: 1fr; gap: 3rem; }
   .sobre-section { grid-template-columns: 1fr; gap: 3rem; }
   .arquivo-grid { grid-template-columns: 1fr; }
+  .voz-soon { grid-column: span 1; }
   .indica-grid { grid-template-columns: 1fr; }
 }
 /* BIOGRAFIA COLAPSÁVEL — o próprio rótulo é o controle (opção A) */
@@ -749,4 +750,29 @@ footer {
 }
 .arquivo.open .voz-toggle {
   opacity: 1;
+}
+
+/* AVISO "EM BREVE" NA GRADE VOZ — temporário (ver template) */
+.voz-soon {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  grid-column: span 2;
+}
+.voz-soon-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--verde);
+  opacity: 0.6;
+}
+.voz-soon-text {
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+  font-weight: 500;
+  color: var(--verde);
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  max-width: 28ch;
 }

@@ -32,6 +32,13 @@ window.LESBIEL = {
       text: "Escritora neozelandesa de enorme importância para o modernismo de língua inglesa. Em seus contos, trabalhado com diversas representações de feminilidade e narrou um desejo ambíguo e confuso entre mulheres.",
       link: "https://open.spotify.com/episode/6DZ06yDV5CeFYI8AKCNhV1?si=03ab9b8154ee410e"
     },
+    /* ============================================================
+       CARDS TEMPORARIAMENTE OCULTOS — episódios ainda não lançados.
+       Para publicar um episódio: remova o bloco do autor daqui,
+       cole-o de volta no array (ordem numérica) e troque
+       link: "#" + soon: true pelo URL real do Spotify.
+       Depois rode: node build.js
+       ============================================================
     {
       number: "02",
       img: "assets/img/sylvia-molloy.jpg",
@@ -109,6 +116,7 @@ window.LESBIEL = {
       link: "#",
       soon: true
     }
+    */
   ],
 
   /* ---- Carrossel de citações -------------------------------------------- */

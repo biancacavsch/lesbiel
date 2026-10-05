@@ -48,7 +48,17 @@
   <button class="section-label voz-toggle" aria-expanded="false" aria-controls="voz-grid-wrap">↘ Voz — episódios em áudio <span class="voz-plus" aria-hidden="true">+</span></button>
 
   <div class="voz-collapsible" id="voz-grid-wrap">
-    <div class="arquivo-grid">@@VOZ@@</div>
+    <div class="arquivo-grid">@@VOZ@@
+    <!--
+      AVISO "EM BREVE" — temporário enquanto houver menos de 3 episódios
+      lançados (a grade tem 3 colunas). Remova este <aside> quando adicionar
+      o 2º e o 3º cards em content.js -> "voz".
+    -->
+    <aside class="voz-soon" aria-label="Novos episódios em breve">
+      <p class="voz-soon-label">↘ Em breve</p>
+      <p class="voz-soon-text">Novos episódios com outras autoras do arquivo estão a caminho.</p>
+    </aside>
+  </div>
   </div>
 </section>
 
