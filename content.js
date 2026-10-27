@@ -123,7 +123,8 @@ window.LESBIEL = {
     { title: "Maria Firmina dos Reis →", href: "maria-firmina-dos-reis.html" },
     { title: "Monique Wittig →", href: "monique-wittig.html" },
     { title: "Natália Borges Polesso →", href: "natalia-borges-polesso.html" },
-    { title: "Val Flores →", href: "val-flores.html" }
+    { title: "Val Flores →", href: "val-flores.html" },
+    { title: "Leslie Feinberg →", href: "leslie-feinberg.html" },
   ],
 
 /* ---- Links (linktree próprio) ---------------------------------------- */
