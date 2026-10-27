@@ -9,49 +9,200 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=General+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  .text-page {
+    background: var(--bege);
+    min-height: 100vh;
+    padding: 4rem 5rem 4rem 5rem;
+  }
+  .text-page-fixed-logo {
+    position: fixed;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--verde);
+    letter-spacing: -0.04em;
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .text-page-fixed-logo span { font-weight: 300; font-style: italic; }
+  .text-page-bio {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--verde);
+    line-height: 1.9;
+    max-width: 280px;
+    text-align: left;
+    align-self: center;
+    border-left: 2px solid var(--verde);
+    padding-left: 1rem;
+  }
+  .text-page-bio-label {
+    font-size: 0.72rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .text-page-bio p { margin-bottom: 0.6rem; }
+  .text-page-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--verde);
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+  }
+  .text-page-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+  .text-page-top h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--verde);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .text-page-top .author-link {
+    font-size: 0.85rem;
+    color: var(--verde);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .text-page-photo {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .text-page-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .text-page-meta {
+    max-width: 600px;
+    margin: 2rem auto 2.5rem;
+    font-size: 0.85rem;
+    color: var(--verde);
+    line-height: 1.7;
+  }
+  .text-page-meta-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .text-page-meta p { margin-bottom: 0.3rem; opacity: 0.7; }
+  .text-page-meta a {
+    color: var(--verde);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .text-page-body {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .text-page-body p {
+    font-size: 1.05rem;
+    color: var(--verde);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+    text-align: left;
+  }
+  .text-page-body h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--verde);
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+  }
+  .text-page-body .epigraph {
+    font-style: italic;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  footer {
+    margin: 4rem -5rem -4rem -5rem;
+  }
+
+  @media (max-width: 768px) {
+    .text-page { padding: 2rem 1.2rem; }
+    .text-page-fixed-logo { display: none !important; }
+    .text-page-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .text-page-top h1 { font-size: 1.6rem; }
+    .text-page-photo { width: 80px; height: 80px; }
+    .text-page-bio { max-width: 100%; text-align: left; order: 3; }
+    .text-page-meta { margin: 1.5rem 0 2rem; }
+    .text-page-body { max-width: 100%; }
+    .text-page-body p { font-size: 1rem; }
+    footer { margin: 3rem -1.2rem -2rem -1.2rem; padding: 2rem 1.2rem; }
+  }
+</style>
 </head>
 <body>
-  <main class="text-page">
-    <p class="text-page-label">↘ Texto</p>
 
-    <div class="text-page-top">
-      <div>
-        <h1>Stone Butch Blues</h1>
-        <p class="author-link">Leslie Feinberg</p>
-      </div>
-      <div class="text-page-bio">
-        <button class="text-page-bio-label bio-label-toggle" aria-expanded="false">↘ Biografia <span class="bio-plus" aria-hidden="true">+</span></button>
-        <div class="bio-content">
-          <p>Leslie Feinberg (1949-2014) se descrevia como uma "branca anti-racista, de classe trabalhadora, judia secular, trangênero, lésbica, mulher e comunista revolucionária", cujos livros e trabalhos como ativista impactaram a cultura pop, pesquisa acadêmica e organizações políticas. Seu trabalho mais notável foi "Stone Butch Blues", um livro de autoficção que carrega as complexidades de gênero dentro da cultura lésbica e a perseguição sofrida pela comunidade queer durante a segunda metade do século 20, consolidada hoje como uma obra política importante para a história e estudos LGBTQ+ mais de 40 anos após sua publicação. Leslie trabalhou como jornalista por mais de 15 anos no jornal do Partido Mundial dos Trabalhadores, na seção de presos políticos, onde publicou uma série de artigos sobre a união entre socialismo e história LGBTQ+.</p>
-        </div>
-      </div>
-      <figure class="text-page-photo">
-        <img src="assets/img/leslie-feinberg.jpg" alt="Leslie Feinberg">
-      </figure>
+<div class="text-page-fixed-logo">Lesb<span>iel</span></div>
+
+<main class="text-page">
+  <p class="text-page-label">↘ Texto</p>
+
+  <div class="text-page-top">
+    <div>
+      <h1>Stone Butch Blues</h1>
+      <p class="author-link">Leslie Feinberg</p>
     </div>
-
-    <div class="text-page-meta">
-      <p class="text-page-meta-label">↘ Ficha técnica</p>
-      <p><strong>Título original:</strong> Stone Butch Blues</p>
-      <p><strong>Ano de publicação:</strong> 1993</p>
-      <p><strong>Tradução:</strong> Petri de Albuquerque</p>
+    <div class="text-page-bio">
+      <button class="text-page-bio-label bio-label-toggle" aria-expanded="false">↘ Biografia <span class="bio-plus" aria-hidden="true">+</span></button>
+      <div class="bio-content">
+        <p>Leslie Feinberg (1949-2014) se descrevia como uma "branca anti-racista, de classe trabalhadora, judia secular, trangênero, lésbica, mulher e comunista revolucionária", cujos livros e trabalhos como ativista impactaram a cultura pop, pesquisa acadêmica e organizações políticas. Seu trabalho mais notável foi "Stone Butch Blues", um livro de autoficção que carrega as complexidades de gênero dentro da cultura lésbica e a perseguição sofrida pela comunidade queer durante a segunda metade do século 20, consolidada hoje como uma obra política importante para a história e estudos LGBTQ+ mais de 40 anos após sua publicação. Leslie trabalhou como jornalista por mais de 15 anos no jornal do Partido Mundial dos Trabalhadores, na seção de presos políticos, onde publicou uma série de artigos sobre a união entre socialismo e história LGBTQ+.</p>
+      </div>
     </div>
+    <figure class="text-page-photo">
+      <img src="assets/img/leslie-feinberg.jpg" alt="Leslie Feinberg">
+    </figure>
+  </div>
 
-    <article class="text-page-body">
-      <h3>Trechos para o post:</h3>
-      <p>I remember what it was like to walk a gauntlet of strangers who stare—their eyes angry, confused, intrigued. Woman or man: they are outraged that I confuse them. The punishment will follow. The only recognition I can find in their eyes is that I am "other." I am different. I will always be different. I will never be able to nestle my skin against the comfort of sameness.</p>
-      <p>"Eu me lembro como era andar em uma multidão de estranhos que encaram—seus olhos bravos, confusos, intrigados. Homem ou mulher: eles estão indignados que eu os confundo. A punição vem logo. O único reconhecimento que eu encontro em seus olhos é que eu sou o 'outro'. Eu sou diferente. Eu sempre serei diferente. Eu nunca conseguirei aninhar minha pele contra o conforto da unanimidade."</p>
-      <p>I've been going to the library, looking up our history. There's a ton of it in anthropology books, a ton of it, Ruth. We haven't always been hated. Why didn't we grow up knowing that?</p>
-      <p>"Estive indo para a biblioteca, procurando por nossa história. Tem um monte dela nos livros de antropologia, um monte dela, Ruth. Nós nem sempre fomos odiados. Por que não crescemos sabendo disso?"</p>
+  <div class="text-page-meta">
+    <p class="text-page-meta-label">↘ Ficha técnica</p>
+    <p><strong>Título original:</strong> Stone Butch Blues</p>
+    <p><strong>Ano de publicação:</strong> 1993</p>
+    <p><strong>Tradução:</strong> Petri de Albuquerque</p>
+  </div>
 
-      <h3>1° capítulo de "Stone Butch Blues", tradução de Petri de Albuquerque</h3>
-      <p>Querida Theresa,</p>
-      <p>Estou deitada na minha cama sentindo a sua falta, meus olhos inchados, lágrimas quentes escorrendo pelo meu rosto. Há uma intensa tempestade de verão enfurecendo lá fora. Hoje à noite eu andei pelas ruas procurando por você nos rostos de todas as mulheres, assim como faço todas as noites neste exílio solitário. Tenho medo de que nunca verei seus risonhos , provocantes olhos novamente.</p>
-      <p>Tomei café com uma mulher hoje mais cedo, em Greenwich Village. Um amigo mútuo que arranjou, claro que teríamos muito em comum já que ambas "gostamos de política". Bem, nos sentamos em uma cafeteria e ela falou sobre o partido Democrata e seminários e fotografia e problemas com sua cooperativa e como ela é tão contrária à cobrança de aluguel. Que surpresa – Papai é um promotor imobiliário.</p>
-      <p>Eu a observava enquanto ela falava, pensando para mim mesma que sou um estranho para seus olhos. Ela está olhando para mim mas ela não me vê. Então ela disse que odeia essa sociedade por o que fez a "mulheres como eu", que odeiam tanto a si mesmas que precisam parecer e agir como homens. Me senti corar, meu rosto tremendo um pouco e comecei a dizer para ela, toda calma e serena, sobre mulheres assim como eu que existiram desde o início dos tempos, antes de existir opressão, e como essas sociedades a respeitavam, e ela ficou com um semblante muito interessado – e além disso era hora de ir embora.</p>
-    </article>
-  </main>
+  <article class="text-page-body">
+    <h3>Trechos para o post:</h3>
+    <p>I remember what it was like to walk a gauntlet of strangers who stare—their eyes angry, confused, intrigued. Woman or man: they are outraged that I confuse them. The punishment will follow. The only recognition I can find in their eyes is that I am "other." I am different. I will always be different. I will never be able to nestle my skin against the comfort of sameness.</p>
+    <p>"Eu me lembro como era andar em uma multidão de estranhos que encaram—seus olhos bravos, confusos, intrigados. Homem ou mulher: eles estão indignados que eu os confundo. A punição vem logo. O único reconhecimento que eu encontro em seus olhos é que eu sou o 'outro'. Eu sou diferente. Eu sempre serei diferente. Eu nunca conseguirei aninhar minha pele contra o conforto da unanimidade."</p>
+    <p>I've been going to the library, looking up our history. There's a ton of it in anthropology books, a ton of it, Ruth. We haven't always been hated. Why didn't we grow up knowing that?</p>
+    <p>"Estive indo para a biblioteca, procurando por nossa história. Tem um monte dela nos livros de antropologia, um monte dela, Ruth. Nós nem sempre fomos odiados. Por que não crescemos sabendo disso?"</p>
 
-  <script src="script.js"></script>
+    <h3>1° capítulo de "Stone Butch Blues", tradução de Petri de Albuquerque</h3>
+    <p>Querida Theresa,</p>
+    <p>Estou deitada na minha cama sentindo a sua falta, meus olhos inchados, lágrimas quentes escorrendo pelo meu rosto. Há uma intensa tempestade de verão enfurecendo lá fora. Hoje à noite eu andei pelas ruas procurando por você nos rostos de todas as mulheres, assim como faço todas as noites neste exílio solitário. Tenho medo de que nunca verei seus risonhos , provocantes olhos novamente.</p>
+    <p>Tomei café com uma mulher hoje mais cedo, em Greenwich Village. Um amigo mútuo que arranjou, claro que teríamos muito em comum já que ambas "gostamos de política". Bem, nos sentamos em uma cafeteria e ela falou sobre o partido Democrata e seminários e fotografia e problemas com sua cooperativa e como ela é tão contrária à cobrança de aluguel. Que surpresa – Papai é um promotor imobiliário.</p>
+    <p>Eu a observava enquanto ela falava, pensando para mim mesma que sou um estranho para seus olhos. Ela está olhando para mim mas ela não me vê. Então ela disse que odeia essa sociedade por o que fez a "mulheres como eu", que odeiam tanto a si mesmas que precisam parecer e agir como homens. Me senti corar, meu rosto tremendo um pouco e comecei a dizer para ela, toda calma e serena, sobre mulheres assim como eu que existiram desde o início dos tempos, antes de existir opressão, e como essas sociedades a respeitavam, e ela ficou com um semblante muito interessado – e além disso era hora de ir embora.</p>
+  </article>
+
+  <footer>
+    <div class="footer-logo">Lesb<span>iel</span></div>
+    <p class="footer-note">Arquivo e voz de autoras lésbicas e bissexuais — 2026</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
