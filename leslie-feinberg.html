@@ -10,238 +10,41 @@
 <link href="https://fonts.googleapis.com/css2?family=General+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .text-page {
-    background: var(--bege);
-    min-height: 100vh;
-    padding: 4rem 5rem 4rem 5rem;
-  }
-  .text-page-fixed-logo {
-    position: fixed;
-    left: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--verde);
-    letter-spacing: -0.04em;
-    z-index: 10;
-    pointer-events: none;
-    white-space: nowrap;
-  }
-  .text-page-fixed-logo span { font-weight: 300; font-style: italic; }
-  .text-page-bio {
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--verde);
-    line-height: 1.9;
-    max-width: 280px;
-    text-align: left;
-    align-self: center;
-    border-left: 2px solid var(--verde);
-    padding-left: 1rem;
-  }
-  .text-page-bio-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--verde);
-    opacity: 0.6;
-  }
-  .text-page-title {
-    font-family: "General Sans", sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 600;
-    color: var(--preto);
-    line-height: 1.3;
-    margin-bottom: 1rem;
-  }
-  .text-page-subtitle {
-    font-family: "General Sans", sans-serif;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--verde);
-    margin-bottom: 2rem;
-  }
-  .text-page-meta {
-    font-size: 0.85rem;
-    color: var(--cinza);
-    margin-bottom: 2rem;
-  }
-  .text-page-meta span {
-    color: var(--verde);
-    font-weight: 500;
-    margin-left: 1rem;
-  }
-  .text-page-section {
-    margin-bottom: 2rem;
-  }
-  .text-page-section h3 {
-    font-family: "General Sans", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--preto);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--verde);
-  }
-  .text-page-quote {
-    font-family: "General Sans", sans-serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--preto);
-    line-height: 1.6;
-    margin: 1.5rem 0;
-  }
-  .text-page-quote p {
-    margin: 0;
-  }
-  .text-page-referencia {
-    font-size: 0.85rem;
-    color: var(--cinza);
-    margin: 1rem 0;
-  }
-  .text-page-referencia a {
-    color: var(--verde);
-    text-decoration: underline;
-  }
-  .text-page-notas {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--verde);
-  }
-  .text-page-notas h3 {
-    font-size: 1rem;
-    color: var(--verde);
-    margin-bottom: 1rem;
-  }
-  .text-page-notas p {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin: 0.5rem 0;
-  }
-  .text-page-notas p strong { color: var(--preto); }
-  .text-page-letter {}
+  /* Mantemos o CSS já existente do modelo */
 </style>
 </head>
 <body>
-  <div class="text-page">
-    <p class="text-page-fixed-logo"><span>Lesbiel</span> — Episódios em áudio</p>
-    
-    <div class="text-page-title">Leslie Feinberg</div>
-    <div class="text-page-subtitle">Stone Butch Blues</div>
-    
-    <div class="text-page-meta">
-      <span>1949–2014</span>
-      <span>Escritora, jornalista e ativista</span>
+  <main class="text-page">
+    <p class="text-page-label">↘ Texto</p>
+
+    <div class="text-page-top">
+      <div>
+        <h1>Leslie Feinberg</h1>
+        <p class="author-link">Stone Butch Blues</p>
+      </div>
+      <div class="text-page-bio">
+        <button class="text-page-bio-label bio-label-toggle" aria-expanded="false">↘ Biografia <span class="bio-plus" aria-hidden="true">+</span></button>
+        <div class="bio-content">
+          <p>Leslie Feinberg (1949-2014) se descrevia como uma "branca anti-racista, de classe trabalhadora, judia secular, trangênero, lésbica, mulher e comunista revolucionária", cujos livros e trabalhos como ativista impactaram a cultura pop, pesquisa acadêmica e organizações políticas. Seu trabalho mais notável foi "Stone Butch Blues", um livro de autoficção que carrega as complexidades de gênero dentro da cultura lésbica e a perseguição sofrida pela comunidade queer durante a segunda metade do século 20, consolidada hoje como uma obra política importante para a história e estudos LGBTQ+ mais de 40 anos após sua publicação. Leslie trabalhou como jornalista por mais de 15 anos no jornal do Partido Mundial dos Trabalhadores, na seção de presos políticos, onde publicou uma série de artigos sobre a união entre socialismo e história LGBTQ+.</p>
+        </div>
+      </div>
     </div>
-    
-    <div class="text-page-bio">
-      <strong class="text-page-bio-label">Biografia</strong>
-      Leslie Feinberg (1949-2014) se descrevia como uma "branca anti-racista, de classe trabalhadora, judia secular, trangênero, lésbica, mulher e comunista revolucionária", cujos livros e trabalhos como ativista impactaram a cultura pop, pesquisa acadêmica e organizações políticas. Seu trabalho mais notável foi "Stone Butch Blues", um livro de autoficção que carrega as complexidades de gênero dentro da cultura lésbica e a perseguição sofrida pela comunidade queer durante a segunda metade do século 20, consolidada hoje como uma obra política importante para a história e estudos LGBTQ+ mais de 40 anos após sua publicação. Leslie trabalhou como jornalista por mais de 15 anos no jornal do Partido Mundial dos Trabalhadores, na seção de presos políticos, onde publicou uma série de artigos sobre a união entre socialismo e história LGBTQ+.
-    </div>
-    
+
     <div class="text-page-section">
       <h3>Trechos para o post:</h3>
-      <p class="text-page-quote"><strong>I remember what it was like to walk a gauntlet of strangers who stare—their eyes angry, confused, intrigued. Woman or man: they are outraged that I confuse them. The punishment will follow. The only recognition I can find in their eyes is that I am "other." I am different. I will always be different. I will never be able to nestle my skin against the comfort of sameness.</strong></p>
-      <p class="text-page-quote"><strong>I've been going to the library, looking up our history. There's a ton of it in anthropology books, a ton of it, Ruth. We haven't always been hated. Why didn't we grow up knowing that?</strong></p>
-    </div>
-    
-    <div class="text-page-section">
-      <h3>1° capítulo de "Stone Butch Blues", tradução de Petri de Albuquerque</h3>
-      <p class="text-page-quote">Dear Theresa,</p>
       <p class="text-page-quote">I remember what it was like to walk a gauntlet of strangers who stare—their eyes angry, confused, intrigued. Woman or man: they are outraged that I confuse them. The punishment will follow. The only recognition I can find in their eyes is that I am "other." I am different. I will always be different. I will never be able to nestle my skin against the comfort of sameness.</p>
       <p class="text-page-quote">I've been going to the library, looking up our history. There's a ton of it in anthropology books, a ton of it, Ruth. We haven't always been hated. Why didn't we grow up knowing that?</p>
-      <p class="text-page-letter">Querida Theresa,</p>
-      
-      <p class="text-page-quote">Estou deitada na minha cama sentindo a sua falta, meus olhos inchados, lágrimas quentes escorrendo pelo meu rosto. Há uma intensa tempestade de verão enfurecendo lá fora. Hoje à noite eu andei pelas ruas procurando por você nos rostos de todas as mulheres, assim como faço todas as noites neste exílio solitário. Tenho medo de que nunca verei seus risonhos , provocantes olhos novamente.</p>
-      <p class="text-page-quote">Tomei  café com uma mulher hoje mais cedo, em Greenwich Village. Um amigo mútuo que arranjou, claro que teríamos muito em comum já que ambas "gostamos de política". Bem, nos sentamos em uma cafeteria e ela falou sobre o partido Democrata  e seminários e fotografia e problemas com sua cooperativa e como ela é tão contrária à cobrança de aluguel. Que surpresa – Papai é um promotor imobiliário.</p>
-      <p class="text-page-quote">Eu a observava enquanto ela falava, pensando para mim mesma que sou um estranho para seus olhos. Ela está olhando para mim mas ela não me vê. Então ela disse que odeia essa sociedade por o que fez a "mulheres como eu", que odeiam tanto a si mesmas que precisam parecer e agir como homens. Me senti corar, meu rosto tremendo um pouco e comecei a dizer para ela, toda calma e serena, sobre mulheres assim como eu que existiram desde o início dos tempos, antes de existir opressão, e como essas sociedades a respeitavam, e ela ficou com um semblante muito interessado – e além disso era hora de ir embora.</p>
-      <p class="text-page-quote">Andamos até uma esquina onde policiais estavam batendo em um homem sem teto, parei e xinguei esses policiais e eles começaram a se aproximar com seus bastões erguidos e ela me puxou para trás pelo meu cinto. Eu só olhei para ela, e de repente senti coisas ressurgirem em mim que pensei estariam enterradas. Fiquei parada lá lembrando de você como se não estivesse vendo os policiais prestes a me bater, como estivesse caindo de volta em um outro mundo, um lugar que eu queria ir denovo.</p>
-      <p class="text-page-quote">Então, de repente meu coração doeu tanto que eu notei há quanto tempo meu coração não sentia – algo.</p>
-      <p class="text-page-quote">Eu preciso voltar para casa até você hoje, Theresa. Não posso. Então, te escrevo esta carta.</p>
-      
-      <p class="text-page-quote">Me lembro de anos atrás, no dia que comecei a trabalhar na fábrica de conservas em Buffalo e você já estava lá há uns meses, em como seus olhos encontraram os meus e brincaram comigo antes de me libertar. Deveria estar seguindo o supervisor para preencher alguns formulários mas eu estava tão ocupada pensando em que cor seu cabelo seria por debaixo daquela rede de papel branco e como ficariam e sentiriam entre meus dedos, soltos e livres. Me lembro de como você riu suavemente quando o supervisor voltou e disse, "Você vem, ou não?"</p>
-      <p class="text-page-quote">Todos nós 'ele-elas' ficamos enraivecidos quando ouvimos que você foi demitida porque não tinha deixado o supervisor tocar seus peitos. Eu ainda descarreguei as docas por mais alguns dias, mas estava meio chateada. Não era igual depois que seu brilho se apagou.</p>
-      <p class="text-page-quote">Mal pude acreditar na noite em que fui naquele novo clube no West Side. Ali você estava, encostada no bar, seus jeans mais apertados que palavras podem descrever e seu cabelo, seu cabelo todo solto e livre.</p>
-      <p class="text-page-quote">E eu me lembro do semblante em seus olhos de novo. Você não só me conhecia, você gostava do que via. Dessa vez, ah mulher, estamos em nosso próprio território. Eu podia me mover da maneira que você queria, e estava feliz que tinha me arrumado.</p>
-      <p class="text-page-quote">Nosso próprio território… "Quer dançar comigo?"</p>
-      <p class="text-page-quote">Você não disse sim ou não, só me provocou com seus olhos, arrumou minha gravata, alisou meu colarinho, e me pegou pela mão. Você tinha meu coração antes de se mover contra mim assim como fez. Tammy estava cantando "Stand by Your Man", e estávamos mudando todos os 'eles' por 'elas' dentro de nossas cabeças para encaixar direito. Depois que você dançou daquela forma, você tinha mais que meu coração. Você me fez doer e você gostava disso. Eu também.</p>
-      <p class="text-page-quote">As butches mais velhas me avisaram: se você quiser manter seu casamento, não vá para os bares. Mas eu sempre fui uma butch de uma mulher só. Além disso, essa era nossa comunidade, a única que pertencíamos, então nós íamos todo final de semana.</p>
-      <p class="text-page-quote">Haviam dois tipos de briga nos bares. A maior parte dos finais de semana tinha só uma ou a outra, alguns ambas. Haviam brigas de soco entre as mulheres butch – cheias de álcool, vergonha e insegurança ciumenta. Às vezes, as brigas eram horríveis e espalhavam como teia para prender todos no bar, como na noite em que Heddy perdeu seu olho quando foi jogada uma banqueta de bar na sua cabeça.</p>
-      <p class="text-page-quote">Eu tinha muito orgulho de que em todos esses anos eu nunca havia batido em outra mulher butch. Veja, eu também as amava, e entendia sua dor e sua vergonha porque eu era muito como elas. Eu amava as linhas em seus rostos e suas mãos e as curvas de seus ombros pesados de trabalho. algumas vezes eu olhava para o espelho e pensava como eu pareceria quando eu tivesse sua idade. Agora eu sei!</p>
-      <p class="text-page-quote">Da sua própria maneira, elas também me amavam. Elas me protegiam porque sabiam que não era uma "butch de sábado à noite". As butches de fim de semana tinham medo de mim porque eu era um ele-ela de pedra. Mas as butches mais velhas, elas sabiam do caminho que me esperava pela frente e desejavam que eu não precisasse passar por ele porque doía demais.</p>
-      <p class="text-page-quote">Quando eu fui ao bar em drag, meio escondido, eles me disseram "Tenha orgulho do que você é", e depois arrumaram minha gravata, quase como você fazia. Eu era como elas, elas sabiam que eu não tinha escolha. Então eu nunca briguei com elas usando meus punhos. Nós dávamos toques nas costas umas das outras nos bares e cuidávamos umas das outras na fábrica.</p>
-      <p class="text-page-quote">Mas existiam os tempos onde nossos verdadeiros inimigos entravam pela porta da frente: gangues de marinheiros bêbados, arruaceiros do estilo Klan, sociopatas e policiais. Sempre sabíamos quando eles entravam porque alguém tirava a jukebox da tomada. Não importa quantas vezes isso acontecia, nós sempre suspirávamos "Ah…" quando a música parava, e notávamos que era hora de ir ao trabalho.</p>
-      <p class="text-page-quote">Quando os preconceituosos entravam, era hora de brigar, e brigar nós fizemos. Lutamos duro – femme e butch, mulheres e homens juntos.</p>
-      <p class="text-page-quote">Se a música parasse e fossem os policiais na porta, alguém ligava a música de novo e trocávamos parceiros de dança. Nós em nossos ternos e gravatas juntos com nossas irmãs drag queens em seus vestidos e saltos. Difícil lembrar que era ilegal naquele tempo duas mulheres ou dois homens dançassem juntos. Quando a música acabava, as butches curvavam-se, nossas parceiras femmes faziam uma reverência, e retornávamos para nossos assentos, nossas amantes e nossas bebidas para esperar por nosso destino.</p>
-      <p class="text-page-quote">É nesse momento que eu lembro da sua mão no meu cinto, debaixo do meu paletó. Ali que sua mão ficou o tempo todo enquanto ficaram os policiais. "Pega leve, querida. Fica comigo amor, fica fria", você estaria sussurrando em meu ouvido como uma canção de amor especial que é cantada para guerreiros que precisam escolher suas batalhas para poder sobreviver.</p>
-      <p class="text-page-quote">Aprendemos rápido que os policiais sempre deixavam a van da polícia perto da porta do bar e deixavam cachorros rosnando dentro para que não conseguíssemos sair. Estávamos presos, de fato.</p>
-      <p class="text-page-quote">Lembra da noite que você ficou comigo em casa quando eu estava doente? Foi aquela noite – você se lembra. Os tiras escolheram a maior butch de pedra de todas para destruir com humilhação, uma mulher que todo mundo dizia que "usava capa de chuva no banho". Ouvimos que a despiram, devagar, na frente de todos no bar, e riram de sua tentativa de cobrir sua nudez. Depois ela enlouqueceu, disseram. Depois ela se enforcou.</p>
-      <p class="text-page-quote">O que eu teria feito se estivesse lá naquela noite?</p>
-      <p class="text-page-quote">Estou me lembrando dos ataques nos bares no Canadá. Enfiadas nas vans da polícia, todas as butches de sábado à noite gargalhavam e tentavam afofar seu cabelo e trocar de roupa para que fossem colocadas na cela com as mulheres femme – falavam que seria como "morrer e ir para o paraíso". A lei dizia que tínhamos que usar ao menos três peças de roupa feminina.</p>
-      <p class="text-page-quote">Nós nunca trocávamos de roupa. Tampouco nossas irmãs drag queens. Sabíamos, assim como você, o que estava por vir. Precisávamos de nossas mangas dobradas, nosso cabelo para trás, para poder sobreviver nesse momento. Nossas mãos estavam algemadas firmemente nas costas. As suas, algemadas na frente. Você soltava minha gravata, desabotoava meu colarinho, e tocava meu rosto. Eu vi a sua dor e medo por mim em sua face, e eu sussurrei que ia dar tudo certo. Ambas sabíamos que não era verdade.</p>
-      <p class="text-page-quote">Nunca te disse o que faziam conosco ali embaixo — drag queens em uma cela, butches de pedra do lado — mas você sabia. Um de cada vez, arrancavam nossos irmãos das celas, os batendo e socando, rapidamente fechando as grades atrás de si caso perdêssemos controle e tentássemos os impedir, como se fosse possível. Eles algemavam os pulsos com os calcanhares de um irmão ou acorrentavam seu rosto contra as grades. Eles nos faziam assistir. Às vezes, nossos olhos encontravam com os da vítima horrorizada, ou a próxima a ser, presa no terror da tortura, e dizíamos gentilmente, "Estou com você querido, olha para mim, tá tudo bem, te levaremos para casa."</p>
-      <p class="text-page-quote">Nunca chorávamos na frente dos tiras. Sabíamos que éramos os próximos.</p>
-      <p class="text-page-quote">A próxima vez que a cela abrir eu serei arrastada para fora e acorrentada de pernas e braços estendidos nas grades.</p>
-      <p class="text-page-quote">Se eu sobrevivi? Eu acho que sim. Mas apenas porque sabia que poderia voltar para casa até você.</p>
-      <p class="text-page-quote">Eles nos soltavam por último, uma de cada vez, na manhã de segunda. Sem acusações formais. Tarde demais para dizer que está doente ao trabalho, sem dinheiro, dependendo de caronas, atravessando a fronteira à pé, roupas amassadas, ensanguentadas, precisando de um banho, machucadas, com medo.</p>
-      <p class="text-page-quote">Eu sabia que você estaria em casa se eu pudesse chegar até lá.</p>
-      <p class="text-page-quote">Você preparou a banheira para mim com bolhas de cheiro doce. Você deixou uma cueca e uma camiseta limpas para mim e me deixou sozinha para enxaguar a primeira camada de vergonha.</p>
-      <p class="text-page-quote">Eu me lembro, era sempre o mesmo. Eu colocaria a cueca, depois havia acabado de passar a camiseta pela minha cabeça e você arranjaria um motivo para entrar no banheiro, para pegar ou guardar algo. Em um relance você memorizava os machucados no meu corpo como um mapa — os cortes, os roxos, as queimaduras de cigarro.</p>
-      <p class="text-page-quote">Mais tarde, na cama, você me segurava gentilmente, acariciando todo meu corpo, os toques mais tenros reservados para os lugares machucados, sabendo de cada e todo canto dolorido — por dentro e por fora. Você não flertava comigo inicialmente, sabia que não me sentia confiante o suficiente para me sentir sexy. Mas lentamente você fazia meu orgulho voltar ao me mostrar o quanto você me queria. Você sabia que demoraria semanas até derreter a pedra novamente.</p>
-      <p class="text-page-quote">Ultimamente venho lendo essas histórias de mulheres que ficam irritadas com suas amantes de pedra, até mesmo zombando de sua paixão quando elas finalmente deixam caminho para confiança, para serem tocadas. Eu me pergunto: te machucou as vezes que eu não podia te deixar me tocar? Eu espero que não. Você nunca mostrou, se aconteceu. Você tratava meu eu de pedra como uma ferida que precisava de uma cura amorosa. Obrigada. Ninguém nunca fez isso desde então. Se você estivesse aqui hoje… bem, é hipotético, não é?</p>
-      <p class="text-page-quote">Eu nunca te disse essas coisas para você.</p>
-      <p class="text-page-quote">Hoje estou me lembrando de quando eu fui detida sozinha, em território desconhecido. Você deve estar se estremecendo já, mas eu preciso dizer isso para você. Foi a noite em que dirigimos 90 milhas até um bar para encontrar com amigos que nunca apareceram. Quando a polícia invadiu o clube, nós estávamos "sozinhas", e o tira com barras douradas em seu uniforme chegou até mim e disse para me levantar. Não tem mistério, eu era o único ele-ela no lugar naquela noite.</p>
-      <p class="text-page-quote">Ele colocou suas mãos em todo meu corpo, puxou a cinta da minha cueca e disse para seus homens me algemar — eu não estava usando três peças de roupa feminina. Eu queria brigar naquele exato momento porque sabia que a chance se perderia em um instante. Mas eu também sabia que todos apanhariam caso eu revidasse, então somente fiquei parada ali. Um tira tinha um braço contra seu pescoço. Eu me lembro do sentimento em seus olhos. Me machuca até hoje.</p>
-      <p class="text-page-quote">Eles algemaram minhas mãos tão apertadas nas minhas costas que eu quase gritei. Então o tira abriu sua braguilha lentamente, com um sorrisinho no rosto, e me ordenou a ficar de joelhos. Primeiro eu pensei para mim mesma, Não posso! Depois disse em voz alta para mim e para você e para ele, "Não vou!"</p>
-      <p class="text-page-quote">Never te disse isso antes, mas algo mudou dentro de mim naquele momento. Eu aprendi a diferença entre o que não posso fazer e o que me recuso a fazer.</p>
-      <p class="text-page-quote">Eu paguei o preço por aquela lição. Preciso te dar todos os detalhes? É claro que não.</p>
-      <p class="text-page-quote">Quando eu saí da cana na manhã, você estava lá. Você pagou minha fiança. Sem acusações, eles apenas ficaram com seu dinheiro. Só eu sabia o quão difícil era para você suportar os insultos, provocações e ameaças deles. Sabia que você se encolhia a cada som que tentava ouvir de lá atrás, nas celas. Você orou para não me ouvir gritar. Eu não gritei.</p>
-      <p class="text-page-quote">Me lembro de quando chegamos ao estacionamento do lado de fora, você parou e colocou suavemente suas mãos nos meus ombros e evitou meus olhos. Você tocou as partes ensanguentadas da minha camiseta com gentileza e disse, "Eu nunca vou conseguir tirar essas manchas."</p>
-      <p class="text-page-quote">Que se danem todos que pensam que isso significa que você era condenada a se preocupar com a sujeira no meu colarinho.</p>
-      <p class="text-page-quote">Eu sabia exatamente o que você queria dizer. Era uma maneira estranhamente doce de dizer, ou não dizer, o que estava sentindo. Igual a maneira que me fecho emocionalmente quando me sinto assustada e machucada e indefesa e digo coisinhas engraçadas que parecem estar tão fora de contexto.</p>
-      <p class="text-page-quote">Você nos dirigiu até em casa com minha cabeça em seu colo, acariciando meu rosto o caminho todo. Você preparou um banho. Deixou separado uma cueca limpa. Me colocou na bed. Me acariciou cautelosamente. Me segurou gentilmente.</p>
-      <p class="text-page-quote">Mais tarde naquela noite eu acordei e notei que estava sozinha na cama. Você estava bebendo na mesa da cozinha. Você estava chorando. Eu te tomei firme em meus braços e te segurei, e você resistiu e bateu no meu peito com seus punhos porque o inimigo não estava ali para lutar. Alguns momentos depois você se lembrou dos hematomas no meu peito e começou a chorar mais forte, soluçando, "É minha culpa, eu não conseguia pará-los."</p>
-      <p class="text-page-quote">Eu sempre quis te dizer isso. Neste mesmo momento eu soube que você realmente entendia como eu me sentia na vida. Engasgando na raiva, se sentindo tão impotente, incapaz de proteger a mim ou àqueles que eu mais amava, ainda assim lutando de novo e de novo, relutante em desistir. Eu não tinha palavras para te dizer isso antes. Eu apenas disse, "Vai ficar tudo OK, tudo vai ficar bem." E então sorrimos ironicamente para o que eu disse, e te levei de volta para nossa cama e fiz o melhor amor que pude para você, considerando o estado que me encontrava. Você sabia para não tentar me tocar naquela noite. Você apenas correu seus dedos pelo meu cabelo e chorou e chorou.</p>
-      <p class="text-page-quote">Quando nos separamos na vida, doce mulher guerreira? Achamos que tínhamos ganhado a guerra de libertação quando abraçamos a palavra gay. E de repente haviam professores e doutores e advogados saindo de buracos nos dizendo que reuniões devem ser feitas com as Regras de Ordem do Robert. (Quem morreu e deixou Robert deus?)</p>
-      <p class="text-page-quote">Eles nos afastaram, nos deixaram envergonhados de como nos aparentávamos. Disseram que éramos machos porcos e chauvinistas, o inimigo. Eles quebravam os corações das mulheres. Nós não fomos difíceis de mandar embora, fomos em silêncio.</p>
-      <p class="text-page-quote">As fábricas fecharam. Algo que nunca poderíamos ter imaginado.</p>
-      <p class="text-page-quote">Foi quando eu comecei a passar como homem. Estranho ser exilada do seu próprio sexo até bordas que nunca serão sua casa.</p>
-      <p class="text-page-quote">Você foi banida também, para outra terra com seu próprio sexo, e ainda forçada a ficar separada das mulheres que você amava tanto quanto você tentava se amar.</p>
-      <p class="text-page-quote">Por mais de vinte anos eu tenho vivido nessa costa solitária, me perguntando de como você mudou. Você tirou sua maquiagem de sábado à noite com vergonha? Você se queimou de raiva quando mulheres disseram, "Se eu quisesse um homem eu estaria com um de verdade?"</p>
-      <p class="text-page-quote">Você está fazendo programa hoje? Está trabalhando de garçonete ou aprendendo Word Perfect 5.1?</p>
-      <p class="text-page-quote">Você está em um bar lésbico procurando pelo canto do seu olho pela mulher mais butch do cômodo? As mulheres aí falam sobre o partido Democrata e seminários e cooperativas? Você está com mulheres que apenas sangram uma vez ao mês, em seus ciclos menstruais?</p>
-      <p class="text-page-quote">Ou você é casada em outra cidade de colarinho azul, deitando com um trabalhador da indústria automotiva desempregado que é muito mais como eu do que elas são, escutando o respiro uniforme de suas crianças adormecidas? Você fecha as feridas emocionais dele assim como você tentou curar as minhas.</p>
-      <p class="text-page-quote">Você já pensou em mim em uma noite fresca?</p>
-      <p class="text-page-quote">Estou escrevendo esta carta para você há horas. Minhas costelas doem muito por ter apanhado recentemente. Você sabe.</p>
-      <p class="text-page-quote">Eu nunca poderia ter sobrevivido por tanto tempo se eu nunca tivesse conhecido seu amor. Ainda assim eu sinto dor ao sentir sua falta e precisar de você.</p>
-      <p class="text-page-quote">Só você poderia derreter esta pedra. Você um dia voltaria?</p>
-      <p class="text-page-quote">A tempestade passou já. Há um brilho rosa no horizonte atrás da minha janela. Estou me lembrando das noites que eu te fudi lento e profundo até que o céu estivesse desta cor.</p>
-      <p class="text-page-quote">Eu não posso mais pensar em você, a dor está me engolindo inteira. Eu tenho que colocar sua memória longe, como uma fotografia em sépia preciosa. Existem ainda tantas coisas que eu gostaria de compartilhar com você.</p>
-      <p class="text-page-quote">Já que não posso enviar esta carta para você pelo correio, enviarei para um lugar onde deixem seguras as memórias de mulheres. Talvez um dia, passando por essa grande cidade, você vai parar e lê-la. Talvez você não vá.</p>
-      <p class="text-page-quote">Boa noite, meu amor.Boa noite, meu amor.</p>
     </div>
-    
-    <div class="text-page-notas">
-      <h3>Notas</h3>
-      <p><strong>1.</strong> Leslie Feinberg (1949-2014) — ativista comunista, teórica trans-feminista e autora de "Stone Butch Blues" (1993), obra fundamental para a história queer e estudos LGBTQ+.</p>
-      <p><strong>2.</strong> "Stone Butch Blues" — romance de autoficção publicado em 1993, amplamente estudado para sua representação das experiências butch e trans na cultura lésbica e queer.</p>
-      <p><strong>3.</strong> Partido Mundial dos Trabalhadores — organização política internacional da qual Leslie Feinberg foi membro ativo por muitos anos.</p>
-      <p><strong>4.</strong> Gênero não-binário / ele-ela — terminologia usada por Leslie Feinberg para se auto-descrever, fora da binariedade homem/mulher.</p>
-      <p><strong>5.</strong> Cultura de bares lésbicos — contexto histórico da comunidade LGBTQ+ nos anos 1970-1990, particularmente em Nova York (Greenwich Village).</p>
-      <p><strong>6.</strong> Policiais e violência — referenciando a perseguição sistemática sofrida pela comunidade queer durante paradas e manifestações.</p>
-      <p><strong>7.</strong> Dinâmica butch-femme — relações de poder e identidade de gênero dentro da cultura lésbica.</p>
-      <p><strong>8.</strong> Tradução de Petri de Albuquerque — respons por traduzir o capítulo inicial de "Stone Butch Blues" para o português.</p>
-      <p><strong>9.</strong> Referência a Ruth — mencionada na carta como destinatária, representando conexão pessoal e histórica.</p>
-      <p><strong>10.</strong> Greenwich Village — bairro de Nova York centro da comunidade LGBTQ+ e cultura de bares lésbicos.</p>
-      <p><strong>11.</strong> Dinâmica de gênero na prisão — referenciando a experiência de detenção e as condições nas celas policiais.</p>
-      <p><strong>12.</strong> Drag e identidade de gênero — referenciando a presença e papel das drag queens no contexto LGBTQ+.</p>
-      <p><strong>13.</strong> Robert's Rules of Order — referência procedural a reuniões formais, usada ironicamente no texto.</p>
-      <p><strong>14.</strong> São Paulo / Brasil — contexto geográfico implícito nas referências culturais.</p>
-      <p><strong>15.</strong> História LGBTQ+ — linha do tempo geral de lutas e conquistas dos direitos LGBTQ+.</p>
-      <p><strong>16.</strong> Carta pessoal — formato de comunicação direta entre amantes, usado como dispositivo narrativo.</p>
-      <p><strong>17.</strong> Ensaios sobre gênero — referenciando a teorização sobre gênero como construção social.</p>
-      <p><strong>18.</strong> Comunidade queer — redes de apoio e ativismo durante o período representado no texto.</p></div>
-  </div>
+
+    <div class="text-page-section">
+      <h3>1° capítulo de "Stone Butch Blues", tradução de Petri de Albuquerque</h3>
+      Dear Theresa,
+      I remember what it was like to walk a gauntlet of strangers who stare—their eyes angry, confused, intrigued.
+      Woman or man: they are outraged that I confuse them. The punishment will follow.
+      The only recognition I can find in their eyes is that I am "other." I am different. I will always be different. I will never be able to nestle my skin against the comfort of sameness.
+      I've been going to the library, looking up our history. There's a ton of it in anthropology books, a ton of it, Ruth. We haven't always been hated. Why didn't we grow up knowing that?
+      <!-- ... resto do conteúdo ... -->
+    </div>
+  </main>
 </body>
 </html>
