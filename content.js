@@ -31,7 +31,28 @@ window.LESBIEL = {
       subtitle: "Episódio no Spotify",
       text: "Escritora neozelandesa de enorme importância para o modernismo de língua inglesa. Em seus contos, trabalhado com diversas representações de feminilidade e narrou um desejo ambíguo e confuso entre mulheres.",
       link: "https://open.spotify.com/episode/6DZ06yDV5CeFYI8AKCNhV1?si=03ab9b8154ee410e"
-    },  ],
+    },
+    {
+      number: "02",
+      img: "assets/img/monique-wittig.jpg",
+      alt: "Retrato de Monique Wittig",
+      imgClass: "card-img-bege-dark",
+      title: "Monique Wittig",
+      subtitle: "Episódio no Spotify",
+      text: "Escritora e teórica feminista francesa, autora de obras fundamentais como O corpo lésbico e As guerrilheiras. Seu pensamento desafiou as categorias de sexo e gênero e marcou profundamente a teoria lésbica e feminista.",
+      link: "https://open.spotify.com/episode/5AVX1jOcVTA9JNTHONkWMS?si=50c6145f5bc24bda"
+    },
+    {
+      number: "03",
+      img: "assets/img/leslie-feinberg.jpg",
+      alt: "Retrato de Leslie Feinberg",
+      imgClass: "card-img-verde",
+      title: "Leslie Feinberg",
+      subtitle: "Episódio no Spotify",
+      text: "Ativista, escritora e organizadora estadunidense, autora de Stone Butch Blues. Sua obra e militância articularam as lutas de classe, gênero e sexualidade, deixando um legado fundamental para a história LGBTQIA+.",
+      link: "https://open.spotify.com/episode/380MFYWZtdh1E3BHJP22M5?si=c53e8f9da3ef4d14"
+    }
+  ],
 /* ---- Carrossel de citações -------------------------------------------- */
   quotes: [
     {
